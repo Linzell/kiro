@@ -48,6 +48,7 @@ module.exports = {
     'import/no-extraneous-dependencies': 'error',
     'import/prefer-default-export': 'error',
     'prefer-promise-reject-errors': 'off',
+    'react/react-in-jsx-scope': 'off',
 
     quotes: ['warn', 'single', { avoidEscape: true }],
     '@typescript-eslint/explicit-function-return-type': 'off',

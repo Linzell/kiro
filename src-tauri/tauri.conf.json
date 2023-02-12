@@ -7,7 +7,7 @@
     "withGlobalTauri": false
   },
   "package": {
-    "productName": "editorTauri",
+    "productName": "editor-tauri",
     "version": "0.0.0"
   },
   "tauri": {
@@ -62,7 +62,7 @@
         "fullscreen": false,
         "height": 840,
         "resizable": true,
-        "title": "editorTauri",
+        "title": "editor-tauri",
         "width": 1280
       }
     ]

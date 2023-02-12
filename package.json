@@ -1,5 +1,5 @@
 {
-  "name": "editorTauri",
+  "name": "editor-tauri",
   "author": {
     "name": "Charlie Cohen",
     "email": "linzellart@gmail.com",
@@ -27,15 +27,17 @@
     "postcss": "^8.4.21",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-i18next": "^12.1.5"
+    "react-i18next": "^12.1.5",
+    "uuid": "^9.0.0"
   },
   "devDependencies": {
     "@tauri-apps/cli": "^1.2.3",
     "@types/node": "^18.13.0",
-    "@typescript-eslint/eslint-plugin": "^5.51.0",
-    "@typescript-eslint/parser": "^5.51.0",
+    "@types/uuid": "^9.0.0",
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.10",
+    "@typescript-eslint/eslint-plugin": "^5.51.0",
+    "@typescript-eslint/parser": "^5.51.0",
     "@vitejs/plugin-react": "^3.1.0",
     "eslint": "^8.34.0",
     "eslint-config-airbnb-base": "^15.0.0",

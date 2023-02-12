@@ -1,6 +1,7 @@
-import * as React from 'react';
+import { v4 as uuidv4 } from 'uuid';
+import StateInterface from '#/interfaces/StateInterface';
 
-interface Props {
+interface ItemInterface {
   Id: string;
   CID: string;
   Name: string;
@@ -8,159 +9,179 @@ interface Props {
   Description: string;
   Content: string;
   ImgUrl: string;
-  Created: Date;
-  Modified: Date;
+  CreatedDate : Date;
+  ModifiedDate : Date;
   Tags: string[];
   FollowerIds: string[];
   ExpertsIds: string[];
 }
 
-interface State {
-  id: string;
-  cid: string;
-  name: string;
-  ownerId: string;
-  description: string;
-  content: string;
-  imgUrl: string;
-  created: Date;
-  modified: Date;
-  tags: string[];
-  followerIds: string[];
-  expertsIds: string[];
-}
+/**
+ * Item class
+ * @class Item
+ * @constructor
+ * ```TS
+ * constructor(
+ * id: string,
+ * cid: string,
+ * name: string,
+ * description: string
+ * content: string,
+ * imgUrl: string
+ * createdDate : Date,
+ * modifiedDate : Date,
+ * tags: string
+ * followerIds: string[],
+ * expertsIds: string[]
+ * )
+ * ```
+ */
+abstract class Item implements StateInterface {
+  private itemInterface: ItemInterface;
 
-class Item extends React.Component<Props, State> {
-  constructor(props: Props) {
-    super(props);
-    this.state = {
-      id: props.Id,
-      cid: props.CID,
-      name: props.Name,
-      ownerId: props.OwnerId,
-      description: props.Description,
-      content: props.Content,
-      imgUrl: props.ImgUrl,
-      created: props.Created,
-      modified: props.Modified,
-      tags: props.Tags,
-      followerIds: props.FollowerIds,
-      expertsIds: props.ExpertsIds,
+  constructor(
+    id: string,
+    cid: string,
+    name: string,
+    ownerId: string,
+    description: string,
+    content: string,
+    imgUrl: string,
+    createdDate : Date,
+    modifiedDate : Date,
+    tags: string[],
+    followerIds: string[],
+    expertsIds: string[],
+  ) {
+    this.itemInterface = {
+      Id: id || uuidv4(),
+      CID: cid,
+      Name: name,
+      OwnerId: ownerId,
+      Description: description,
+      Content: content,
+      ImgUrl: imgUrl,
+      CreatedDate: createdDate,
+      ModifiedDate: modifiedDate,
+      Tags: tags,
+      FollowerIds: followerIds,
+      ExpertsIds: expertsIds,
     };
   }
 
   get id() {
-    return this.state.id;
+    return this.itemInterface.Id;
   }
 
   set id(value: string) {
-    this.setState({ id: value });
+    this.itemInterface.Id = value;
   }
 
   get cid() {
-    return this.state.cid;
+    return this.itemInterface.CID;
   }
 
   set cid(value: string) {
-    this.setState({ cid: value });
+    this.itemInterface.CID = value;
   }
 
   get name() {
-    return this.state.name;
+    return this.itemInterface.Name;
   }
 
   set name(value: string) {
-    this.setState({ name: value });
+    this.itemInterface.Name = value;
   }
 
   get ownerId() {
-    return this.state.ownerId;
+    return this.itemInterface.OwnerId;
   }
 
   set ownerId(value: string) {
-    this.setState({ ownerId: value });
+    this.itemInterface.OwnerId = value;
   }
 
   get description() {
-    return this.state.description;
+    return this.itemInterface.Description;
   }
 
   set description(value: string) {
-    this.setState({ description: value });
+    this.itemInterface.Description = value;
   }
 
   get content() {
-    return this.state.content;
+    return this.itemInterface.Content;
   }
 
   set content(value: string) {
-    this.setState({ content: value });
+    this.itemInterface.Content = value;
   }
 
   get imgUrl() {
-    return this.state.imgUrl;
+    return this.itemInterface.ImgUrl;
   }
 
   set imgUrl(value: string) {
-    this.setState({ imgUrl: value });
+    this.itemInterface.ImgUrl = value;
   }
 
-  get created() {
-    return this.state.created;
+  get createdDate() {
+    return this.itemInterface.CreatedDate;
   }
 
-  set created(value: Date) {
-    this.setState({ created: value });
+  set createdDate(value: Date) {
+    this.itemInterface.CreatedDate = value;
   }
 
-  get modified() {
-    return this.state.modified;
+  get modifiedDate() {
+    return this.itemInterface.ModifiedDate;
   }
 
-  set modified(value: Date) {
-    this.setState({ modified: value });
+  set modifiedDate(value: Date) {
+    this.itemInterface.ModifiedDate = value;
   }
 
   get tags() {
-    return this.state.tags;
+    return this.itemInterface.Tags;
   }
 
   set tags(value: string[]) {
-    this.setState({ tags: value });
+    this.itemInterface.Tags = value;
   }
 
   get followerIds() {
-    return this.state.followerIds;
+    return this.itemInterface.FollowerIds;
   }
 
   set followerIds(value: string[]) {
-    this.setState({ followerIds: value });
+    this.itemInterface.FollowerIds = value;
   }
 
   get expertsIds() {
-    return this.state.expertsIds;
+    return this.itemInterface.ExpertsIds;
   }
 
   set expertsIds(value: string[]) {
-    this.setState({ expertsIds: value });
+    this.itemInterface.ExpertsIds = value;
   }
 
-  updateItem = (item: Item) => {
-    this.setState({
-      id: item.id,
-      cid: item.cid,
-      name: item.name,
-      ownerId: item.ownerId,
-      description: item.description,
-      content: item.content,
-      imgUrl: item.imgUrl,
-      created: item.created,
-      modified: item.modified,
-      tags: item.tags,
-      followerIds: item.followerIds,
-      expertsIds: item.expertsIds,
-    });
-  };
+  /**
+   * Add a new item to the database
+   * @param item The item to add
+   */
+  public abstract addItem(item: Item): void;
+
+  /**
+   * Update an existing item in the database
+   * @param item The item to update
+   */
+  public abstract updateItem(item: Item): void;
+
+  /**
+   * Delete an existing item from the database
+   * @param id The id of the item to delete
+   */
+  public abstract deleteItemById(id: string): void;
 }
 
 export default Item;
