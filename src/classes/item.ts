@@ -1,5 +1,5 @@
 import { v4 as uuidv4 } from 'uuid';
-import StateInterface from '#/interfaces/StateInterface';
+import ItemStateInterface from '#/interfaces/ItemStateInterface';
 
 interface ItemInterface {
   Id: string;
@@ -36,7 +36,7 @@ interface ItemInterface {
  * )
  * ```
  */
-abstract class Item implements StateInterface {
+abstract class Item implements ItemStateInterface {
   private itemInterface: ItemInterface;
 
   constructor(
@@ -181,7 +181,7 @@ abstract class Item implements StateInterface {
    * Delete an existing item from the database
    * @param id The id of the item to delete
    */
-  public abstract deleteItemById(id: string): void;
+  public abstract removeItemById(id: string): void;
 }
 
 export default Item;

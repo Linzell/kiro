@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import User from '#/user';
 
 interface Props {
@@ -50,8 +50,11 @@ abstract class UserState extends React.Component<Props, State> {
    * Add a user to the state
    * @param user The user to add
    */
-  static addUser: (user: User)
-    => (users: Map<string, User>) => void = (user: User) => (users: Map<string, User>) => {
+  static addUser: (
+    user: User
+  ) => (users: Map<string, User>) => void = (
+      user: User,
+    ) => (users: Map<string, User>) => {
       users.set(user.id, user);
     };
 
@@ -59,8 +62,11 @@ abstract class UserState extends React.Component<Props, State> {
    * Remove a user from the state
    * @param id The id of the user to remove
    */
-  static removeUserById: (id: string)
-    => (users: Map<string, User>) => void = (id: string) => (users: Map<string, User>) => {
+  static removeUserById: (
+    id: string
+  ) => (users: Map<string, User>) => void = (
+      id: string,
+    ) => (users: Map<string, User>) => {
       users.delete(id);
     };
 
@@ -68,8 +74,11 @@ abstract class UserState extends React.Component<Props, State> {
    * Update a user in the state
    * @param user The user to update
    */
-  static updateUser: (user: User)
-    => (users: Map<string, User>) => void = (user: User) => (users: Map<string, User>) => {
+  static updateUser: (
+    user: User
+  ) => (users: Map<string, User>) => void = (
+      user: User,
+    ) => (users: Map<string, User>) => {
       users.set(user.id, user);
     };
 }

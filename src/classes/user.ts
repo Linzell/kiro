@@ -105,13 +105,34 @@ class User extends Item {
     this.PublicKey = value;
   }
 
+  get publicUser(): User {
+    return new User(
+      this.id,
+      this.cid,
+      this.name,
+      this.ownerId,
+      this.description,
+      this.content,
+      this.imgUrl,
+      this.createdDate,
+      this.modifiedDate,
+      this.tags,
+      this.followerIds,
+      this.expertsIds,
+      this.email,
+      this.peerId,
+      '',
+      this.publicKey,
+    );
+  }
+
   // eslint-disable-next-line class-methods-use-this
   public addItem(user: User): void {
     UserState.addUser(user);
   }
 
   // eslint-disable-next-line class-methods-use-this
-  public deleteItemById(id: string): void {
+  public removeItemById(id: string): void {
     UserState.removeUserById(id);
   }
 
