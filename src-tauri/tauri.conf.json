@@ -60,10 +60,10 @@
     "windows": [
       {
         "fullscreen": false,
-        "height": 840,
+        "height": 1080,
         "resizable": true,
         "title": "editor-tauri",
-        "width": 1280
+        "width": 1920
       }
     ]
   }
