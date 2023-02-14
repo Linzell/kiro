@@ -6,10 +6,13 @@ abstract class TeamCreator {
     ownerId: string,
   ): Team;
 
-  public someOperation(): string {
+  public someOperation(
+    name: string,
+    ownerId: string,
+  ): string {
     const team = this.factoryMethod(
-      'New Team',
-      '123456789',
+      name,
+      ownerId,
     );
     return `Team: ${team.name}`;
   }

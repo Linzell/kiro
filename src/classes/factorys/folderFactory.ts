@@ -6,10 +6,13 @@ abstract class FolderCreator {
     ownerId: string,
   ): Folder;
 
-  public someOperation(): string {
+  public someOperation(
+    name: string,
+    ownerId: string,
+  ): string {
     const folder = this.factoryMethod(
-      'New Folder',
-      '123456789',
+      name,
+      ownerId,
     );
     return `Folder: ${folder.name}`;
   }

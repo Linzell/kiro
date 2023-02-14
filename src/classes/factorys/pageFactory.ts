@@ -7,11 +7,15 @@ abstract class PageCreator {
     parentId: string,
   ): Page;
 
-  public someOperation(): string {
+  public someOperation(
+    name: string,
+    ownerId: string,
+    parentId: string,
+  ): string {
     const page = this.factoryMethod(
-      'New Page',
-      '123456789',
-      '123456789',
+      name,
+      ownerId,
+      parentId,
     );
     return `Page: ${page.name}`;
   }
