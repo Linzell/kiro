@@ -1,15 +1,23 @@
 import Page from '#/page';
 
-abstract class PageFactory {
-  public abstract factoryMethod(): Page;
+abstract class PageCreator {
+  public abstract factoryMethod(
+    name: string,
+    ownerId: string,
+    parentId: string,
+  ): Page;
 
   public someOperation(): string {
-    const page = this.factoryMethod();
+    const page = this.factoryMethod(
+      'New Page',
+      '123456789',
+      '123456789',
+    );
     return `Page: ${page.name}`;
   }
 }
 
-class newPage extends Page {
+class newPage extends PageCreator {
   // eslint-disable-next-line class-methods-use-this
   public factoryMethod(
     name: string,
@@ -40,4 +48,4 @@ class newPage extends Page {
   }
 }
 
-export default [PageFactory, newPage];
+export default [newPage];

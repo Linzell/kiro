@@ -1,15 +1,21 @@
 import Folder from '#/folder';
 
 abstract class FolderCreator {
-  public abstract factoryMethod(): Folder;
+  public abstract factoryMethod(
+    name: string,
+    ownerId: string,
+  ): Folder;
 
   public someOperation(): string {
-    const folder = this.factoryMethod();
+    const folder = this.factoryMethod(
+      'New Folder',
+      '123456789',
+    );
     return `Folder: ${folder.name}`;
   }
 }
 
-class newFolder extends Folder {
+class newFolder extends FolderCreator {
   // eslint-disable-next-line class-methods-use-this
   public factoryMethod(
     name: string,
@@ -40,4 +46,4 @@ class newFolder extends Folder {
   }
 }
 
-export default [FolderCreator, newFolder];
+export default [newFolder];
