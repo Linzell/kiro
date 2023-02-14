@@ -36,11 +36,11 @@ class Page extends Item {
     this.ParentId = parentId;
   }
 
-  get parent(): string {
+  get parentId(): string {
     return this.ParentId;
   }
 
-  set parent(parentId: string) {
+  set parentId(parentId: string) {
     this.ParentId = parentId;
   }
 

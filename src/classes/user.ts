@@ -120,7 +120,7 @@ class User extends Item {
       this.followerIds,
       this.expertsIds,
       this.email,
-      this.peerId,
+      '',
       '',
       this.publicKey,
     );
