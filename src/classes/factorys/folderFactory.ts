@@ -18,12 +18,25 @@ abstract class FolderCreator {
   }
 }
 
+/**
+ * Generates a new instance of a Folder
+ * @factoryMethod returns a new instance of a Folder
+ * @param name [Required] - name of the folder
+ * @param ownerId [Required] - id of the owner of the folder
+ * @param description - description of the folder
+ * @param content - content of the folder
+ * @param imgUrl - image url of the folder
+ * @param tags - tags of the folder
+ * @param followerIds - follower ids of the folder
+ * @param expertsIds - expert ids of the folder
+ * @param items - items of the folder
+ */
 class newFolder extends FolderCreator {
   // eslint-disable-next-line class-methods-use-this
   public factoryMethod(
     name: string,
     ownerId: string,
-    description = '',
+    description = 'A new Folder',
     content = '',
     imgUrl = '',
     tags = [],

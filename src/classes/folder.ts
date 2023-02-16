@@ -1,6 +1,29 @@
 import Item from '#/item';
 import FolderState from '$/folderState';
 
+/**+
+ * Folder class
+ * @class Folder
+ * @extends Item
+ * @constructor
+ * ```TS
+ * constructor(
+ * id: string,
+ * cid: string,
+ * name: string,
+ * ownerId: string,
+ * description: string,
+ * content: string,
+ * imgUrl: string,
+ * createdDate : Date,
+ * modifiedDate : Date,
+ * tags: string[],
+ * followerIds: string[],
+ * expertsIds: string[],
+ * items: Item[],
+ * )
+ * ```
+ */
 class Folder extends Item {
   private Items: Item[];
 

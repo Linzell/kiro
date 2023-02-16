@@ -1,3 +1,6 @@
+/**
+ * Get the language name from the language code
+ */
 // eslint-disable-next-line no-shadow
 enum LanguageName {
   ENGLISH = 'en-US',

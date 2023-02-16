@@ -11,6 +11,22 @@ interface TeamInterface {
   Description: string;
 }
 
+/**
+ * Team class
+ * @class Team
+ * @extends TeamState
+ * @constructor
+ * ```TS
+ * constructor(
+ * id: string,
+ * name: string,
+ * ownerId: string,
+ * adminsIds: string[],
+ * usersIds: string[],
+ * description: string,
+ * )
+ * ```
+ */
 class Team implements TeamStateInterface {
   private teamInterface: TeamInterface;
 

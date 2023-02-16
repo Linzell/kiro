@@ -30,7 +30,7 @@ interface ItemInterface {
  * imgUrl: string
  * createdDate : Date,
  * modifiedDate : Date,
- * tags: string
+ * tags: string,
  * followerIds: string[],
  * expertsIds: string[]
  * )

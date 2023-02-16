@@ -18,6 +18,15 @@ abstract class TeamCreator {
   }
 }
 
+/**
+ * Generates a new instance of a Team
+ * @factoryMethod returns a new instance of a Team
+ * @param name [Required] - name of the team
+ * @param ownerId [Required] - id of the owner of the team
+ * @param adminsIds - admin ids of the team
+ * @param usersIds - user ids of the team
+ * @param description - description of the team
+ */
 class newTeam extends TeamCreator {
   // eslint-disable-next-line class-methods-use-this
   public factoryMethod(

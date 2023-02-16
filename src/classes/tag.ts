@@ -1,6 +1,29 @@
 import Item from '#/item';
 import TagState from '$/tagState';
 
+/**
+ * Tag class
+ * @class Tag
+ * @extends Item
+ * @constructor
+ * ```TS
+ * constructor(
+ * id: string,
+ * cid: string,
+ * name: string,
+ * ownerId: string,
+ * description: string
+ * content: string,
+ * imgUrl: string,
+ * createdDate: Date,
+ * modifiedDate: Date,
+ * tags: string[],
+ * followerIds: string[],
+ * expertsIds: string[],
+ * colorTag: string,
+ * )
+ * ```
+ */
 class Tag extends Item {
   private ColorTag: string;
 

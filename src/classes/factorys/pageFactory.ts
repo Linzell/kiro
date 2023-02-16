@@ -21,13 +21,26 @@ abstract class PageCreator {
   }
 }
 
+/**
+ * Generates a new instance of a Page
+ * @factoryMethod returns a new instance of a Page
+ * @param name [Required] - name of the page
+ * @param ownerId [Required] - id of the owner of the page
+ * @param parentId [Required] - id of the parent of the page
+ * @param description - description of the page
+ * @param content - content of the page
+ * @param imgUrl - image url of the page
+ * @param tags - tags of the page
+ * @param followerIds - follower ids of the page
+ * @param expertsIds - expert ids of the page
+ */
 class newPage extends PageCreator {
   // eslint-disable-next-line class-methods-use-this
   public factoryMethod(
     name: string,
     ownerId: string,
     parentId: string,
-    description = '',
+    description = 'A new Page',
     content = '',
     imgUrl = '',
     tags = [],

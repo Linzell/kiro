@@ -1,6 +1,29 @@
 import Item from '#/item';
 import PageState from '$/pageState';
 
+/**
+ * Page class
+ * @class Page
+ * @extends Item
+ * @constructor
+ * ```TS
+ * constructor(
+ * id: string,
+ * cid: string,
+ * name: string,
+ * ownerId: string,
+ * description: string
+ * content: string,
+ * imgUrl: string,
+ * createdDate: Date,
+ * modifiedDate: Date,
+ * tags: string[],
+ * followerIds: string[],
+ * expertsIds: string[],
+ * parentId: string,
+ * )
+ * ```
+ */
 class Page extends Item {
   private ParentId: string;
 
