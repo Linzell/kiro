@@ -67,19 +67,20 @@ class Folder extends Item {
     this.Items = value;
   }
 
-  // eslint-disable-next-line class-methods-use-this
-  public addItem(folder: Folder): void {
-    FolderState.addFolder(folder);
+  public removeItem(): void {
+    FolderState.removeFolderById(this.id);
   }
 
-  // eslint-disable-next-line class-methods-use-this
-  public removeItemById(id: string): void {
-    FolderState.removeFolderById(id);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  public updateItem(toNetwork: boolean): void {
+    FolderState.updateFolder(this);
   }
 
-  // eslint-disable-next-line class-methods-use-this
-  public updateItem(folder: Folder): void {
-    FolderState.updateFolder(folder);
+  public toJSON(): object {
+    return {
+      ...super.toJSON(),
+      items: this.Items,
+    };
   }
 }
 

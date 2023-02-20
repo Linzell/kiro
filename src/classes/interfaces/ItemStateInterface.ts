@@ -1,8 +1,6 @@
-import Item from '#/item';
-
 export default interface ItemStateInterface {
-  addItem: (item: Item) => void;
-  updateItem: (item: Item) => void;
-  removeItemById: (id: string) => void;
+  updateItem: (toNetwork: boolean) => void;
+  removeItem: () => void;
+  toJSON: () => object;
 // eslint-disable-next-line semi
 }

@@ -67,19 +67,20 @@ class Page extends Item {
     this.ParentId = parentId;
   }
 
-  // eslint-disable-next-line class-methods-use-this
-  public addItem(page: Page): void {
-    PageState.addPage(page);
+  public removeItem(): void {
+    PageState.removePageById(this.id);
   }
 
-  // eslint-disable-next-line class-methods-use-this
-  public removeItemById(id: string): void {
-    PageState.removePageById(id);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  public updateItem(toNetwork: boolean): void {
+    PageState.updatePage(this);
   }
 
-  // eslint-disable-next-line class-methods-use-this
-  public updateItem(page: Page): void {
-    PageState.updatePage(page);
+  public toJSON(): object {
+    return {
+      ...super.toJSON(),
+      parentId: this.parentId,
+    };
   }
 }
 

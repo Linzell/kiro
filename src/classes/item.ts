@@ -166,22 +166,35 @@ abstract class Item implements ItemStateInterface {
   }
 
   /**
-   * Add a new item to the database
-   * @param item The item to add
-   */
-  public abstract addItem(item: Item): void;
-
-  /**
    * Update an existing item in the database
-   * @param item The item to update
+   * @param toNetwork - If true, update the item on the network
    */
-  public abstract updateItem(item: Item): void;
+  public abstract updateItem(toNetwork: boolean): void;
 
   /**
    * Delete an existing item from the database
-   * @param id The id of the item to delete
    */
-  public abstract removeItemById(id: string): void;
+  public abstract removeItem(): void;
+
+  /**
+   * Convert the item to a JSON object
+   */
+  public toJSON(): object {
+    return {
+      id: this.id,
+      cid: this.cid,
+      name: this.name,
+      ownerId: this.ownerId,
+      description: this.description,
+      content: this.content,
+      imgUrl: this.imgUrl,
+      createdDate: this.createdDate,
+      modifiedDate: this.modifiedDate,
+      tags: this.tags,
+      followerIds: this.followerIds,
+      expertsIds: this.expertsIds,
+    };
+  }
 }
 
 export default Item;

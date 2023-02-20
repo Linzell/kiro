@@ -97,30 +97,19 @@ class Team implements TeamStateInterface {
   }
 
   /**
-   * Add a team to the state
-   * @param team The team to add
-   */
-  // eslint-disable-next-line class-methods-use-this
-  public addTeam(team: Team): void {
-    TeamState.addTeam(team);
-  }
-
-  /**
    * Update a team in the state
    * @param team The team to update
    */
-  // eslint-disable-next-line class-methods-use-this
-  public updateTeam(team: Team): void {
-    TeamState.updateTeam(team);
+  public updateTeam(): void {
+    TeamState.updateTeam(this);
   }
 
   /**
    * Remove a team from the state
    * @param id The id of the team to remove
    */
-  // eslint-disable-next-line class-methods-use-this
-  public removeTeamById(id: string): void {
-    TeamState.removeTeamById(id);
+  public removeTeam(): void {
+    TeamState.removeTeamById(this.id);
   }
 }
 

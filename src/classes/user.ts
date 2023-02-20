@@ -126,19 +126,23 @@ class User extends Item {
     );
   }
 
-  // eslint-disable-next-line class-methods-use-this
-  public addItem(user: User): void {
-    UserState.addUser(user);
+  public removeItem(): void {
+    UserState.removeUserById(this.id);
   }
 
-  // eslint-disable-next-line class-methods-use-this
-  public removeItemById(id: string): void {
-    UserState.removeUserById(id);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  public updateItem(toNetwork: boolean): void {
+    UserState.updateUser(this);
   }
 
-  // eslint-disable-next-line class-methods-use-this
-  public updateItem(user: User): void {
-    UserState.updateUser(user);
+  public toJSON(): object {
+    return {
+      ...super.toJSON(),
+      email: this.email,
+      peerId: this.peerId,
+      privateKey: this.privateKey,
+      publicKey: this.publicKey,
+    };
   }
 }
 

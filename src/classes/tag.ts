@@ -67,19 +67,20 @@ class Tag extends Item {
     this.ColorTag = colorTag;
   }
 
-  // eslint-disable-next-line class-methods-use-this
-  public addItem(tag: Tag): void {
-    TagState.addTag(tag);
+  public removeItem(): void {
+    TagState.removeTagById(this.id);
   }
 
-  // eslint-disable-next-line class-methods-use-this
-  public removeItemById(id: string): void {
-    TagState.removeTagById(id);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  public updateItem(toNetwork: boolean): void {
+    TagState.updateTag(this);
   }
 
-  // eslint-disable-next-line class-methods-use-this
-  public updateItem(tag: Tag): void {
-    TagState.updateTag(tag);
+  public toJSON(): object {
+    return {
+      ...super.toJSON(),
+      colorTag: this.colorTag,
+    };
   }
 }
 
