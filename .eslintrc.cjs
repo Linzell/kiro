@@ -7,12 +7,12 @@ module.exports = {
   },
   parserOptions: {
     parser: require.resolve('@typescript-eslint/parser'),
-    extraFileExtensions: [ '.tsx' ]
+    extraFileExtensions: ['.tsx'],
   },
   extends: [
     'plugin:@typescript-eslint/recommended',
     'plugin:react/recommended',
-    'airbnb-base'
+    'airbnb-base',
   ],
   plugins: [
     '@typescript-eslint',
@@ -28,7 +28,7 @@ module.exports = {
     __VITE_SSR_PWA__: 'readonly',
     process: 'readonly',
     Capacitor: 'readonly',
-    chrome: 'readonly'
+    chrome: 'readonly',
   },
   rules: {
     'no-param-reassign': 'off',
@@ -54,6 +54,6 @@ module.exports = {
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/no-var-requires': 'off',
     'no-unused-vars': 'off',
-    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off'
-  }
-}
+    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+  },
+};

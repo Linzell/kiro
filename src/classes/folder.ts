@@ -1,7 +1,7 @@
 import Item from '#/item';
 import FolderState from '$/folderState';
 
-/**+
+/**
  * Folder class
  * @class Folder
  * @extends Item
