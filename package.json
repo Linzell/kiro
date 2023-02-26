@@ -33,6 +33,7 @@
     "uuid": "^9.0.0"
   },
   "devDependencies": {
+    "@reduxjs/toolkit": "^1.9.3",
     "@tauri-apps/cli": "^1.2.3",
     "@types/node": "^18.13.0",
     "@types/react": "^18.0.28",

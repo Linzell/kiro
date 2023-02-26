@@ -1,5 +1,5 @@
+import { removeFolderById, updateFolder } from 'src/stores/folder';
 import Item from '#/item';
-import FolderState from '$/folderState';
 
 /**
  * Folder class
@@ -68,12 +68,12 @@ class Folder extends Item {
   }
 
   public removeItem(): void {
-    FolderState.removeFolderById(this.id);
+    removeFolderById({ id: this.id });
   }
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   public updateItem(toNetwork: boolean): void {
-    FolderState.updateFolder(this);
+    updateFolder(this);
   }
 
   public toJSON(): object {
