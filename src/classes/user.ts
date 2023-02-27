@@ -1,5 +1,14 @@
+import { useAppSelector } from '$/hooks';
+import {
+  removeUser,
+  updateUser,
+  addCurrentUser,
+  removeCurrentUser,
+  updateCurrentUser,
+} from '$/user';
 import Item from '#/item';
-import UserState from '$/userState';
+
+const currentUser = useAppSelector((state) => state.userStore.currentUser);
 
 /**
  * User class
@@ -127,12 +136,41 @@ class User extends Item {
   }
 
   public removeItem(): void {
-    UserState.removeUserById(this.id);
+    removeUser(this);
+    if (this.id === currentUser.id) {
+      this.removeCurrentUser();
+    }
   }
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   public updateItem(toNetwork: boolean): void {
-    UserState.updateUser(this);
+    updateUser(this);
+    if (this.id === currentUser.id) {
+      this.updateCurrentUser();
+    }
+  }
+
+  /**
+   * Add current user to the store
+   */
+  public addCurrentUser(toNetwork: boolean): void {
+    addCurrentUser(this);
+    this.publicUser.updateItem(toNetwork);
+  }
+
+  /**
+   * Remove current user from the store
+   */
+  // eslint-disable-next-line class-methods-use-this
+  removeCurrentUser(): void {
+    removeCurrentUser();
+  }
+
+  /**
+   * Update current user in the store
+   */
+  updateCurrentUser(): void {
+    updateCurrentUser(this);
   }
 
   public toJSON(): object {

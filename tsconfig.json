@@ -19,7 +19,7 @@
     "paths": {
       "@/*": ["src/components/*"],
       "#/*": ["src/classes/*"],
-      "$/*": ["src/states/*"],
+      "$/*": ["src/stores/*"],
     }
   },
   "include": ["src"],

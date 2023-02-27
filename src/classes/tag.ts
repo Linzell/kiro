@@ -1,5 +1,5 @@
+import { removeTag, updateTag } from '$/tag';
 import Item from '#/item';
-import TagState from '$/tagState';
 
 /**
  * Tag class
@@ -68,12 +68,12 @@ class Tag extends Item {
   }
 
   public removeItem(): void {
-    TagState.removeTagById(this.id);
+    removeTag(this);
   }
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   public updateItem(toNetwork: boolean): void {
-    TagState.updateTag(this);
+    updateTag(this);
   }
 
   public toJSON(): object {

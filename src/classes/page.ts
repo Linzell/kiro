@@ -1,5 +1,5 @@
+import { removePage, updatePage } from '$/page';
 import Item from '#/item';
-import PageState from '$/pageState';
 
 /**
  * Page class
@@ -68,12 +68,12 @@ class Page extends Item {
   }
 
   public removeItem(): void {
-    PageState.removePageById(this.id);
+    removePage(this);
   }
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   public updateItem(toNetwork: boolean): void {
-    PageState.updatePage(this);
+    updatePage(this);
   }
 
   public toJSON(): object {

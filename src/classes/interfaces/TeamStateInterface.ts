@@ -1,5 +1,6 @@
 export default interface TeamStateInterface {
-  updateTeam: () => void;
+  updateTeam: (toNetwork: boolean) => void;
   removeTeam: () => void;
+  toJSON: () => object;
 // eslint-disable-next-line semi
 }

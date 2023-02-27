@@ -1,4 +1,4 @@
-import { removeFolderById, updateFolder } from 'src/stores/folder';
+import { removeFolder, updateFolder } from '$/folder';
 import Item from '#/item';
 
 /**
@@ -68,7 +68,7 @@ class Folder extends Item {
   }
 
   public removeItem(): void {
-    removeFolderById({ id: this.id });
+    removeFolder(this);
   }
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars

@@ -1,6 +1,6 @@
 import { v4 as uuidv4 } from 'uuid';
+import { removeTeam, updateTeam } from '$/team';
 import TeamStateInterface from '#/interfaces/TeamStateInterface';
-import TeamState from '$/teamState';
 
 interface TeamInterface {
   Id: string;
@@ -97,19 +97,33 @@ class Team implements TeamStateInterface {
   }
 
   /**
-   * Update a team in the state
-   * @param team The team to update
+   * Delete an existing team from the database
    */
-  public updateTeam(): void {
-    TeamState.updateTeam(this);
+  public removeTeam(): void {
+    removeTeam(this);
   }
 
   /**
-   * Remove a team from the state
-   * @param id The id of the team to remove
+   * Update an existing team in the database
+   * @param toNetwork — If true, update the item on the network
    */
-  public removeTeam(): void {
-    TeamState.removeTeamById(this.id);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  public updateTeam(toNetwork: boolean): void {
+    updateTeam(this);
+  }
+
+  /**
+   * Convert the team to a JSON object
+   */
+  public toJSON(): object {
+    return {
+      id: this.id,
+      name: this.name,
+      ownerId: this.ownerId,
+      adminsIds: this.adminsIds,
+      usersIds: this.usersIds,
+      description: this.description,
+    };
   }
 }
 
