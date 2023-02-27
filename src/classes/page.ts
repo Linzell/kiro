@@ -72,7 +72,7 @@ class Page extends Item {
   }
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  public updateItem(toNetwork: boolean): void {
+  public updateItem(toNetwork = true): void {
     updatePage(this);
   }
 

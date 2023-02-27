@@ -108,7 +108,7 @@ class Team implements TeamStateInterface {
    * @param toNetwork — If true, update the item on the network
    */
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  public updateTeam(toNetwork: boolean): void {
+  public updateTeam(toNetwork = true): void {
     updateTeam(this);
   }
 

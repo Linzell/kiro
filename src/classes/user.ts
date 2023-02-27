@@ -143,7 +143,7 @@ class User extends Item {
   }
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  public updateItem(toNetwork: boolean): void {
+  public updateItem(toNetwork = true): void {
     updateUser(this);
     if (this.id === currentUser.id) {
       this.updateCurrentUser();
@@ -153,7 +153,7 @@ class User extends Item {
   /**
    * Add current user to the store
    */
-  public addCurrentUser(toNetwork: boolean): void {
+  public addCurrentUser(toNetwork = false): void {
     addCurrentUser(this);
     this.publicUser.updateItem(toNetwork);
   }
@@ -162,14 +162,14 @@ class User extends Item {
    * Remove current user from the store
    */
   // eslint-disable-next-line class-methods-use-this
-  removeCurrentUser(): void {
+  private removeCurrentUser(): void {
     removeCurrentUser();
   }
 
   /**
    * Update current user in the store
    */
-  updateCurrentUser(): void {
+  private updateCurrentUser(): void {
     updateCurrentUser(this);
   }
 
