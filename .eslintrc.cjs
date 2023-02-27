@@ -18,6 +18,11 @@ module.exports = {
     '@typescript-eslint',
     'react',
   ],
+  settings: {
+    react: {
+      version: 'detect',
+    },
+  },
   globals: {
     ga: 'readonly',
     cordova: 'readonly',
