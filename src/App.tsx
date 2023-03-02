@@ -1,7 +1,12 @@
+/* eslint-disable import/no-extraneous-dependencies */
 /* import { useState } from "react";
 import { invoke } from "@tauri-apps/api/tauri"; */
-import MainLayout from './layouts/mainLayout';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { loadPrivateKey } from '$/user';
+
+import routes from '§/router/router';
+
+const router = createBrowserRouter(routes);
 
 function App() {
   /* const [greetMsg, setGreetMsg] = useState("");
@@ -16,7 +21,7 @@ function App() {
   loadPrivateKey();
 
   return (
-    <MainLayout />
+    <RouterProvider router={router} fallbackElement={null} />
   );
 }
 

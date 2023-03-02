@@ -16,9 +16,11 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      '@': `${process.cwd()}/src`,
+      '@': `${process.cwd()}/src/components`,
       '#': `${process.cwd()}/src/classes`,
       '$': `${process.cwd()}/src/stores`,
+      '&': `${process.cwd()}/src/pages`,
+      '§': `${process.cwd()}/src`,
     },
   },
   // to make use of `TAURI_DEBUG` and other env variables

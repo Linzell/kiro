@@ -1,6 +1,7 @@
 import {
   styled, useTheme, Theme, CSSObject,
 } from '@mui/material/styles';
+import { Link } from 'react-router-dom';
 import MuiDrawer from '@mui/material/Drawer';
 import IconButton from '@mui/material/IconButton';
 import List from '@mui/material/List';
@@ -77,51 +78,28 @@ export default function DrawerLayout(
     </DrawerHeader>
     <Divider />
     <List>
-      {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
+      {['Home', 'Items', 'About'].map((text, index) => (
         <ListItem key={text} disablePadding sx={{ display: 'block' }}>
-          <ListItemButton
-            sx={{
-              minHeight: 48,
-              justifyContent: props.open ? 'initial' : 'center',
-              px: 2.5,
-            }}
-          >
-            <ListItemIcon
+          <Link to={text.toLowerCase()}>
+            <ListItemButton
               sx={{
-                minWidth: 0,
-                mr: props.open ? 3 : 'auto',
-                justifyContent: 'center',
+                minHeight: 48,
+                justifyContent: props.open ? 'initial' : 'center',
+                px: 2.5,
               }}
             >
-              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-            </ListItemIcon>
-            <ListItemText primary={text} sx={{ opacity: props.open ? 1 : 0 }} />
-          </ListItemButton>
-        </ListItem>
-      ))}
-    </List>
-    <Divider />
-    <List>
-      {['All mail', 'Trash', 'Spam'].map((text, index) => (
-        <ListItem key={text} disablePadding sx={{ display: 'block' }}>
-          <ListItemButton
-            sx={{
-              minHeight: 48,
-              justifyContent: props.open ? 'initial' : 'center',
-              px: 2.5,
-            }}
-          >
-            <ListItemIcon
-              sx={{
-                minWidth: 0,
-                mr: props.open ? 3 : 'auto',
-                justifyContent: 'center',
-              }}
-            >
-              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-            </ListItemIcon>
-            <ListItemText primary={text} sx={{ opacity: props.open ? 1 : 0 }} />
-          </ListItemButton>
+              <ListItemIcon
+                sx={{
+                  minWidth: 0,
+                  mr: props.open ? 3 : 'auto',
+                  justifyContent: 'center',
+                }}
+              >
+                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+              </ListItemIcon>
+              <ListItemText primary={text} sx={{ opacity: props.open ? 1 : 0 }} />
+            </ListItemButton>
+          </Link>
         </ListItem>
       ))}
     </List>

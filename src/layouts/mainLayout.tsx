@@ -1,11 +1,10 @@
-import * as React from 'react';
+import React from 'react';
 import { styled } from '@mui/material/styles';
+import { Outlet } from 'react-router-dom';
 import Box from '@mui/material/Box';
 import CssBaseline from '@mui/material/CssBaseline';
-import BottomLayout from './bottomLayout';
 import MenuDrawerLayout from './menuDrawerlayout';
 import ToolbarLayout from './toolbarLayout';
-import ItemsTable from '../pages/itemsTable';
 
 const DrawerHeader = styled('div')(({ theme }) => ({
   display: 'flex',
@@ -34,8 +33,7 @@ export default function MiniDrawer() {
       <MenuDrawerLayout open={open} handleDrawerClose={handleDrawerClose} />
       <Box component="main" sx={{ flexGrow: 1 }}>
         <DrawerHeader />
-        <ItemsTable />
-        <BottomLayout />
+        <Outlet />
       </Box>
     </Box>
   );
