@@ -4,18 +4,15 @@ abstract class UserCreator {
   public abstract factoryMethod(
     peerId: string,
     publicKey: string,
-    privateKey: string,
   ): User;
 
   public someOperation(
     peerId: string,
     publicKey: string,
-    privateKey: string,
   ): string {
     const user = this.factoryMethod(
       peerId,
       publicKey,
-      privateKey,
     );
     return `User: ${user.name}`;
   }
@@ -26,7 +23,6 @@ abstract class UserCreator {
  * @factoryMethod returns a new instance of a User
  * @param peerId [Required] - peer id of the user
  * @param publicKey [Required] - public key of the user
- * @param privateKey [Required] - private key of the user
  * @param name - name of the user
  * @param description - description of the user
  * @param content - content of the user
@@ -41,7 +37,6 @@ class newUser extends UserCreator {
   public factoryMethod(
     peerId: string,
     publicKey: string,
-    privateKey: string,
     name = '',
     description = 'A new User',
     content = '',
@@ -67,7 +62,6 @@ class newUser extends UserCreator {
       email,
       peerId,
       publicKey,
-      privateKey,
     );
   }
 }

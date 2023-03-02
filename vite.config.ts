@@ -1,3 +1,4 @@
+/* eslint-disable quote-props */
 /* eslint-disable import/no-extraneous-dependencies */
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
@@ -12,6 +13,13 @@ export default defineConfig({
   server: {
     port: 1420,
     strictPort: true,
+  },
+  resolve: {
+    alias: {
+      '@': `${process.cwd()}/src`,
+      '#': `${process.cwd()}/src/classes`,
+      '$': `${process.cwd()}/src/stores`,
+    },
   },
   // to make use of `TAURI_DEBUG` and other env variables
   // https://tauri.studio/v1/api/config#buildconfig.beforedevcommand

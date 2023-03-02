@@ -30,7 +30,6 @@ const currentUser = useAppSelector((state) => state.userStore.currentUser);
  * expertsIds: string[],
  * email: string,
  * peerId: string,
- * privateKey: string,
  * publicKey: string
  * )
  * ```
@@ -39,8 +38,6 @@ class User extends Item {
   private Email: string;
 
   private PeerId: string;
-
-  private PrivateKey: string;
 
   private PublicKey: string;
 
@@ -59,7 +56,6 @@ class User extends Item {
     expertsIds: string[],
     email: string,
     peerId: string,
-    privateKey: string,
     publicKey: string,
   ) {
     super(
@@ -78,7 +74,6 @@ class User extends Item {
     );
     this.Email = email;
     this.PeerId = peerId;
-    this.PrivateKey = privateKey;
     this.PublicKey = publicKey;
   }
 
@@ -98,41 +93,12 @@ class User extends Item {
     this.PeerId = value;
   }
 
-  get privateKey(): string {
-    return this.PrivateKey;
-  }
-
-  set privateKey(value: string) {
-    this.PrivateKey = value;
-  }
-
   get publicKey(): string {
     return this.PublicKey;
   }
 
   set publicKey(value: string) {
     this.PublicKey = value;
-  }
-
-  get publicUser(): User {
-    return new User(
-      this.id,
-      '',
-      this.name,
-      this.ownerId,
-      this.description,
-      this.content,
-      this.imgUrl,
-      this.createdDate,
-      this.modifiedDate,
-      this.tags,
-      this.followerIds,
-      this.expertsIds,
-      this.email,
-      '',
-      '',
-      this.publicKey,
-    );
   }
 
   public removeItem(): void {
@@ -146,7 +112,7 @@ class User extends Item {
   public updateItem(toNetwork = true): void {
     if (this.id === currentUser.id) {
       this.updateCurrentUser();
-      updateUser(this.publicUser);
+      updateUser(this);
     } else {
       updateUser(this);
     }
@@ -157,7 +123,7 @@ class User extends Item {
    */
   public addCurrentUser(toNetwork = false): void {
     addCurrentUser(this);
-    this.publicUser.updateItem(toNetwork);
+    this.updateItem(toNetwork);
   }
 
   /**
@@ -180,7 +146,6 @@ class User extends Item {
       ...super.toJSON(),
       email: this.email,
       peerId: this.peerId,
-      privateKey: this.privateKey,
       publicKey: this.publicKey,
     };
   }
