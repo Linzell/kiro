@@ -10,8 +10,3 @@ updates:
     schedule:
       interval: "daily"
     target-branch: "dev"
-  - name: Create NPMRC
-    run: |
-      echo "//npm.pkg.github.com/:_authToken=${{ secrets.ACCESS_TOKEN }}" >> ~/.npmrc
-      echo "@meetsys:registry=https://npm.pkg.github.com" >> ~/.npmrc
-      echo 'registry "https://registry.yarnpkg.com"' >> ~/.yarnrc
