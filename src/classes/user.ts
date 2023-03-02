@@ -117,7 +117,7 @@ class User extends Item {
   get publicUser(): User {
     return new User(
       this.id,
-      this.cid,
+      '',
       this.name,
       this.ownerId,
       this.description,
@@ -144,9 +144,11 @@ class User extends Item {
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   public updateItem(toNetwork = true): void {
-    updateUser(this);
     if (this.id === currentUser.id) {
       this.updateCurrentUser();
+      updateUser(this.publicUser);
+    } else {
+      updateUser(this);
     }
   }
 

@@ -1,0 +1,50 @@
+name: "pre-release"
+on:
+  push:
+    branches:
+      - "main"
+jobs:
+  pre-release:
+    name: "Pre Release"
+    runs-on: "ubuntu-latest"
+    strategy:
+      matrix:
+        node: [ 16 ]
+    permissions:
+      contents: read
+      pull-requests: write 
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+      - uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node }}
+          cache: "yarn"
+          registry-url: "https://npm.pkg.github.com"
+      - name: Yarn Install
+        env:
+          # also other environment variable
+          NODE_AUTH_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+        run: yarn
+      - name: Install dependencies
+        uses: bahmutov/npm-install@v1
+      - name: build
+        run: 
+          yarn build
+      - name: "Build & test"
+        run: |
+          echo "done!"
+
+      - uses: "marvinpinto/action-automatic-releases@latest"
+        with:
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          automatic_release_tag: "latest"
+          prerelease: true
+          title: "Development Build"
+          files: |
+            LICENSE.txt
+            *.jar
+            *.AppImage
+            *.snap
+            *.exe
