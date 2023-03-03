@@ -11,8 +11,7 @@ import Avatar from '@mui/material/Avatar';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
 import GroupIcon from '@mui/icons-material/Group';
-import TranslateIcon from '@mui/icons-material/Translate';
-import Wifi from '@mui/icons-material/Wifi';
+import Translate from '@mui/icons-material/Translate';
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -54,6 +53,56 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
+// TODO: A remplacer par module avatar
+const StyledBadge = styled(Badge)(({ theme }) => ({
+  '& .MuiBadge-badge': {
+    backgroundColor: '#44b700',
+    color: '#44b700',
+    boxShadow: `0 0 0 2px ${theme.palette.background.paper}`,
+    '&::after': {
+      position: 'absolute',
+      top: 0,
+      left: 0,
+      width: '100%',
+      height: '100%',
+      borderRadius: '50%',
+      animation: 'ripple 1.2s infinite ease-in-out',
+      border: '1px solid currentColor',
+      content: '""',
+    },
+  },
+  '@keyframes ripple': {
+    '0%': {
+      transform: 'scale(.8)',
+      opacity: 1,
+    },
+    '100%': {
+      transform: 'scale(2.4)',
+      opacity: 0,
+    },
+  },
+}));
+
+const StyledIconButton = styled(IconButton)(({ theme }) => ({
+  color: 'action',
+  margin: 2,
+  '&:hover': {
+    color: theme.palette.primary.main,
+    animation: 'pulse 1s infinite',
+    '@keyframes pulse': {
+      '0%': {
+        transform: 'scale(1)',
+      },
+      '50%': {
+        transform: 'scale(1.1)',
+      },
+      '100%': {
+        transform: 'scale(1)',
+      },
+    },
+  },
+}));
+
 export default function BarToolbar(
   props: {
     menuId: string;
@@ -89,41 +138,39 @@ export default function BarToolbar(
       </Search>
       <Box sx={{ flexGrow: 1 }} />
       <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-        <IconButton
-          size="large"
-          aria-label="change online status"
-          color="inherit"
-        >
-          <Wifi color="success" />
-        </IconButton>
-        <IconButton
-          size="large"
-          aria-label="show 17 new notifications"
-          color="inherit"
-        >
+        <StyledIconButton aria-label="change language">
+          <Translate />
+        </StyledIconButton>
+        <StyledIconButton aria-label="show 17 new notifications">
           <Badge badgeContent={17} color="warning">
-            <NotificationsIcon color="action" />
+            <NotificationsIcon />
           </Badge>
-        </IconButton>
-        <IconButton size="large" aria-label="show 4 messages" color="inherit">
+        </StyledIconButton>
+        <StyledIconButton aria-label="show 4 messages">
           <Badge badgeContent={4} color="warning">
-            <GroupIcon color="action" />
+            <GroupIcon />
           </Badge>
-        </IconButton>
+        </StyledIconButton>
       </Box>
       <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-        <IconButton
+        <StyledIconButton
           aria-label="account of current user"
           aria-controls={props.menuId}
           aria-haspopup="true"
           onClick={props.handleProfileMenuOpen}
-          sx={{ p: 0, ml: 2 }}
-        >
-          <Avatar
-            alt="Remy Sharp"
-            src="src/static/dragon-wiggle.gif"
-          />
-        </IconButton>
+          sx={{ p: 0 }}
+        > {/* // TODO: Remplacer par le module Avatar */}
+          <StyledBadge
+            overlap="circular"
+            anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
+            variant="dot"
+          >
+            <Avatar
+              alt="Charlie Cohen"
+              src="src/static/dragon-wiggle.gif"
+            />
+          </StyledBadge>
+        </StyledIconButton>
       </Box>
       <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
         <IconButton

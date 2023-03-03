@@ -42,6 +42,7 @@ export default function BadgeAvatars(
       overlap="circular"
       anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
       variant="dot"
+      color={props.user.getStatusColor()}
     >
       <Avatar alt={props.user.name} src={props.user.imgUrl} />
     </StyledBadge>
