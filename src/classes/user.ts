@@ -7,8 +7,7 @@ import {
   updateCurrentUser,
 } from '$/user';
 import Item from '#/item';
-
-const currentUser = useAppSelector((state) => state.userStore.currentUser);
+import OnlineStateEnum from './enums/onlineStateEnum';
 
 /**
  * User class
@@ -35,11 +34,15 @@ const currentUser = useAppSelector((state) => state.userStore.currentUser);
  * ```
  */
 class User extends Item {
+  private CurrentUser = useAppSelector((state) => state.userStore.currentUser);
+
   private Email: string;
 
   private PeerId: string;
 
   private PublicKey: string;
+
+  private OnlineStatus: OnlineStateEnum;
 
   constructor(
     id: string,
@@ -57,6 +60,7 @@ class User extends Item {
     email: string,
     peerId: string,
     publicKey: string,
+    onlineStatus: OnlineStateEnum,
   ) {
     super(
       id,
@@ -75,6 +79,7 @@ class User extends Item {
     this.Email = email;
     this.PeerId = peerId;
     this.PublicKey = publicKey;
+    this.OnlineStatus = onlineStatus;
   }
 
   get email(): string {
@@ -101,16 +106,24 @@ class User extends Item {
     this.PublicKey = value;
   }
 
+  get onlineStatus(): OnlineStateEnum {
+    return this.OnlineStatus;
+  }
+
+  set onlineStatus(value: OnlineStateEnum) {
+    this.OnlineStatus = value;
+  }
+
   public removeItem(): void {
     removeUser(this);
-    if (this.id === currentUser.id) {
+    if (this.id === this.CurrentUser.id) {
       this.removeCurrentUser();
     }
   }
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   public updateItem(toNetwork = true): void {
-    if (this.id === currentUser.id) {
+    if (this.id === this.CurrentUser.id) {
       this.updateCurrentUser();
       updateUser(this);
     } else {
@@ -141,12 +154,26 @@ class User extends Item {
     updateCurrentUser(this);
   }
 
+  public getStatusColor(): 'primary' | 'secondary' | 'default' | 'error' | 'info' | 'success' | 'warning' | undefined {
+    switch (this.OnlineStatus) {
+      case OnlineStateEnum.ONLINE:
+        return 'success';
+      case OnlineStateEnum.OFFLINE:
+        return 'error';
+      case OnlineStateEnum.AWAY:
+        return 'warning';
+      default:
+        return 'error';
+    }
+  }
+
   public toJSON(): object {
     return {
       ...super.toJSON(),
       email: this.email,
       peerId: this.peerId,
       publicKey: this.publicKey,
+      onlineStatus: this.OnlineStatus,
     };
   }
 }

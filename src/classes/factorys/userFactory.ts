@@ -1,4 +1,5 @@
 import User from '#/user';
+import OnlineStateEnum from '#/enums/onlineStateEnum';
 
 abstract class UserCreator {
   public abstract factoryMethod(
@@ -32,15 +33,15 @@ abstract class UserCreator {
  * @param expertsIds - expert ids of the user
  * @param email - email of the user
  */
-class newUser extends UserCreator {
+class NewUser extends UserCreator {
   // eslint-disable-next-line class-methods-use-this
   public factoryMethod(
     peerId: string,
     publicKey: string,
-    name = '',
+    name = 'Charlie Cohen', // TODO: remove default values
     description = 'A new User',
     content = '',
-    imgUrl = '',
+    imgUrl = 'src/static/dragon-wiggle.gif', // TODO: remove default values
     tags = [],
     followerIds = [],
     expertsIds = [],
@@ -62,8 +63,9 @@ class newUser extends UserCreator {
       email,
       peerId,
       publicKey,
+      OnlineStateEnum.OFFLINE,
     );
   }
 }
 
-export default [newUser];
+export default NewUser;

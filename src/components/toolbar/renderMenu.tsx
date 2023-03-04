@@ -1,15 +1,15 @@
 import React from 'react';
-import Avatar from '@mui/material/Avatar';
 import Divider from '@mui/material/Divider';
-import ListItem from '@mui/material/ListItem';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import ListItemAvatar from '@mui/material/ListItemAvatar';
+import Tooltip from '@mui/material/Tooltip';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import Settings from '@mui/icons-material/Settings';
 import Logout from '@mui/icons-material/Logout';
 import InfoIcon from '@mui/icons-material/Info';
+import AvatarModule from '@/modules/avatarModule';
+import NewUser from '#/factorys/userFactory';
 
 export default function renderMenu(
   props: {
@@ -19,6 +19,11 @@ export default function renderMenu(
     handleMobileMenuClose: () => void;
   },
 ) {
+  // TODO: Replace this with a real user
+  const user = new NewUser().factoryMethod(
+    '123456789',
+    'd4fg56df4g654df65g4d65f4g65df4',
+  );
   const handleMenuClose = () => {
     props.setAnchorEl(null);
     props.handleMobileMenuClose();
@@ -36,13 +41,7 @@ export default function renderMenu(
         sx: {
           overflow: 'visible',
           filter: 'drop-shadow(0px 2px 8px rgba(0,0,0,0.32))',
-          mt: 1.5,
-          '& .MuiAvatar-root': {
-            width: 42,
-            height: 42,
-            ml: -0.5,
-            mr: 1,
-          },
+          maxWidth: 280,
           '&:before': {
             content: '""',
             display: 'block',
@@ -60,35 +59,46 @@ export default function renderMenu(
       transformOrigin={{ horizontal: 'right', vertical: 'top' }}
       anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
     >
-      {/* // TODO: Faire un module pour les Avatars */}
-      <MenuItem onClick={handleMenuClose}>
-        <ListItem>
-          <ListItemAvatar>
-            <Avatar
-              alt="Charlie Cohen"
-              src="src/static/dragon-wiggle.gif"
-            />
-          </ListItemAvatar>
+      <MenuItem onClick={handleMenuClose} sx={{
+        ml: 1,
+        mr: 1,
+        borderRadius: 2,
+      }}>
+        <AvatarModule user={user} />
+        <Tooltip title={`Go to the ${user.name} page`} placement='top'>
           <ListItemText
-            primary="Charlie Cohen"
-            secondary="sdgsdgsdg"
+            primary={user.name}
+            secondary={user.publicKey}
+            sx={{ ml: 1.5, overflow: 'hidden' }}
           />
-        </ListItem>
+        </Tooltip>
       </MenuItem>
       <Divider />
-      <MenuItem onClick={handleMenuClose}>
+      <MenuItem onClick={handleMenuClose} sx={{
+        ml: 1,
+        mr: 1,
+        borderRadius: 2,
+      }}>
         <ListItemIcon>
           <InfoIcon fontSize="small" color="info" />
         </ListItemIcon>
         About
       </MenuItem>
-      <MenuItem onClick={handleMenuClose}>
+      <MenuItem onClick={handleMenuClose} sx={{
+        ml: 1,
+        mr: 1,
+        borderRadius: 2,
+      }}>
         <ListItemIcon>
           <Settings fontSize="small" color="disabled" />
         </ListItemIcon>
         Settings
       </MenuItem>
-      <MenuItem onClick={handleMenuClose}>
+      <MenuItem onClick={handleMenuClose} sx={{
+        ml: 1,
+        mr: 1,
+        borderRadius: 2,
+      }}>
         <ListItemIcon>
           <Logout fontSize="small" color="error" />
         </ListItemIcon>

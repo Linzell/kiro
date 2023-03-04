@@ -7,11 +7,12 @@ import InputBase from '@mui/material/InputBase';
 import Badge from '@mui/material/Badge';
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
-import Avatar from '@mui/material/Avatar';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
 import GroupIcon from '@mui/icons-material/Group';
-import Translate from '@mui/icons-material/Translate';
+import AvatarModule from '@/modules/avatarModule';
+import NewUser from '#/factorys/userFactory';
+import LanguageName from '#/enums/languageEnum';
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -53,36 +54,6 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-// TODO: A remplacer par module avatar
-const StyledBadge = styled(Badge)(({ theme }) => ({
-  '& .MuiBadge-badge': {
-    backgroundColor: '#44b700',
-    color: '#44b700',
-    boxShadow: `0 0 0 2px ${theme.palette.background.paper}`,
-    '&::after': {
-      position: 'absolute',
-      top: 0,
-      left: 0,
-      width: '100%',
-      height: '100%',
-      borderRadius: '50%',
-      animation: 'ripple 1.2s infinite ease-in-out',
-      border: '1px solid currentColor',
-      content: '""',
-    },
-  },
-  '@keyframes ripple': {
-    '0%': {
-      transform: 'scale(.8)',
-      opacity: 1,
-    },
-    '100%': {
-      transform: 'scale(2.4)',
-      opacity: 0,
-    },
-  },
-}));
-
 const StyledIconButton = styled(IconButton)(({ theme }) => ({
   color: 'action',
   margin: 2,
@@ -107,10 +78,23 @@ export default function BarToolbar(
   props: {
     menuId: string;
     mobileMenuId: string;
+    menuUserId: string;
+    menuNotifyId: string;
+    menuTranslateId: string;
+    language: LanguageName;
+    languages: { name: string; code: LanguageName; icon: string; }[]
     handleProfileMenuOpen: (event: React.MouseEvent<HTMLElement>) => void;
+    handleUserMenuOpen: (event: React.MouseEvent<HTMLElement>) => void;
+    handleNotifyMenuOpen: (event: React.MouseEvent<HTMLElement>) => void;
+    handleTranslateMenuOpen: (event: React.MouseEvent<HTMLElement>) => void;
     handleMobileMenuOpen: (event: React.MouseEvent<HTMLElement>) => void;
   },
 ) {
+  // TODO: Replace this with a real user
+  const user = new NewUser().factoryMethod(
+    '123456789',
+    'd4fg56df4g654df65g4d65f4g65df4',
+  );
   return (
     <Toolbar sx={{
       display: 'flex',
@@ -138,16 +122,31 @@ export default function BarToolbar(
       </Search>
       <Box sx={{ flexGrow: 1 }} />
       <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-        <StyledIconButton aria-label="change language">
-          <Translate />
+        <StyledIconButton
+          aria-label="change language"
+          aria-controls={props.menuTranslateId}
+          aria-haspopup="true"
+          onClick={props.handleTranslateMenuOpen}
+        >
+          {props.languages.find((language) => language.code === props.language)?.icon}
         </StyledIconButton>
-        <StyledIconButton aria-label="show 17 new notifications">
-          <Badge badgeContent={17} color="warning">
+        <StyledIconButton
+          aria-label="show 2 new notifications"
+          aria-controls={props.menuNotifyId}
+          aria-haspopup="true"
+          onClick={props.handleNotifyMenuOpen}
+        >
+          <Badge badgeContent={2} color="warning">
             <NotificationsIcon />
           </Badge>
         </StyledIconButton>
-        <StyledIconButton aria-label="show 4 messages">
-          <Badge badgeContent={4} color="warning">
+        <StyledIconButton
+          aria-label="show users online"
+          aria-controls={props.menuUserId}
+          aria-haspopup="true"
+          onClick={props.handleUserMenuOpen}
+        >
+          <Badge badgeContent={5} color="warning">
             <GroupIcon />
           </Badge>
         </StyledIconButton>
@@ -159,17 +158,8 @@ export default function BarToolbar(
           aria-haspopup="true"
           onClick={props.handleProfileMenuOpen}
           sx={{ p: 0 }}
-        > {/* // TODO: Remplacer par le module Avatar */}
-          <StyledBadge
-            overlap="circular"
-            anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
-            variant="dot"
-          >
-            <Avatar
-              alt="Charlie Cohen"
-              src="src/static/dragon-wiggle.gif"
-            />
-          </StyledBadge>
+        >
+          <AvatarModule user={user} />
         </StyledIconButton>
       </Box>
       <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
