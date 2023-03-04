@@ -81,8 +81,8 @@ export default function AppToolbar(
         color="transparent"
         sx={{
           boxShadow: 'none',
-          width: `calc(100% - ${props.drawerWidth}px)`,
-          ml: `${props.drawerWidth}px`,
+          width: `calc(100% - ${props.drawerWidth}%)`,
+          ml: `${props.drawerWidth}%`,
         }}>
         <BarToolbar
           menuId={menuId}
