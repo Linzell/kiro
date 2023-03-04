@@ -4,13 +4,21 @@ import LanguageDetector from 'i18next-browser-languagedetector';
 import { initReactI18next } from 'react-i18next';
 
 i18n
-  .use(Backend)
   .use(LanguageDetector)
   .use(initReactI18next)
+  .use(Backend)
   .init({
-    fallbackLng: 'en',
+    fallbackLng: 'en-US',
+    supportedLngs: ['en-US', 'es-ES', 'fr-FR', 'ja-JP', 'zh-CN'],
     interpolation: {
       escapeValue: false,
+    },
+    detection: {
+      order: ['localStorage', 'navigator', 'path', 'cookie', 'htmlTag', 'subdomain'],
+      caches: ['localStorage'],
+    },
+    backend: {
+      loadPath: '/locales/{{lng}}/translation.json',
     },
   });
 
