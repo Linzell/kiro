@@ -1,4 +1,6 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
+import i18next from 'i18next';
 import Box from '@mui/material/Box';
 import AppBar from '@mui/material/AppBar';
 import BarToolbar from './barToolbar';
@@ -14,13 +16,14 @@ const menuUserId = 'primary-search-user-menu';
 const menuNotifyId = 'primary-search-notify-menu';
 const menuTranslateId = 'primary-search-translate-menu';
 const mobileMenuId = 'primary-search-account-menu-mobile';
-
 export default function AppToolbar(
   props: {
     drawerWidth: number;
   },
 ) {
-  const [language, setLanguage] = React.useState<LanguageName>(LanguageName.ENGLISH);
+  const { t } = useTranslation();
+
+  const [language, setLanguage] = React.useState<LanguageName>(i18next.language as LanguageName);
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const [anchorUserEl, setAnchorUserEl] = React.useState<null | HTMLElement>(null);
   const [anchorNotifyEl, setAnchorNotifyEl] = React.useState<null | HTMLElement>(null);
@@ -47,27 +50,27 @@ export default function AppToolbar(
   };
   const languages = [
     {
-      name: 'English',
+      name: t('language.english'),
       code: LanguageName.ENGLISH,
       icon: '🇺🇸',
     },
     {
-      name: 'Français',
+      name: t('language.french'),
       code: LanguageName.FRENCH,
       icon: '🇫🇷',
     },
     {
-      name: 'Español',
+      name: t('language.spanish'),
       code: LanguageName.SPANISH,
       icon: '🇪🇸',
     },
     {
-      name: '日本',
+      name: t('language.japanese'),
       code: LanguageName.JAPANESE,
       icon: '🇯🇵',
     },
     {
-      name: '中文',
+      name: t('language.chinese'),
       code: LanguageName.CHINESE,
       icon: '🇨🇳',
     },

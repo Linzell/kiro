@@ -32,7 +32,7 @@ export default function renderMenu(
   return (
     <Menu
       anchorEl={props.anchorEl}
-      id="account-menu"
+      id={props.menuId}
       open={isMenuOpen}
       onClose={handleMenuClose}
       onClick={handleMenuClose}

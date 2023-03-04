@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import ListItemText from '@mui/material/ListItemText';
@@ -15,9 +16,17 @@ export default function renderTranslateMenu(
     setAnchorTranslateEl: React.Dispatch<React.SetStateAction<null | HTMLElement>>;
   },
 ) {
+  const { i18n } = useTranslation();
+
   const handleMenuClose = () => {
     props.setAnchorTranslateEl(null);
   };
+  const changeLanguage = (language: LanguageName) => {
+    i18n.changeLanguage(language);
+    props.setLanguage(language);
+    localStorage.setItem('i18nextLng', language);
+  };
+
   const isMenuOpen = Boolean(props.anchorTranslateEl);
   return (
     <Menu
@@ -54,7 +63,7 @@ export default function renderTranslateMenu(
         props.languages.map((language, key) => (
           <MenuItem
             key={key}
-            onClick={() => props.setLanguage(language.code)}
+            onClick={() => changeLanguage(language.code)}
             sx={{
               ml: 1,
               mr: 1,

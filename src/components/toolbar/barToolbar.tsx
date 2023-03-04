@@ -55,7 +55,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 const StyledIconButton = styled(IconButton)(({ theme }) => ({
-  color: 'action',
+  color: theme.palette.action.active,
   margin: 2,
   '&:hover': {
     color: theme.palette.primary.main,
