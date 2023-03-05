@@ -21,19 +21,48 @@ export default function AppMenuDrawer(
   const redirectTo = (path: string) => navigate(path);
   const generalRoutes = [
     {
-      name: 'Home',
+      name: 'App',
       icon: <InboxIcon />,
       path: '/',
     },
     {
-      name: 'items',
+      name: 'Pages',
       icon: <MailIcon />,
       path: '/items',
     },
     {
-      name: 'About',
+      name: 'Analytics',
       icon: <MailIcon />,
-      path: '/about',
+      path: '/analytics',
+    },
+  ];
+  const managementRoutes = [
+    {
+      name: 'Users',
+      icon: <MailIcon />,
+      path: '/users',
+    },
+    {
+      name: 'Invoice',
+      icon: <InboxIcon />,
+      path: '/invoice',
+    },
+  ];
+  const applicationsRoutes = [
+    {
+      name: 'Chats',
+      icon: <InboxIcon />,
+      path: '/chats',
+    },
+    {
+      name: 'Calendar',
+      icon: <MailIcon />,
+      path: '/calendar',
+    },
+    {
+      name: 'Kanban',
+      icon: <MailIcon />,
+      path: '/kanban',
     },
   ];
   return (
@@ -136,7 +165,43 @@ export default function AppMenuDrawer(
         }}>
           <strong>Applications</strong>
         </Typography>
-        {generalRoutes.map((value, key) => (
+        {applicationsRoutes.map((value, key) => (
+          <ListItem key={key} disablePadding
+            sx={{
+              backgroundColor: value.path === window.location.pathname ? 'primary.light' : 'transparent',
+              ml: 1,
+              mr: 1,
+              mt: 0.2,
+              mb: 0.2,
+              width: 'calc(100% - 1rem)',
+              borderRadius: 2,
+            }}
+            onClick={() => redirectTo(value.path)}
+          >
+            <ListItemButton>
+              <ListItemIcon sx={{
+                color: value.path === window.location.pathname ? 'primary.contrastText' : 'text.primary',
+                opacity: 1,
+              }}>
+                {value.icon}
+              </ListItemIcon>
+              <ListItemText primary={value.name} sx={{
+                color: value.path === window.location.pathname ? 'primary.contrastText' : 'text.primary',
+              }} />
+            </ListItemButton>
+          </ListItem>
+        ))}
+      </List>
+      <List>
+        <Typography variant="overline" sx={{
+          px: 2,
+          py: 0,
+          color: 'text.secondary',
+          fontSize: '0.6rem',
+        }}>
+          <strong>Management</strong>
+        </Typography>
+        {managementRoutes.map((value, key) => (
           <ListItem key={key} disablePadding
             sx={{
               backgroundColor: value.path === window.location.pathname ? 'primary.light' : 'transparent',
