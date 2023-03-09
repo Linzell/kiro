@@ -6,10 +6,10 @@ import Team from '#/team';
 /**
  * Interface for Redux store
  * @interface teamtoreInterface
- * @property {Map<string, Team>} teams- Collection of teams
+ * @property {Array<Team>} teams- Collection of teams
  */
 interface teamStoreInterface {
-  teams: Map<string, Team>;
+  teams: Array<Team>;
 }
 
 /**
@@ -17,7 +17,7 @@ interface teamStoreInterface {
  * @type {teamStoreInterface}
  */
 const initialState: teamStoreInterface = {
-  teams: new Map(),
+  teams: [],
 };
 
 /**
@@ -31,19 +31,24 @@ const teamsSlice = createSlice({
      * Add a team to the collection
      */
     addTeam: (state, action: PayloadAction<Team>) => {
-      state.teams.set(action.payload.id, action.payload);
+      state.teams.push(action.payload);
     },
     /**
      * Remove a team from the collection
      */
     removeTeam: (state, action: PayloadAction<Team>) => {
-      state.teams.delete(action.payload.id);
+      state.teams = state.teams.filter((team) => team.id !== action.payload.id);
     },
     /**
      * Update a team in the collection
      */
     updateTeam: (state, action: PayloadAction<Team>) => {
-      state.teams.set(action.payload.id, action.payload);
+      state.teams = state.teams.map((team) => {
+        if (team.id === action.payload.id) {
+          return action.payload;
+        }
+        return team;
+      });
     },
   },
 });

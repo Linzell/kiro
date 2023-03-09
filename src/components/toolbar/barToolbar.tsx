@@ -11,7 +11,7 @@ import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
 import GroupIcon from '@mui/icons-material/Group';
 import AvatarModule from '@/modules/avatarModule';
-import NewUser from '#/factorys/userFactory';
+import { useAppSelector } from '$/hooks';
 import LanguageName from '#/enums/languageEnum';
 
 const Search = styled('div')(({ theme }) => ({
@@ -90,11 +90,7 @@ export default function BarToolbar(
     handleMobileMenuOpen: (event: React.MouseEvent<HTMLElement>) => void;
   },
 ) {
-  // TODO: Replace this with a real user
-  const user = new NewUser().factoryMethod(
-    '123456789',
-    'd4fg56df4g654df65g4d65f4g65df4',
-  );
+  const user = useAppSelector((state) => state.userStore.currentUser);
   return (
     <Toolbar sx={{
       display: 'flex',

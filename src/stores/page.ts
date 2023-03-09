@@ -6,10 +6,10 @@ import Page from '#/page';
 /**
  * Interface for Redux store
  * @interface pagetoreInterface
- * @property {Map<string, Page>} pages- Collection of pages
+ * @property {Array<Page>} pages- Collection of pages
  */
 interface pageStoreInterface {
-  pages: Map<string, Page>;
+  pages: Array<Page>;
 }
 
 /**
@@ -17,7 +17,7 @@ interface pageStoreInterface {
  * @type {pageStoreInterface}
  */
 const initialState: pageStoreInterface = {
-  pages: new Map(),
+  pages: [],
 };
 
 /**
@@ -31,19 +31,24 @@ const pagesSlice = createSlice({
      * Add a page to the collection
      */
     addPage: (state, action: PayloadAction<Page>) => {
-      state.pages.set(action.payload.id, action.payload);
+      state.pages.push(action.payload);
     },
     /**
      * Remove a page from the collection
      */
     removePage: (state, action: PayloadAction<Page>) => {
-      state.pages.delete(action.payload.id);
+      state.pages = state.pages.filter((page) => page.id !== action.payload.id);
     },
     /**
      * Update a page in the collection
      */
     updatePage: (state, action: PayloadAction<Page>) => {
-      state.pages.set(action.payload.id, action.payload);
+      state.pages = state.pages.map((page) => {
+        if (page.id === action.payload.id) {
+          return action.payload;
+        }
+        return page;
+      });
     },
   },
 });

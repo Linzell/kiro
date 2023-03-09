@@ -1,4 +1,3 @@
-import { useAppSelector } from '$/hooks';
 import {
   removeUser,
   updateUser,
@@ -34,8 +33,6 @@ import OnlineStateEnum from './enums/onlineStateEnum';
  * ```
  */
 class User extends Item {
-  private CurrentUser = useAppSelector((state) => state.userStore.currentUser);
-
   private Email: string;
 
   private PeerId: string;
@@ -116,19 +113,19 @@ class User extends Item {
 
   public removeItem(): void {
     removeUser(this);
-    if (this.id === this.CurrentUser.id) {
+    /* if (this.id === this.CurrentUser.id) {
       this.removeCurrentUser();
-    }
+    } */
   }
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   public updateItem(toNetwork = true): void {
-    if (this.id === this.CurrentUser.id) {
+    /* if (this.id === this.CurrentUser.id) {
       this.updateCurrentUser();
       updateUser(this);
-    } else {
-      updateUser(this);
-    }
+    } else { */
+    updateUser(this);
+    /* } */
   }
 
   /**

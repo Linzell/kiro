@@ -6,10 +6,10 @@ import Tag from '#/tag';
 /**
  * Interface for Redux store
  * @interface tagtoreInterface
- * @property {Map<string, Tag>} tags- Collection of tags
+ * @property {Array<Tag>} tags- Collection of tags
  */
 interface tagStoreInterface {
-  tags: Map<string, Tag>;
+  tags: Array<Tag>;
 }
 
 /**
@@ -17,7 +17,7 @@ interface tagStoreInterface {
  * @type {tagStoreInterface}
  */
 const initialState: tagStoreInterface = {
-  tags: new Map(),
+  tags: [],
 };
 
 /**
@@ -31,19 +31,24 @@ const tagsSlice = createSlice({
      * Add a tag to the collection
      */
     addTag: (state, action: PayloadAction<Tag>) => {
-      state.tags.set(action.payload.id, action.payload);
+      state.tags.push(action.payload);
     },
     /**
      * Remove a tag from the collection
      */
     removeTag: (state, action: PayloadAction<Tag>) => {
-      state.tags.delete(action.payload.id);
+      state.tags = state.tags.filter((tag) => tag.id !== action.payload.id);
     },
     /**
      * Update a tag in the collection
      */
     updateTag: (state, action: PayloadAction<Tag>) => {
-      state.tags.set(action.payload.id, action.payload);
+      state.tags = state.tags.map((tag) => {
+        if (tag.id === action.payload.id) {
+          return action.payload;
+        }
+        return tag;
+      });
     },
   },
 });

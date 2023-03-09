@@ -6,10 +6,10 @@ import Folder from '#/folder';
 /**
  * Interface for Redux store
  * @interface folderStoreInterface
- * @property {Map<string, Folder>} folders - Collection of folders
+ * @property {Array<Folder>} folders - Collection of folders
  */
 interface folderStoreInterface {
-  folders: Map<string, Folder>;
+  folders: Array<Folder>;
 }
 
 /**
@@ -17,7 +17,7 @@ interface folderStoreInterface {
  * @type {folderStoreInterface}
  */
 const initialState: folderStoreInterface = {
-  folders: new Map(),
+  folders: [],
 };
 
 /**
@@ -31,19 +31,24 @@ const foldersSlice = createSlice({
      * Add a folder to the collection
      */
     addFolder: (state, action: PayloadAction<Folder>) => {
-      state.folders.set(action.payload.id, action.payload);
+      state.folders.push(action.payload);
     },
     /**
      * Remove a folder from the collection
      */
     removeFolder: (state, action: PayloadAction<Folder>) => {
-      state.folders.delete(action.payload.id);
+      state.folders = state.folders.filter((folder) => folder.id !== action.payload.id);
     },
     /**
      * Update a folder in the collection
      */
     updateFolder: (state, action: PayloadAction<Folder>) => {
-      state.folders.set(action.payload.id, action.payload);
+      state.folders = state.folders.map((folder) => {
+        if (folder.id === action.payload.id) {
+          return action.payload;
+        }
+        return folder;
+      });
     },
   },
 });

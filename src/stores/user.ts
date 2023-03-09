@@ -1,19 +1,28 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import NewUser from '#/factorys/userFactory';
 import type { RootState } from '$/index';
 import User from '#/user';
 
 /**
  * Interface for Redux store
  * @interface userStoreInterface
- * @property {Map<string, User>} users - Collection of users
+ * @property {Array<User>} users - Collection of users
  * @property {User} currentUser - Current user
  * @property {string} privateKey - Private key for current user
  */
 interface userStoreInterface {
-  users: Map<string, User>;
+  users: Array<User>;
   currentUser: User;
   privateKey: string;
+}
+
+// TODO: Temporaire, à supprimer
+function getCurrentUser(): User {
+  return new NewUser().factoryMethod(
+    '123456789',
+    'd4fg56df4g654df65g4d65f4g65df4',
+  );
 }
 
 /**
@@ -21,8 +30,8 @@ interface userStoreInterface {
  * @type {userStoreInterface}
  */
 const initialState: userStoreInterface = {
-  users: new Map(),
-  currentUser: {} as User,
+  users: [],
+  currentUser: getCurrentUser(),
   privateKey: '456',
 };
 
@@ -37,19 +46,24 @@ const usersSlice = createSlice({
      * Add a user to the collection
      */
     addUser: (state, action: PayloadAction<User>) => {
-      state.users.set(action.payload.id, action.payload);
+      state.users.push(action.payload);
     },
     /**
      * Remove a user from the collection
      */
     removeUser: (state, action: PayloadAction<User>) => {
-      state.users.delete(action.payload.id);
+      state.users = state.users.filter((user) => user.id !== action.payload.id);
     },
     /**
      * Update a user in the collection
      */
     updateUser: (state, action: PayloadAction<User>) => {
-      state.users.set(action.payload.id, action.payload);
+      state.users = state.users.map((user) => {
+        if (user.id === action.payload.id) {
+          return action.payload;
+        }
+        return user;
+      });
     },
     /**
      * Add current user to the collection
