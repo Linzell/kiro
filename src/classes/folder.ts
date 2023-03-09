@@ -1,3 +1,4 @@
+/* import Fireproof from 'fireproof'; */
 import { removeFolder, updateFolder } from '$/folder';
 import Item from '#/item';
 
@@ -72,8 +73,12 @@ class Folder extends Item {
   }
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  public updateItem(toNetwork = true): void {
+  public async updateItem(toNetwork = true): Promise<void> {
     updateFolder(this);
+    /* if (toNetwork) {
+      const database = new Fireproof();
+      await database.put(`folders/${this.id}`, this.toJSON());
+    } */
   }
 
   public toJSON(): object {

@@ -1,4 +1,6 @@
 /* eslint-disable import/no-extraneous-dependencies */
+// TODO: A rajouter sur le projet une fois le store fonctionnel
+/* import { FireproofCtx, useFireproof } from '@fireproof/core/hooks/use-fireproof'; */
 /* import { useState } from "react";
 import { invoke } from "@tauri-apps/api/tauri"; */
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
