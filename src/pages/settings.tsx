@@ -1,13 +1,12 @@
-import React, { Component } from 'react';
+import Box from '@mui/material/Box';
+import AppTabs from '@/settings/appTabs';
+import BreadCrumbsModule from '@/modules/breadCrumbsModule';
 
-class settings extends Component {
-  render() {
-    return (
-      <div>
-
-      </div>
-    );
-  }
+export default function settings() {
+  return (
+    <Box>
+      <BreadCrumbsModule />
+      <AppTabs />
+    </Box>
+  );
 }
-
-export default settings;

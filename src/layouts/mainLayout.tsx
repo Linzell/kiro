@@ -29,7 +29,11 @@ export default function MiniDrawer() {
         ml: { xs: 0, md: `calc(${drawerWidth}%)` },
       }}>
         <Toolbar />
-        <Outlet />
+        <Box sx={{
+          m: 4,
+        }}>
+          <Outlet />
+        </Box>
       </Box>
     </Box>
   );

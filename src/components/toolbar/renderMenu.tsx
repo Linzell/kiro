@@ -21,8 +21,8 @@ export default function renderMenu(
     handleMobileMenuClose: () => void;
   },
 ) {
-  const navigate = useNavigate();
   const { t } = useTranslation();
+  const navigate = useNavigate();
   const user = useAppSelector((state) => state.userStore.currentUser);
   const redirectTo = (path: string) => navigate(path);
   const handleMenuClose = () => {

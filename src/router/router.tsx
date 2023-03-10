@@ -1,6 +1,7 @@
 import MainLayout from '§/layouts/mainLayout';
 import Home from '&/home';
 import About from '&/about';
+import Settings from '&/settings';
 import ItemsTable from '&/itemsTable';
 
 const routes = [
@@ -19,6 +20,10 @@ const routes = [
       {
         path: '/about',
         element: <About />,
+      },
+      {
+        path: '/settings',
+        element: <Settings />,
       },
     ],
   },
