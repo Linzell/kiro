@@ -17,6 +17,7 @@ module.exports = {
   plugins: [
     '@typescript-eslint',
     'react',
+    'react-refresh',
   ],
   settings: {
     react: {
@@ -54,6 +55,7 @@ module.exports = {
     'import/prefer-default-export': 'error',
     'prefer-promise-reject-errors': 'off',
     'react/react-in-jsx-scope': 'off',
+    'react-refresh/only-export-components': 'warn',
 
     quotes: ['warn', 'single', { avoidEscape: true }],
     '@typescript-eslint/explicit-function-return-type': 'off',

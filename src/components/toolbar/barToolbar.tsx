@@ -10,8 +10,8 @@ import SearchIcon from '@mui/icons-material/Search';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
 import GroupIcon from '@mui/icons-material/Group';
-import AvatarModule from '@/modules/avatarModule';
 import { useAppSelector } from '$/hooks';
+import AvatarModule from '@/modules/avatarModule';
 import LanguageName from '#/enums/languageEnum';
 
 const Search = styled('div')(({ theme }) => ({
@@ -91,6 +91,7 @@ export default function BarToolbar(
   },
 ) {
   const user = useAppSelector((state) => state.userStore.currentUser);
+  const usersLength = useAppSelector((state) => state.userStore.users).length;
   return (
     <Toolbar sx={{
       display: 'flex',
@@ -142,7 +143,7 @@ export default function BarToolbar(
           aria-haspopup="true"
           onClick={props.handleUserMenuOpen}
         >
-          <Badge badgeContent={5} color="warning">
+          <Badge badgeContent={usersLength} color="warning">
             <GroupIcon />
           </Badge>
         </StyledIconButton>

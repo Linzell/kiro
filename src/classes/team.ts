@@ -1,4 +1,5 @@
 import { v4 as uuidv4 } from 'uuid';
+import { useAppDispatch } from '$/hooks';
 import { removeTeam, updateTeam } from '$/team';
 import TeamStateInterface from '#/interfaces/TeamStateInterface';
 
@@ -100,7 +101,8 @@ class Team implements TeamStateInterface {
    * Delete an existing team from the database
    */
   public removeTeam(): void {
-    removeTeam(this);
+    const dispatch = useAppDispatch();
+    dispatch(removeTeam(this));
   }
 
   /**
@@ -109,7 +111,8 @@ class Team implements TeamStateInterface {
    */
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   public updateTeam(toNetwork = true): void {
-    updateTeam(this);
+    const dispatch = useAppDispatch();
+    dispatch(updateTeam(this));
   }
 
   /**

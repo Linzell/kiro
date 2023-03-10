@@ -4,8 +4,8 @@ import ListItemText from '@mui/material/ListItemText';
 import Menu from '@mui/material/Menu';
 import Typography from '@mui/material/Typography';
 import Tooltip from '@mui/material/Tooltip';
+import { useAppSelector } from '$/hooks';
 import AvatarModule from '@/modules/avatarModule';
-import NewUser from '#/factorys/userFactory';
 
 export default function RenderUserMenu(
   props: {
@@ -14,29 +14,7 @@ export default function RenderUserMenu(
     setAnchorUserEl: React.Dispatch<React.SetStateAction<null | HTMLElement>>;
   },
 ) {
-  // TODO: Replace this with a real users list
-  const users = [
-    new NewUser().factoryMethod(
-      '123456789',
-      'd4fg56df4g654df65g4d65f4g65df4',
-    ),
-    new NewUser().factoryMethod(
-      '987654321',
-      'd4fg56df4g654df65g4d65f4g65df4',
-    ),
-    new NewUser().factoryMethod(
-      '987654321',
-      'd4fg56df4g654df65g4d65f4g65df4',
-    ),
-    new NewUser().factoryMethod(
-      '987654321',
-      'd4fg56df4g654df65g4d65f4g65df4',
-    ),
-    new NewUser().factoryMethod(
-      '987654321',
-      'd4fg56df4g654df65g4d65f4g65df4',
-    ),
-  ];
+  const users = useAppSelector((state) => state.userStore.users);
   const handleMenuClose = () => {
     props.setAnchorUserEl(null);
   };

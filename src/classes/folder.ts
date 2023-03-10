@@ -1,4 +1,5 @@
 /* import Fireproof from 'fireproof'; */
+import { useAppDispatch } from '$/hooks';
 import { removeFolder, updateFolder } from '$/folder';
 import Item from '#/item';
 
@@ -69,12 +70,14 @@ class Folder extends Item {
   }
 
   public removeItem(): void {
-    removeFolder(this);
+    const dispatch = useAppDispatch();
+    dispatch(removeFolder(this));
   }
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   public async updateItem(toNetwork = true): Promise<void> {
-    updateFolder(this);
+    const dispatch = useAppDispatch();
+    dispatch(updateFolder(this));
     /* if (toNetwork) {
       const database = new Fireproof();
       await database.put(`folders/${this.id}`, this.toJSON());

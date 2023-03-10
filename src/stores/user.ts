@@ -30,7 +30,7 @@ function getCurrentUser(): User {
  * @type {userStoreInterface}
  */
 const initialState: userStoreInterface = {
-  users: [],
+  users: [getCurrentUser()],
   currentUser: getCurrentUser(),
   privateKey: '456',
 };

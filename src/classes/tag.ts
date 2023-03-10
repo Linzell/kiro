@@ -1,3 +1,4 @@
+import { useAppDispatch } from '$/hooks';
 import { removeTag, updateTag } from '$/tag';
 import Item from '#/item';
 
@@ -68,12 +69,14 @@ class Tag extends Item {
   }
 
   public removeItem(): void {
-    removeTag(this);
+    const dispatch = useAppDispatch();
+    dispatch(removeTag(this));
   }
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   public updateItem(toNetwork = true): void {
-    updateTag(this);
+    const dispatch = useAppDispatch();
+    dispatch(updateTag(this));
   }
 
   public toJSON(): object {

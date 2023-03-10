@@ -8,8 +8,8 @@ import MenuItem from '@mui/material/MenuItem';
 import Settings from '@mui/icons-material/Settings';
 import Logout from '@mui/icons-material/Logout';
 import InfoIcon from '@mui/icons-material/Info';
+import { useAppSelector } from '$/hooks';
 import AvatarModule from '@/modules/avatarModule';
-import NewUser from '#/factorys/userFactory';
 
 export default function renderMenu(
   props: {
@@ -19,11 +19,7 @@ export default function renderMenu(
     handleMobileMenuClose: () => void;
   },
 ) {
-  // TODO: Replace this with a real user
-  const user = new NewUser().factoryMethod(
-    '123456789',
-    'd4fg56df4g654df65g4d65f4g65df4',
-  );
+  const user = useAppSelector((state) => state.userStore.currentUser);
   const handleMenuClose = () => {
     props.setAnchorEl(null);
     props.handleMobileMenuClose();
@@ -69,11 +65,21 @@ export default function renderMenu(
           <ListItemText
             primary={user.name}
             secondary={user.publicKey}
-            sx={{ ml: 1.5, overflow: 'hidden' }}
+            sx={{ ml: 2, mr: 2, overflow: 'hidden' }}
           />
         </Tooltip>
       </MenuItem>
       <Divider />
+      <MenuItem onClick={handleMenuClose} sx={{
+        ml: 1,
+        mr: 1,
+        borderRadius: 2,
+      }}>
+        <ListItemIcon>
+          <InfoIcon fontSize="small" color="info" />
+        </ListItemIcon>
+        Home
+      </MenuItem>
       <MenuItem onClick={handleMenuClose} sx={{
         ml: 1,
         mr: 1,
@@ -94,6 +100,7 @@ export default function renderMenu(
         </ListItemIcon>
         Settings
       </MenuItem>
+      <Divider />
       <MenuItem onClick={handleMenuClose} sx={{
         ml: 1,
         mr: 1,

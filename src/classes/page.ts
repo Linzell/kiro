@@ -1,3 +1,4 @@
+import { useAppDispatch } from '$/hooks';
 import { removePage, updatePage } from '$/page';
 import Item from '#/item';
 
@@ -68,12 +69,14 @@ class Page extends Item {
   }
 
   public removeItem(): void {
-    removePage(this);
+    const dispatch = useAppDispatch();
+    dispatch(removePage(this));
   }
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   public updateItem(toNetwork = true): void {
-    updatePage(this);
+    const dispatch = useAppDispatch();
+    dispatch(updatePage(this));
   }
 
   public toJSON(): object {

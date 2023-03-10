@@ -1,3 +1,4 @@
+import { useAppDispatch } from '$/hooks';
 import {
   removeUser,
   updateUser,
@@ -112,7 +113,8 @@ class User extends Item {
   }
 
   public removeItem(): void {
-    removeUser(this);
+    const dispatch = useAppDispatch();
+    dispatch(removeUser(this));
     /* if (this.id === this.CurrentUser.id) {
       this.removeCurrentUser();
     } */
@@ -124,7 +126,8 @@ class User extends Item {
       this.updateCurrentUser();
       updateUser(this);
     } else { */
-    updateUser(this);
+    const dispatch = useAppDispatch();
+    dispatch(updateUser(this));
     /* } */
   }
 
@@ -132,7 +135,8 @@ class User extends Item {
    * Add current user to the store
    */
   public addCurrentUser(toNetwork = false): void {
-    addCurrentUser(this);
+    const dispatch = useAppDispatch();
+    dispatch(addCurrentUser(this));
     this.updateItem(toNetwork);
   }
 
@@ -140,15 +144,17 @@ class User extends Item {
    * Remove current user from the store
    */
   // eslint-disable-next-line class-methods-use-this
-  private removeCurrentUser(): void {
-    removeCurrentUser();
+  public removeCurrentUser(): void {
+    const dispatch = useAppDispatch();
+    dispatch(removeCurrentUser());
   }
 
   /**
    * Update current user in the store
    */
-  private updateCurrentUser(): void {
-    updateCurrentUser(this);
+  public updateCurrentUser(): void {
+    const dispatch = useAppDispatch();
+    dispatch(updateCurrentUser(this));
   }
 
   public getStatusColor(): 'primary' | 'secondary' | 'default' | 'error' | 'info' | 'success' | 'warning' | undefined {
