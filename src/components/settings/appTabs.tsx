@@ -7,7 +7,7 @@ import Box from '@mui/material/Box';
 import PhoneIcon from '@mui/icons-material/Phone';
 
 const AntTabs = styled(Tabs)({
-  borderBottom: '1px solid #e8e8e8',
+  maxHeight: 60,
   '& .MuiTabs-indicator': {
     backgroundColor: '#1890ff',
   },
@@ -16,10 +16,9 @@ const AntTabs = styled(Tabs)({
 interface StyledTabProps {
   label: string;
   icon: React.ReactElement;
-  iconPosition: string;
 }
 
-const AntTab = styled((props: StyledTabProps) => <Tab disableRipple {...props} />)(
+const AntTab = styled((props: StyledTabProps) => <Tab iconPosition="start" disableRipple {...props} />)(
   ({ theme }) => ({
     textTransform: 'none',
     minWidth: 0,
@@ -77,7 +76,7 @@ function TabPanel(props: TabPanelProps) {
       {...other}
     >
       {value === index && (
-        <Box sx={{ p: 3 }}>
+        <Box>
           <Typography>{children}</Typography>
         </Box>
       )}
@@ -94,31 +93,37 @@ export default function appTabs() {
 
   return (
     <Box sx={{ width: '100%' }}>
-      <Box sx={{ bgcolor: '#fff' }}>
-        <AntTabs value={value} onChange={handleChange} aria-label="ant example">
-          <AntTab icon={<PhoneIcon />} iconPosition="start" label="General" />
-          <AntTab icon={<PhoneIcon />} iconPosition="start" label="Billing" />
-          <AntTab icon={<PhoneIcon />} iconPosition="start" label="Notifications" />
-          <AntTab icon={<PhoneIcon />} iconPosition="start" label="Social links" />
-          <AntTab icon={<PhoneIcon />} iconPosition="start" label="Change password" />
+      <Box>
+        <AntTabs
+          value={value}
+          onChange={handleChange}
+          variant="scrollable"
+          scrollButtons="auto"
+          aria-label="ant example"
+        >
+          <AntTab icon={<PhoneIcon fontSize="inherit" />} label="General" />
+          <AntTab icon={<PhoneIcon fontSize="inherit" />} label="Billing" />
+          <AntTab icon={<PhoneIcon fontSize="inherit" />} label="Notifications" />
+          <AntTab icon={<PhoneIcon fontSize="inherit" />} label="Social links" />
+          <AntTab icon={<PhoneIcon fontSize="inherit" />} label="Change password" />
         </AntTabs>
       </Box>
-      <Box sx={{ bgcolor: '#fff' }}>
-      <TabPanel value={value} index={0}>
-        <h3>General</h3>
-      </TabPanel>
-      <TabPanel value={value} index={1}>
-        <h3>Billing</h3>
-      </TabPanel>
-      <TabPanel value={value} index={2}>
-        <h3>Notifications</h3>
-      </TabPanel>
-      <TabPanel value={value} index={3}>
-        <h3>Social links</h3>
-      </TabPanel>
-      <TabPanel value={value} index={4}>
-        <h3>Change password</h3>
-      </TabPanel>
+      <Box>
+        <TabPanel value={value} index={0}>
+          <h3>General</h3>
+        </TabPanel>
+        <TabPanel value={value} index={1}>
+          <h3>Billing</h3>
+        </TabPanel>
+        <TabPanel value={value} index={2}>
+          <h3>Notifications</h3>
+        </TabPanel>
+        <TabPanel value={value} index={3}>
+          <h3>Social links</h3>
+        </TabPanel>
+        <TabPanel value={value} index={4}>
+          <h3>Change password</h3>
+        </TabPanel>
       </Box>
     </Box>
   );
