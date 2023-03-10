@@ -15,6 +15,8 @@
     "contactsOnline_null": "No hay contactos en línea",
     "contactsOnline_plural": "{{contactsLength}} contactos en línea",
     "goToThePageFrom": "Ir a la página de",
+    "languageChangeMenu": "Cambiar idioma",
+    "changeLanguageTo": "Cambiar idioma a",
     "page": "Página",
     "home": "Inicio",
     "goToTheHomePage": "Ir a la página de inicio",

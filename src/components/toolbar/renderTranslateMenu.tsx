@@ -4,6 +4,7 @@ import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import ListItemText from '@mui/material/ListItemText';
 import ListItemIcon from '@mui/material/ListItemIcon';
+import Tooltip from '@mui/material/Tooltip';
 import LanguageName from '#/enums/languageEnum';
 
 export default function renderTranslateMenu(
@@ -16,8 +17,7 @@ export default function renderTranslateMenu(
     setAnchorTranslateEl: React.Dispatch<React.SetStateAction<null | HTMLElement>>;
   },
 ) {
-  const { i18n } = useTranslation();
-
+  const { i18n, t } = useTranslation();
   const handleMenuClose = () => {
     props.setAnchorTranslateEl(null);
   };
@@ -35,6 +35,7 @@ export default function renderTranslateMenu(
       open={isMenuOpen}
       onClose={handleMenuClose}
       onClick={handleMenuClose}
+      aria-label={`${t('menu.languageChangeMenu')}`}
       PaperProps={{
         elevation: 1,
         sx: {
@@ -61,21 +62,24 @@ export default function renderTranslateMenu(
     >
       {
         props.languages.map((language, key) => (
-          <MenuItem
-            key={key}
-            onClick={() => changeLanguage(language.code)}
-            sx={{
-              ml: 1,
-              mr: 1,
-              backgroundColor: props.language === language.code ? 'grey.200' : 'background.paper',
-              borderRadius: 2,
-            }}
-          >
-            <ListItemIcon>
-              { language.icon }
-            </ListItemIcon>
-            <ListItemText primary={language.name} />
-          </MenuItem>
+          <Tooltip key={key} title={`${t('menu.changeLanguageTo')} ${language.name}`} placement='top'>
+            <MenuItem
+              onClick={() => changeLanguage(language.code)}
+              aria-label={language.name}
+              role="button"
+              sx={{
+                ml: 1,
+                mr: 1,
+                backgroundColor: props.language === language.code ? 'grey.200' : 'background.paper',
+                borderRadius: 2,
+              }}
+            >
+              <ListItemIcon>
+                {language.icon}
+              </ListItemIcon>
+              <ListItemText primary={language.name} />
+            </MenuItem>
+          </Tooltip>
         ))
       }
     </Menu>

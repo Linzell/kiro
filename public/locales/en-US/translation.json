@@ -15,6 +15,8 @@
     "contactsOnline_null": "No contacts online",
     "contactsOnline_plural": "{{contactsLength}} contacts online",
     "goToThePageFrom": "Go to the page from",
+    "languageChangeMenu": "Language Change Menu",
+    "changeLanguageTo": "Change language to",
     "page": "Page",
     "home": "Home",
     "goToTheHomePage": "Go to the Home Page",
