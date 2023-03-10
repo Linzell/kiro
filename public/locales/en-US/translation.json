@@ -5,5 +5,17 @@
     "french": "French",
     "japanese": "Japanese",
     "chinese": "Chinese"
+  },
+  "menu": {
+    "menu": "Menu",
+    "goToThePageFrom": "Go to the page from",
+    "page": "Page",
+    "home": "Home",
+    "goToTheHomePage": "Go to the Home Page",
+    "about": "About",
+    "goToTheAboutPage": "Go to the About Page",
+    "settings": "Settings",
+    "goToTheSettingsPage": "Go to the Settings Page",
+    "logout": "Logout"
   }
 }

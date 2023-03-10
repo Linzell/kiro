@@ -5,5 +5,17 @@
     "french": "法语",
     "japanese": "日语",
     "chinese": "中文"
+  },
+  "menu": {
+    "menu": "菜单",
+    "goToThePageFrom": "前往",
+    "page": "页面",
+    "home": "主页",
+    "goToTheHomePage": "前往主页",
+    "about": "关于",
+    "goToTheAboutPage": "前往关于页面",
+    "settings": "设置",
+    "goToTheSettingsPage": "前往设置页面",
+    "logout": "登出"
   }
 }

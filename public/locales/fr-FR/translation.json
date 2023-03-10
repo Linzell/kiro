@@ -5,5 +5,17 @@
     "french": "Français",
     "japanese": "Japonais",
     "chinese": "Chinois"
+  },
+  "menu": {
+    "menu": "Menu",
+    "goToThePageFrom": "Aller à la page de",
+    "page": "Page",
+    "home": "Accueil",
+    "goToTheHomePage": "Aller à la page d'accueil",
+    "about": "À propos",
+    "goToTheAboutPage": "Aller à la page À propos",
+    "settings": "Paramètres",
+    "goToTheSettingsPage": "Aller à la page Paramètres",
+    "logout": "Déconnexion"
   }
 }

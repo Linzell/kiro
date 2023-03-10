@@ -1,4 +1,6 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import Divider from '@mui/material/Divider';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
@@ -19,7 +21,10 @@ export default function renderMenu(
     handleMobileMenuClose: () => void;
   },
 ) {
+  const navigate = useNavigate();
+  const { t } = useTranslation();
   const user = useAppSelector((state) => state.userStore.currentUser);
+  const redirectTo = (path: string) => navigate(path);
   const handleMenuClose = () => {
     props.setAnchorEl(null);
     props.handleMobileMenuClose();
@@ -32,6 +37,7 @@ export default function renderMenu(
       open={isMenuOpen}
       onClose={handleMenuClose}
       onClick={handleMenuClose}
+      aria-label={`${t('menu.menu')}`}
       PaperProps={{
         elevation: 0,
         sx: {
@@ -55,62 +61,85 @@ export default function renderMenu(
       transformOrigin={{ horizontal: 'right', vertical: 'top' }}
       anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
     >
-      <MenuItem onClick={handleMenuClose} sx={{
-        ml: 1,
-        mr: 1,
-        borderRadius: 2,
-      }}>
-        <AvatarModule user={user} />
-        <Tooltip title={`Go to the ${user.name} page`} placement='top'>
+      <Tooltip title={`${t('menu.goToThePageFrom')} ${user.name}`} placement='top'>
+        <MenuItem onClick={() => redirectTo(`/user/${user.publicKey}`)}
+          aria-label={`Go to the ${user.name} page`}
+          role="button"
+          sx={{
+            ml: 1,
+            mr: 1,
+            borderRadius: 2,
+          }}>
+          <AvatarModule user={user} />
           <ListItemText
             primary={user.name}
             secondary={user.publicKey}
             sx={{ ml: 2, mr: 2, overflow: 'hidden' }}
           />
-        </Tooltip>
-      </MenuItem>
+        </MenuItem>
+      </Tooltip>
       <Divider />
-      <MenuItem onClick={handleMenuClose} sx={{
-        ml: 1,
-        mr: 1,
-        borderRadius: 2,
-      }}>
-        <ListItemIcon>
-          <InfoIcon fontSize="small" color="info" />
-        </ListItemIcon>
-        Home
-      </MenuItem>
-      <MenuItem onClick={handleMenuClose} sx={{
-        ml: 1,
-        mr: 1,
-        borderRadius: 2,
-      }}>
-        <ListItemIcon>
-          <InfoIcon fontSize="small" color="info" />
-        </ListItemIcon>
-        About
-      </MenuItem>
-      <MenuItem onClick={handleMenuClose} sx={{
-        ml: 1,
-        mr: 1,
-        borderRadius: 2,
-      }}>
-        <ListItemIcon>
-          <Settings fontSize="small" color="disabled" />
-        </ListItemIcon>
-        Settings
-      </MenuItem>
+      <Tooltip title={t('menu.goToTheHomePage')} placement='top'>
+        <MenuItem onClick={() => redirectTo('/')}
+          aria-label={`${t('menu.goToTheHomePage')}`}
+          role="button"
+          sx={{
+            ml: 1,
+            mr: 1,
+            borderRadius: 2,
+          }}>
+          <ListItemIcon>
+            <InfoIcon fontSize="small" color="info" />
+          </ListItemIcon>
+          {t('menu.home')}
+        </MenuItem>
+      </Tooltip>
+      <Tooltip title={t('menu.goToTheAboutPage')} placement='top'>
+        <MenuItem onClick={() => redirectTo('about')}
+          aria-label={`${t('menu.goToTheAboutPage')}`}
+          role="button"
+          sx={{
+            ml: 1,
+            mr: 1,
+            borderRadius: 2,
+          }}>
+          <ListItemIcon>
+            <InfoIcon fontSize="small" color="info" />
+          </ListItemIcon>
+          {t('menu.about')}
+        </MenuItem>
+      </Tooltip>
+      <Tooltip title={t('menu.goToTheSettingsPage')} placement='top'>
+        <MenuItem onClick={() => redirectTo('settings')}
+          aria-label={`${t('menu.goToTheSettingsPage')}`}
+          role="button"
+          sx={{
+            ml: 1,
+            mr: 1,
+            borderRadius: 2,
+          }}>
+          <ListItemIcon>
+            <Settings fontSize="small" color="disabled" />
+          </ListItemIcon>
+          {t('menu.settings')}
+        </MenuItem>
+      </Tooltip>
       <Divider />
-      <MenuItem onClick={handleMenuClose} sx={{
-        ml: 1,
-        mr: 1,
-        borderRadius: 2,
-      }}>
-        <ListItemIcon>
-          <Logout fontSize="small" color="error" />
-        </ListItemIcon>
-        Logout
-      </MenuItem>
+      <Tooltip title={t('menu.logout')} placement='top'>
+        <MenuItem onClick={handleMenuClose}
+          aria-label={`${t('menu.logout')}`}
+          role="button"
+          sx={{
+            ml: 1,
+            mr: 1,
+            borderRadius: 2,
+          }}>
+          <ListItemIcon>
+            <Logout fontSize="small" color="error" />
+          </ListItemIcon>
+          {t('menu.logout')}
+        </MenuItem>
+      </Tooltip>
     </Menu>
   );
 }
