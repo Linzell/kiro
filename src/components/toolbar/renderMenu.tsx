@@ -63,7 +63,7 @@ export default function renderMenu(
     >
       <Tooltip title={`${t('menu.goToThePageFrom')} ${user.name}`} placement='top'>
         <MenuItem onClick={() => redirectTo(`/user/${user.publicKey}`)}
-          aria-label={`Go to the ${user.name} page`}
+          aria-label={`${t('menu.goToThePageFrom')} ${user.name}`}
           role="button"
           sx={{
             ml: 1,

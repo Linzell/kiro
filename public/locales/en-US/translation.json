@@ -8,6 +8,12 @@
   },
   "menu": {
     "menu": "Menu",
+    "notifications": "Notifications",
+    "userNotificationsNew_null": "You have no unread notifications",
+    "userNotificationsNew_plural": "You have {{notificationsLength}} unread notifications",
+    "contacts": "Contacts",
+    "contactsOnline_null": "No contacts online",
+    "contactsOnline_plural": "{{contactsLength}} contacts online",
     "goToThePageFrom": "Go to the page from",
     "page": "Page",
     "home": "Home",

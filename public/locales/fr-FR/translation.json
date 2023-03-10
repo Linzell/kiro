@@ -8,6 +8,12 @@
   },
   "menu": {
     "menu": "Menu",
+    "notifications": "Notifications",
+    "userNotificationsNew_null": "Aucune nouvelle notification",
+    "userNotificationsNew_plural": "{{notificationsLength}} nouvelles notifications",
+    "contacts": "Contacts",
+    "contactsOnline_null": "Aucun contact en ligne",
+    "contactsOnline_plural": "{{contactsLength}} contacts en ligne",
     "goToThePageFrom": "Aller à la page de",
     "page": "Page",
     "home": "Accueil",

@@ -38,10 +38,10 @@ class NewUser extends UserCreator {
   public factoryMethod(
     peerId: string,
     publicKey: string,
-    name = 'Charlie Cohen', // TODO: remove default values
+    name = 'New user',
     description = 'A new User',
     content = '',
-    imgUrl = 'src/static/dragon-wiggle.gif', // TODO: remove default values
+    imgUrl = '',
     tags = [],
     followerIds = [],
     expertsIds = [],

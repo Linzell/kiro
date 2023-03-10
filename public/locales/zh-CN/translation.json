@@ -8,6 +8,12 @@
   },
   "menu": {
     "menu": "菜单",
+    "notifications": "通知",
+    "userNotificationsNew_null": "没有新通知",
+    "userNotificationsNew_plural": "{{notificationsLength}} 新通知",
+    "contacts": "联系人",
+    "contactsOnline_null": "没有联系人在线",
+    "contactsOnline_plural": "{{contactsLength}} 个联系人在线",
     "goToThePageFrom": "前往",
     "page": "页面",
     "home": "主页",

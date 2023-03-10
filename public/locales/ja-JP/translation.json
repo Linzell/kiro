@@ -8,6 +8,12 @@
   },
   "menu": {
     "menu": "メニュー",
+    "notifications": "通知",
+    "userNotificationsNew_null": "新しい通知はありません",
+    "userNotificationsNew_plural": "{{notificationsLength}} 新しい通知",
+    "contacts": "連絡先",
+    "contactsOnline_null": "オンラインの連絡先はありません",
+    "contactsOnline_plural": "{{contactsLength}} オンラインの連絡先",
     "goToThePageFrom": "ページに移動",
     "page": "ページ",
     "home": "ホーム",

@@ -1,3 +1,4 @@
+import { useTranslation, Trans } from 'react-i18next';
 import React from 'react';
 import moment from 'moment';
 import Menu from '@mui/material/Menu';
@@ -19,6 +20,9 @@ export default function renderNotify(
     setAnchorNotifyEl: React.Dispatch<React.SetStateAction<null | HTMLElement>>;
   },
 ) {
+  const { t } = useTranslation();
+  // TODO: A remplacer dans le futur
+  const notificationsLength = 2;
   const notifications = [
     new Notification(
       '',
@@ -46,6 +50,7 @@ export default function renderNotify(
       open={isMenuOpen}
       onClose={handleMenuClose}
       onClick={handleMenuClose}
+      aria-label={`${t('menu.notifications')}`}
       PaperProps={{
         elevation: 1,
         sx: {
@@ -70,10 +75,18 @@ export default function renderNotify(
       transformOrigin={{ horizontal: 'right', vertical: 'top' }}
       anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
     >
-      <ListItem>
+      <ListItem
+        aria-label={`${t('menu.notifications')}`}
+      >
         <ListItemText
-          primary="Notifications"
-          secondary={`You have ${notifications.length} new notifications`}
+          primary={t('menu.notifications')}
+          secondary={
+            notificationsLength < 1
+              ? <p>{t('menu.userNotificationsNew_null')}</p>
+              : <Trans i18nKey="menu.userNotificationsNew_plural" notificationsLength={notificationsLength}>
+                You have {{ notificationsLength }} unread notifications
+              </Trans>
+          }
         />
         <ListItemIcon>
           <DoneAllIcon fontSize="small" color="success" />

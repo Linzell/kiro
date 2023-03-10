@@ -5,7 +5,7 @@ import Box from '@mui/material/Box';
 import AppBar from '@mui/material/AppBar';
 import BarToolbar from './barToolbar';
 import RenderMenu from './renderMenu';
-import RenderUserMenu from './renderUserMenu';
+import RenderContactsMenu from './renderContactsMenu';
 import RenderNotifyMenu from './renderNotifyMenu';
 import RenderTranslateMenu from './renderTranslateMenu';
 import RenderMobileMenu from './renderMobileMenu';
@@ -105,7 +105,7 @@ export default function AppToolbar(
         setAnchorEl={setAnchorEl}
         handleMobileMenuClose={handleMobileMenuClose}
       />
-      <RenderUserMenu
+      <RenderContactsMenu
         menuUserId={menuUserId}
         anchorUserEl={anchorUserEl}
         setAnchorUserEl={setAnchorUserEl}
