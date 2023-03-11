@@ -48,6 +48,7 @@ export default function AppToolbar(
   const handleMobileMenuClose = () => {
     setMobileMoreAnchorEl(null);
   };
+  // TODO: A déplacer dans un dossier Data
   const languages = [
     {
       name: t('language.english'),

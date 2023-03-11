@@ -1,9 +1,7 @@
 import React from 'react';
-import { styled, alpha } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
-import InputBase from '@mui/material/InputBase';
 import Badge from '@mui/material/Badge';
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
@@ -13,66 +11,10 @@ import GroupIcon from '@mui/icons-material/Group';
 import { useAppSelector } from '$/hooks';
 import AvatarModule from '@/modules/avatarModule';
 import LanguageName from '#/enums/languageEnum';
-
-const Search = styled('div')(({ theme }) => ({
-  position: 'relative',
-  borderRadius: theme.shape.borderRadius,
-  backgroundColor: alpha(theme.palette.common.white, 0.15),
-  '&:hover': {
-    backgroundColor: alpha(theme.palette.common.white, 0.25),
-  },
-  marginRight: theme.spacing(2),
-  marginLeft: 0,
-  width: '100%',
-  [theme.breakpoints.up('sm')]: {
-    marginLeft: theme.spacing(3),
-    width: 'auto',
-  },
-}));
-
-const SearchIconWrapper = styled('div')(({ theme }) => ({
-  padding: theme.spacing(0, 2),
-  height: '100%',
-  position: 'absolute',
-  pointerEvents: 'none',
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-}));
-
-const StyledInputBase = styled(InputBase)(({ theme }) => ({
-  color: 'inherit',
-  '& .MuiInputBase-input': {
-    padding: theme.spacing(1, 1, 1, 0),
-    // vertical padding + font size from searchIcon
-    paddingLeft: `calc(1em + ${theme.spacing(4)})`,
-    transition: theme.transitions.create('width'),
-    width: '100%',
-    [theme.breakpoints.up('md')]: {
-      width: '20ch',
-    },
-  },
-}));
-
-const StyledIconButton = styled(IconButton)(({ theme }) => ({
-  color: theme.palette.action.active,
-  margin: 2,
-  '&:hover': {
-    color: theme.palette.primary.main,
-    animation: 'pulse 1s infinite',
-    '@keyframes pulse': {
-      '0%': {
-        transform: 'scale(1)',
-      },
-      '50%': {
-        transform: 'scale(1.1)',
-      },
-      '100%': {
-        transform: 'scale(1)',
-      },
-    },
-  },
-}));
+import Search from './styles/search';
+import SearchIconWrapper from './styles/searchIconWrapper';
+import StyledInputBase from './styles/styledInputBase';
+import StyledIconButton from './styles/styledIconButton';
 
 export default function BarToolbar(
   props: {
