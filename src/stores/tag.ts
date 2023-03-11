@@ -5,7 +5,7 @@ import Tag from '#/tag';
 
 /**
  * Interface for Redux store
- * @interface tagtoreInterface
+ * @interface tagStoreInterface
  * @property {Array<Tag>} tags- Collection of tags
  */
 interface tagStoreInterface {
