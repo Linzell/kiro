@@ -32,8 +32,8 @@ export default function BarToolbar(
     handleMobileMenuOpen: (event: React.MouseEvent<HTMLElement>) => void;
   },
 ) {
-  const user = useAppSelector((state) => state.userStore.currentUser);
-  const usersLength = useAppSelector((state) => state.userStore.users).length;
+  const [user] = React.useState(useAppSelector((state) => state.userStore.currentUser));
+  const [usersLength] = React.useState(useAppSelector((state) => state.userStore.users.length));
   return (
     <Toolbar sx={{
       display: 'flex',

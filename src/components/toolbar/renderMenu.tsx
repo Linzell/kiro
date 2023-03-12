@@ -23,7 +23,7 @@ export default function renderMenu(
 ) {
   const { t } = useTranslation();
   const navigate = useNavigate();
-  const user = useAppSelector((state) => state.userStore.currentUser);
+  const [user] = React.useState(useAppSelector((state) => state.userStore.currentUser));
   const redirectTo = (path: string) => navigate(path);
   const handleMenuClose = () => {
     props.setAnchorEl(null);

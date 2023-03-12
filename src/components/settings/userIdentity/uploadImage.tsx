@@ -1,84 +1,51 @@
 import React from 'react';
-import ButtonBase from '@mui/material/ButtonBase';
 import PhotoCamera from '@mui/icons-material/PhotoCamera';
+import TrashIcon from '@mui/icons-material/Delete';
 import IconButton from '@mui/material/IconButton';
 import Card from '@mui/material/Card';
 import Typography from '@mui/material/Typography';
-import { styled } from '@mui/material/styles';
+import { useAppDispatch } from '$/hooks';
+import { updateCurrentUser } from '$/user';
+import ImageButton from '@/settings/styles/userIdentity/imageButton';
+import ImageSrc from '@/settings/styles/userIdentity/imageSrc';
+import Image from '@/settings/styles/userIdentity/image';
+import ImageBackdrop from '@/settings/styles/userIdentity/imageBackdrop';
 import User from '#/user';
-
-const ImageButton = styled(ButtonBase)(({ theme }) => ({
-  position: 'relative',
-  width: 200,
-  height: 200,
-  border: '2px dashed lightGrey',
-  borderRadius: '50%',
-  margin: '1rem',
-  [theme.breakpoints.down('sm')]: {
-    width: '100% !important', // Overrides inline-style
-    height: 100,
-  },
-  '&:hover, &.Mui-focusVisible': {
-    zIndex: 1,
-    '& .MuiImageBackdrop-root': {
-      opacity: 0.30,
-    },
-    '& .MuiImageMarked-root': {
-      opacity: 0,
-    },
-    /* '& .MuiTypography-root': {
-      border: '4px solid currentColor',
-    }, */
-  },
-}));
-
-const ImageSrc = styled('span')({
-  position: 'absolute',
-  borderRadius: '50%',
-  left: 4,
-  right: 4,
-  top: 4,
-  bottom: 4,
-  backgroundSize: 'cover',
-  backgroundPosition: 'center 40%',
-});
-
-const Image = styled('span')(({ theme }) => ({
-  position: 'absolute',
-  borderRadius: '50%',
-  left: 4,
-  right: 4,
-  top: 4,
-  bottom: 4,
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-  color: theme.palette.common.white,
-}));
-
-const ImageBackdrop = styled('span')(({ theme }) => ({
-  position: 'absolute',
-  borderRadius: '50%',
-  left: 4,
-  right: 4,
-  top: 4,
-  bottom: 4,
-  backgroundColor: theme.palette.common.black,
-  opacity: 0,
-  transition: theme.transitions.create('opacity'),
-}));
 
 export default function UploadImage(
   props: {
     user: User,
   },
 ) {
-  const { user } = props;
+  const dispatch = useAppDispatch();
   const inputEl = React.useRef(null);
-  const image = 'https://raw.githubusercontent.com/Linzell/kiro/041122f8c41d1d7e9d51201dbf01de7c2008753f/src/static/dragon-wiggle.gif';
-  const uploadImage = () => {
-    // @ts-ignore
-    inputEl.current.click();
+  const [image, _setImage] = React.useState(props.user.imgUrl || null);
+  const cleanup = () => {
+    if (!image) return;
+    URL.revokeObjectURL(image);
+    inputEl.current = null;
+    props.user.imgUrl = '';
+    dispatch(updateCurrentUser(props.user));
+  };
+  const setImage = (newImage: string | null) => {
+    if (props.user.imgUrl) {
+      cleanup();
+    }
+    _setImage(newImage);
+    props.user.imgUrl = newImage as string;
+    dispatch(updateCurrentUser(props.user));
+  };
+  const handleClick = (event: any) => {
+    if (image) {
+      event.preventDefault();
+      setImage(null);
+    }
+  };
+  const handleOnChange = (event: any) => {
+    const newImage = event.target?.files?.[0];
+    if (newImage) {
+      setImage(URL.createObjectURL(newImage));
+    }
   };
   return (
     <React.Fragment>
@@ -94,19 +61,26 @@ export default function UploadImage(
       >
         <ImageButton
         >
-          <ImageSrc style={{ backgroundImage: `url(${image})` }} />
+          <ImageSrc style={{ backgroundImage: `url(${props.user.imgUrl})` }} />
           <ImageBackdrop className="MuiImageBackdrop-root" />
           <IconButton
-          aria-label="upload picture"
-          component="label"
-          onClick={() => uploadImage()}
+            aria-label="upload picture"
+            component="label"
+            onClick={handleClick}
           >
-            <input hidden accept="image/*" ref={inputEl} type="file" />
+            <input
+              hidden
+              accept="image/*"
+              id="imageUpload"
+              type="file"
+              ref={inputEl}
+              onChange={handleOnChange}
+            />
             <Image>
               <Typography
                 component="span"
                 variant="subtitle1"
-                color={image ? 'inherit' : 'primary'}
+                color={image ? 'error' : 'primary'}
                 sx={{
                   position: 'relative',
                   display: 'flex',
@@ -117,8 +91,20 @@ export default function UploadImage(
                   pb: (theme) => `calc(${theme.spacing(1)} + 6px)`,
                 }}
               >
-                <PhotoCamera sx={{ width: 24, height: 24 }} />
-                Upload Photo
+                {image
+                  ? (
+                    <React.Fragment>
+                      <TrashIcon sx={{ width: 24, height: 24 }} />
+                      Delete Photo
+                    </React.Fragment>
+                  )
+                  : (
+                    <React.Fragment>
+                      <PhotoCamera sx={{ width: 24, height: 24 }} />
+                      Upload Photo
+                    </React.Fragment>
+                  )
+                }
               </Typography>
             </Image>
           </IconButton>
