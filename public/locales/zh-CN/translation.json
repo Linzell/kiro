@@ -25,5 +25,12 @@
     "settings": "设置",
     "goToTheSettingsPage": "前往设置页面",
     "logout": "登出"
+  },
+  "settings": {
+    "userIdentity": "用户身份",
+    "billing": "账单",
+    "notifications": "通知",
+    "social": "社交",
+    "appIdentity": "应用身份"
   }
 }

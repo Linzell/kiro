@@ -25,5 +25,12 @@
     "settings": "Paramètres",
     "goToTheSettingsPage": "Aller à la page Paramètres",
     "logout": "Déconnexion"
+  },
+  "settings": {
+    "userIdentity": "Identité de l'utilisateur",
+    "billing": "Facturation",
+    "notifications": "Notifications",
+    "social": "Social",
+    "appIdentity": "Identité de l'application"
   }
 }

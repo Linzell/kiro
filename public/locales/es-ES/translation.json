@@ -25,5 +25,12 @@
     "settings": "Configuración",
     "goToTheSettingsPage": "Ir a la página de Configuración",
     "logout": "Cerrar sesión"
+  },
+  "settings": {
+    "userIdentity": "Identidad de usuario",
+    "billing": "Facturación",
+    "notifications": "Notificaciones",
+    "social": "Social",
+    "appIdentity": "Identidad de la aplicación"
   }
 }

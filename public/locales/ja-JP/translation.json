@@ -25,5 +25,12 @@
     "settings": "設定",
     "goToTheSettingsPage": "設定ページに移動",
     "logout": "ログアウト"
+  },
+  "settings": {
+    "userIdentity": "ユーザーID",
+    "billing": "請求",
+    "notifications": "通知",
+    "social": "ソーシャル",
+    "appIdentity": "アプリケーションID"
   }
 }

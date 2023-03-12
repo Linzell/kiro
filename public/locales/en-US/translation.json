@@ -25,5 +25,12 @@
     "settings": "Settings",
     "goToTheSettingsPage": "Go to the Settings Page",
     "logout": "Logout"
+  },
+  "settings": {
+    "userIdentity": "User Identity",
+    "billing": "Billing",
+    "notifications": "Notifications",
+    "social": "Social",
+    "appIdentity": "App Identity"
   }
 }
