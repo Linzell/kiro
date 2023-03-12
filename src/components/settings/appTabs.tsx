@@ -31,7 +31,7 @@ export default function appTabs() {
           onChange={handleChange}
           variant="scrollable"
           scrollButtons="auto"
-          aria-label="ant example"
+          aria-label="scrollable auto tabs"
         >
           <AntTab icon={<BadgeIcon fontSize="inherit" />} label={t('settings.userIdentity')} />
           <AntTab icon={<CreditCardIcon fontSize="inherit" />} label={t('settings.billing')} />

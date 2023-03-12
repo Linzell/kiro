@@ -4,8 +4,8 @@
 /* import { useState } from "react";
 import { invoke } from "@tauri-apps/api/tauri"; */
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import { useAppDispatch } from '$/hooks';
-import { loadPrivateKey } from '$/user';
+/* import { useAppDispatch } from '$/hooks';
+import { loadPrivateKey } from '$/user'; */
 
 import routes from '§/router/router';
 
@@ -14,7 +14,7 @@ const router = createBrowserRouter(routes);
 function App() {
   /* const [greetMsg, setGreetMsg] = useState("");
   const [name, setName] = useState(""); */
-  const dispatch = useAppDispatch();
+  /* const dispatch = useAppDispatch(); */
 
   /* async function greet() {
     // Learn more about Tauri commands at https://tauri.app/v1/guides/features/command
@@ -22,7 +22,7 @@ function App() {
   } */
 
   // Load private key from local storage
-  dispatch(loadPrivateKey());
+  /* dispatch(loadPrivateKey()); */
 
   return (
     <RouterProvider router={router} fallbackElement={null} />
