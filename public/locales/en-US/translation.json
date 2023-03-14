@@ -31,6 +31,10 @@
     "billing": "Billing",
     "notifications": "Notifications",
     "social": "Social",
-    "appIdentity": "App Identity"
+    "appIdentity": "App Identity",
+    "uploadImage": "Upload Image",
+    "deleteImage": "Delete Image",
+    "allowed_format": "Allowed {{format}}",
+    "maxSizeOf_size": "maximum size of {{size}}"
   }
 }

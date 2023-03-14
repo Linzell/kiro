@@ -31,6 +31,10 @@
     "billing": "Facturation",
     "notifications": "Notifications",
     "social": "Social",
-    "appIdentity": "Identité de l'application"
+    "appIdentity": "Identité de l'application",
+    "uploadImage": "Télécharger une image",
+    "deleteImage": "Supprimer l'image",
+    "allowed_format": "Formats autorisés {{format}}",
+    "maxSizeOf_size": "taille maximale {{size}}"
   }
 }

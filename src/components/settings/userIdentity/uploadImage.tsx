@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation, Trans } from 'react-i18next';
 import PhotoCamera from '@mui/icons-material/PhotoCamera';
 import TrashIcon from '@mui/icons-material/Delete';
 import IconButton from '@mui/material/IconButton';
@@ -17,6 +18,9 @@ export default function UploadImage(
     user: User,
   },
 ) {
+  const { t } = useTranslation();
+  const format = '*.jpeg, *.jpg, *.png, *.gif';
+  const size = '3.1 MB';
   const dispatch = useAppDispatch();
   const inputEl = React.useRef(null);
   const [image, _setImage] = React.useState(props.user.imgUrl || null);
@@ -95,13 +99,13 @@ export default function UploadImage(
                   ? (
                     <React.Fragment>
                       <TrashIcon sx={{ width: 24, height: 24 }} />
-                      Delete Photo
+                      {t('settings.deleteImage')}
                     </React.Fragment>
                   )
                   : (
                     <React.Fragment>
                       <PhotoCamera sx={{ width: 24, height: 24 }} />
-                      Upload Photo
+                      {t('settings.uploadImage')}
                     </React.Fragment>
                   )
                 }
@@ -116,8 +120,12 @@ export default function UploadImage(
           textAlign="center"
           color="textSecondary"
         >
-          Allowed *.jpeg, *.jpg, *.png, *.gif <br />
-          max size of 3.1 MB
+          <Trans i18nKey="settings.allowed_format" format={format}>
+            Allowed {{ format }}
+          </Trans> <br />
+          <Trans i18nKey="settings.maxSizeOf_size" size={size}>
+            max size of {{ size }}
+          </Trans>
         </Typography>
       </Card>
     </React.Fragment>

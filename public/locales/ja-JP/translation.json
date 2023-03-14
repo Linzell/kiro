@@ -31,6 +31,10 @@
     "billing": "請求",
     "notifications": "通知",
     "social": "ソーシャル",
-    "appIdentity": "アプリケーションID"
+    "appIdentity": "アプリケーションID",
+    "uploadImage": "画像をアップロード",
+    "deleteImage": "画像を削除",
+    "allowed_format": "許可されたフォーマット {{format}}",
+    "maxSizeOf_size": "最大サイズ {{size}}"
   }
 }

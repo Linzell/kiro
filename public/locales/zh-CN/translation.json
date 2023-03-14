@@ -31,6 +31,10 @@
     "billing": "账单",
     "notifications": "通知",
     "social": "社交",
-    "appIdentity": "应用身份"
+    "appIdentity": "应用身份",
+    "uploadImage": "上传图片",
+    "deleteImage": "删除图片",
+    "allowed_format": "允许的格式 {{format}}",
+    "maxSizeOf_size": "最大尺寸 {{size}}"
   }
 }
