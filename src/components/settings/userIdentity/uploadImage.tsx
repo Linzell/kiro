@@ -6,10 +6,10 @@ import Card from '@mui/material/Card';
 import Typography from '@mui/material/Typography';
 import { useAppDispatch } from '$/hooks';
 import { updateCurrentUser } from '$/user';
-import ImageButton from '@/settings/styles/userIdentity/imageButton';
-import ImageSrc from '@/settings/styles/userIdentity/imageSrc';
-import Image from '@/settings/styles/userIdentity/image';
-import ImageBackdrop from '@/settings/styles/userIdentity/imageBackdrop';
+import ImageButton from '@/settings/styles/userIdentityStyles/imageButton';
+import ImageSrc from '@/settings/styles/userIdentityStyles/imageSrc';
+import Image from '@/settings/styles/userIdentityStyles/image';
+import ImageBackdrop from '@/settings/styles/userIdentityStyles/imageBackdrop';
 import User from '#/user';
 
 export default function UploadImage(
@@ -28,7 +28,7 @@ export default function UploadImage(
     dispatch(updateCurrentUser(props.user));
   };
   const setImage = (newImage: string | null) => {
-    if (props.user.imgUrl) {
+    if (image) {
       cleanup();
     }
     _setImage(newImage);
