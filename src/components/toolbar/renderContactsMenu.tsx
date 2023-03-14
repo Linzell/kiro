@@ -70,7 +70,7 @@ export default function RenderContactsMenu(
       </Typography>
       {
         users.map((user, key) => (
-          <Tooltip key={key} title={`Start a chat with ${user.name}`} placement='top'>
+          <Tooltip key={key} title={`Start a chat with ${user.name}`} placement='left'>
             <MenuItem onClick={handleMenuClose} sx={{
               ml: 1,
               mr: 1,

@@ -10,15 +10,12 @@ const ImageButton = styled(ButtonBase)(({ theme }) => ({
   margin: '1rem',
   [theme.breakpoints.down('sm')]: {
     width: '100% !important', // Overrides inline-style
-    height: 100,
+    height: 200,
   },
   '&:hover, &.Mui-focusVisible': {
     zIndex: 1,
     '& .MuiImageBackdrop-root': {
       opacity: 0.30,
-    },
-    '& .MuiImageMarked-root': {
-      opacity: 0,
     },
   },
 }));

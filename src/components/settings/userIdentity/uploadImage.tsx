@@ -5,8 +5,6 @@ import TrashIcon from '@mui/icons-material/Delete';
 import IconButton from '@mui/material/IconButton';
 import Card from '@mui/material/Card';
 import Typography from '@mui/material/Typography';
-import { useAppDispatch } from '$/hooks';
-import { updateCurrentUser } from '$/user';
 import ImageButton from '@/settings/styles/userIdentityStyles/imageButton';
 import ImageSrc from '@/settings/styles/userIdentityStyles/imageSrc';
 import Image from '@/settings/styles/userIdentityStyles/image';
@@ -21,23 +19,19 @@ export default function UploadImage(
   const { t } = useTranslation();
   const format = '*.jpeg, *.jpg, *.png, *.gif';
   const size = '3.1 MB';
-  const dispatch = useAppDispatch();
   const inputEl = React.useRef(null);
   const [image, _setImage] = React.useState(props.user.imgUrl || null);
   const cleanup = () => {
     if (!image) return;
     URL.revokeObjectURL(image);
-    inputEl.current = null;
-    props.user.imgUrl = '';
-    dispatch(updateCurrentUser(props.user));
+    if (!inputEl.current) return;
+    Object(inputEl.current).value = null;
   };
   const setImage = (newImage: string | null) => {
     if (image) {
       cleanup();
     }
     _setImage(newImage);
-    props.user.imgUrl = newImage as string;
-    dispatch(updateCurrentUser(props.user));
   };
   const handleClick = (event: any) => {
     if (image) {
@@ -64,13 +58,13 @@ export default function UploadImage(
         }}
       >
         <ImageButton
+          onClick={handleClick}
         >
-          <ImageSrc style={{ backgroundImage: `url(${props.user.imgUrl})` }} />
+          <ImageSrc style={{ backgroundImage: `url(${image})` }} />
           <ImageBackdrop className="MuiImageBackdrop-root" />
           <IconButton
             aria-label="upload picture"
             component="label"
-            onClick={handleClick}
           >
             <input
               hidden
@@ -82,7 +76,7 @@ export default function UploadImage(
             />
             <Image>
               <Typography
-                component="span"
+                component="div"
                 variant="subtitle1"
                 color={image ? 'error' : 'primary'}
                 sx={{
@@ -90,6 +84,10 @@ export default function UploadImage(
                   display: 'flex',
                   flexDirection: 'column',
                   alignItems: 'center',
+                  justifyContent: 'center',
+                  width: 200,
+                  height: 200,
+                  borderRadius: '50%',
                   p: 4,
                   pt: 2,
                   pb: (theme) => `calc(${theme.spacing(1)} + 6px)`,
@@ -98,14 +96,22 @@ export default function UploadImage(
                 {image
                   ? (
                     <React.Fragment>
-                      <TrashIcon sx={{ width: 24, height: 24 }} />
-                      {t('settings.deleteImage')}
+                      <TrashIcon fontSize="large" />
+                      <Typography sx={{
+                        width: 200,
+                      }}>
+                        {t('settings.deleteImage')}
+                      </Typography>
                     </React.Fragment>
                   )
                   : (
                     <React.Fragment>
-                      <PhotoCamera sx={{ width: 24, height: 24 }} />
-                      {t('settings.uploadImage')}
+                      <PhotoCamera fontSize="large" />
+                      <Typography sx={{
+                        width: 200,
+                      }}>
+                        {t('settings.uploadImage')}
+                      </Typography>
                     </React.Fragment>
                   )
                 }
@@ -124,7 +130,7 @@ export default function UploadImage(
             Allowed {{ format }}
           </Trans> <br />
           <Trans i18nKey="settings.maxSizeOf_size" size={size}>
-            max size of {{ size }}
+            maximum size of {{ size }}
           </Trans>
         </Typography>
       </Card>

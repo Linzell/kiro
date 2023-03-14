@@ -61,7 +61,7 @@ export default function renderMenu(
       transformOrigin={{ horizontal: 'right', vertical: 'top' }}
       anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
     >
-      <Tooltip title={`${t('menu.goToThePageFrom')} ${user.name}`} placement='top'>
+      <Tooltip title={`${t('menu.goToThePageFrom')} ${user.name}`} placement='left'>
         <MenuItem onClick={() => redirectTo(`/user/${user.publicKey}`)}
           aria-label={`${t('menu.goToThePageFrom')} ${user.name}`}
           role="button"
@@ -79,7 +79,7 @@ export default function renderMenu(
         </MenuItem>
       </Tooltip>
       <Divider />
-      <Tooltip title={t('menu.goToTheHomePage')} placement='top'>
+      <Tooltip title={t('menu.goToTheHomePage')} placement='left'>
         <MenuItem onClick={() => redirectTo('/')}
           aria-label={`${t('menu.goToTheHomePage')}`}
           role="button"
@@ -94,7 +94,7 @@ export default function renderMenu(
           {t('menu.home')}
         </MenuItem>
       </Tooltip>
-      <Tooltip title={t('menu.goToTheAboutPage')} placement='top'>
+      <Tooltip title={t('menu.goToTheAboutPage')} placement='left'>
         <MenuItem onClick={() => redirectTo('about')}
           aria-label={`${t('menu.goToTheAboutPage')}`}
           role="button"
@@ -109,7 +109,7 @@ export default function renderMenu(
           {t('menu.about')}
         </MenuItem>
       </Tooltip>
-      <Tooltip title={t('menu.goToTheSettingsPage')} placement='top'>
+      <Tooltip title={t('menu.goToTheSettingsPage')} placement='left'>
         <MenuItem onClick={() => redirectTo('settings')}
           aria-label={`${t('menu.goToTheSettingsPage')}`}
           role="button"
@@ -125,7 +125,7 @@ export default function renderMenu(
         </MenuItem>
       </Tooltip>
       <Divider />
-      <Tooltip title={t('menu.logout')} placement='top'>
+      <Tooltip title={t('menu.logout')} placement='left'>
         <MenuItem onClick={handleMenuClose}
           aria-label={`${t('menu.logout')}`}
           role="button"

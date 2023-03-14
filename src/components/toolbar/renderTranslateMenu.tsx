@@ -62,7 +62,7 @@ export default function renderTranslateMenu(
     >
       {
         props.languages.map((language, key) => (
-          <Tooltip key={key} title={`${t('menu.changeLanguageTo')} ${language.name}`} placement='top'>
+          <Tooltip key={key} title={`${t('menu.changeLanguageTo')} ${language.name}`} placement='left'>
             <MenuItem
               onClick={() => changeLanguage(language.code)}
               aria-label={language.name}
