@@ -12,13 +12,19 @@ export default function userForm(
   },
 ) {
   const [user, setUser] = React.useState(props.user);
+  const [name, setName] = React.useState(props.user.name);
+  const [email, setEmail] = React.useState(props.user.email);
   useEffect(() => {
     setUser(props.user);
   }, [props.user]);
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    user[event.target.id] = event.target.value;
-    setUser(user);
+  useEffect(() => {
+    user.name = name;
+    user.email = email;
     props.setUser(user);
+  }, [name, email]);
+  const emailValidator = (value: string) => {
+    const regex = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
+    return regex.test(value);
   };
   return (
     <Card
@@ -32,21 +38,25 @@ export default function userForm(
           gap: 2,
         }}>
         <TextField
-          error={user.name.length < 3}
-          onChange={ handleChange}
           id="name"
           label="Name"
-          defaultValue={user.name}
+          value={name}
+          error={user.name.length < 3}
+          onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+            setName(event.target.value);
+          }}
           helperText={user.name.length < 3 ? 'Name must be at least 3 characters long' : ''}
           sx={{ width: '50%' }}
         />
         <TextField
-          error={user.email.length < 3}
-          onChange={ handleChange}
           id="email"
           label="Email"
-          defaultValue={user.email}
-          helperText={user.email.length < 3 ? 'Email must be at least 3 characters long' : ''}
+          value={email}
+          error={!emailValidator(user.email)}
+          onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+            setEmail(event.target.value);
+          }}
+          helperText={!emailValidator(user.email) ? 'Email is not valid' : ''}
           sx={{ width: '50%' }}
         />
       </CardContent>
