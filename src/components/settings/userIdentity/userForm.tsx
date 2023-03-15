@@ -14,6 +14,7 @@ export default function userForm(
   const [user, setUser] = React.useState(props.user);
   const [name, setName] = React.useState(props.user.name);
   const [email, setEmail] = React.useState(props.user.email);
+  const [description, setDescription] = React.useState(props.user.description);
   useEffect(() => {
     setUser(props.user);
   }, [props.user]);
@@ -21,7 +22,7 @@ export default function userForm(
     user.name = name;
     user.email = email;
     props.setUser(user);
-  }, [name, email]);
+  }, [name, email, description]);
   const emailValidator = (value: string) => {
     const regex = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
     return regex.test(value);
@@ -106,12 +107,15 @@ export default function userForm(
       </CardContent>
       <CardContent>
         <TextField
-          id="outlined-multiline-static"
-          label="Multiline"
+          id="description"
+          label="Description"
+          value={description}
+          onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+            setDescription(event.target.value);
+          }}
           fullWidth
           multiline
           rows={4}
-          defaultValue="Default Value"
         />
       </CardContent>
       <CardContent
@@ -119,7 +123,11 @@ export default function userForm(
           display: 'flex',
           justifyContent: 'flex-end',
         }}>
-        <Button variant="contained">Save changes</Button>
+        <Button
+          disabled={user.name.length < 3 || !emailValidator(user.email)}
+          variant="contained">
+          Save changes
+        </Button>
       </CardContent>
     </Card>
   );
