@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useTranslation, Trans } from 'react-i18next';
 import PhotoCamera from '@mui/icons-material/PhotoCamera';
 import TrashIcon from '@mui/icons-material/Delete';
@@ -14,24 +14,33 @@ import User from '#/user';
 export default function UploadImage(
   props: {
     user: User,
+    setUser: React.Dispatch<React.SetStateAction<User>>,
   },
 ) {
   const { t } = useTranslation();
+  const [user, setUser] = React.useState(props.user);
+  useEffect(() => {
+    setUser(props.user);
+  }, [props.user]);
   const format = '*.jpeg, *.jpg, *.png, *.gif';
   const size = '3.1 MB';
   const inputEl = React.useRef(null);
-  const [image, _setImage] = React.useState(props.user.imgUrl || null);
+  const [image, _setImage] = React.useState(user.imgUrl || null);
   const cleanup = () => {
     if (!image) return;
     URL.revokeObjectURL(image);
     if (!inputEl.current) return;
     Object(inputEl.current).value = null;
+    user.imgUrl = '';
+    props.setUser(user);
   };
   const setImage = (newImage: string | null) => {
     if (image) {
       cleanup();
     }
     _setImage(newImage);
+    user.imgUrl = newImage as string;
+    props.setUser(user);
   };
   const handleClick = (event: any) => {
     if (image) {
@@ -60,7 +69,7 @@ export default function UploadImage(
         <ImageButton
           onClick={handleClick}
         >
-          <ImageSrc style={{ backgroundImage: `url(${image})` }} />
+          <ImageSrc style={{ backgroundImage: `url(${user.imgUrl})` }} />
           <ImageBackdrop className="MuiImageBackdrop-root" />
           <IconButton
             aria-label="upload picture"
@@ -93,7 +102,7 @@ export default function UploadImage(
                   pb: (theme) => `calc(${theme.spacing(1)} + 6px)`,
                 }}
               >
-                {image
+                {user.imgUrl
                   ? (
                     <React.Fragment>
                       <TrashIcon fontSize="large" />

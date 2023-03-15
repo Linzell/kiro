@@ -5,7 +5,7 @@ import UploadImage from './userIdentity/uploadImage';
 import UserForm from './userIdentity/userForm';
 
 export default function RenderUserIdentityTab() {
-  const currentUser = useAppSelector((state) => state.userStore.currentUser);
+  const [user, setUser] = React.useState(useAppSelector((state) => state.userStore.currentUser));
   return (
     <Box sx={{
       display: 'flex',
@@ -15,8 +15,8 @@ export default function RenderUserIdentityTab() {
       gap: 4,
       ariaLabel: 'user identity',
     }}>
-      <UploadImage user={currentUser} />
-      <UserForm user={currentUser} />
+      <UploadImage user={user} setUser={setUser} />
+      <UserForm user={user} setUser={setUser} />
     </Box>
   );
 }
