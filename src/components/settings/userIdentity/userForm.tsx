@@ -15,6 +15,11 @@ export default function userForm(
   useEffect(() => {
     setUser(props.user);
   }, [props.user]);
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    user[event.target.id] = event.target.value;
+    setUser(user);
+    props.setUser(user);
+  };
   return (
     <Card
       sx={{
@@ -28,11 +33,8 @@ export default function userForm(
         }}>
         <TextField
           error={user.name.length < 3}
-          onChange={(e) => {
-            user.name = e.target.value;
-            setUser(user);
-          }}
-          id="nameUser"
+          onChange={ handleChange}
+          id="name"
           label="Name"
           defaultValue={user.name}
           helperText={user.name.length < 3 ? 'Name must be at least 3 characters long' : ''}
@@ -40,7 +42,8 @@ export default function userForm(
         />
         <TextField
           error={user.email.length < 3}
-          id="emailUser"
+          onChange={ handleChange}
+          id="email"
           label="Email"
           defaultValue={user.email}
           helperText={user.email.length < 3 ? 'Email must be at least 3 characters long' : ''}
