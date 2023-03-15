@@ -3,6 +3,7 @@ import Card from '@mui/material/Card';
 import CardActionArea from '@mui/material/CardActionArea';
 import CardContent from '@mui/material/CardContent';
 import TextField from '@mui/material/TextField';
+import Button from '@mui/material/Button';
 import User from '#/user';
 
 export default function userForm(
@@ -67,6 +68,9 @@ export default function userForm(
             rows={4}
             defaultValue="Default Value"
           />
+        </CardContent>
+        <CardContent>
+          <Button variant="contained">Save changes</Button>
         </CardContent>
       </CardActionArea>
     </Card>
