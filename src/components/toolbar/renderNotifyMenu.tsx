@@ -107,11 +107,12 @@ export default function renderNotify(
           }}>
             <NotificationImageModule notification={notification} />
             <ListItemText
+              inset
               primary={
                 <React.Fragment>
                   <Typography
                     sx={{ display: 'inline' }}
-                    component="span"
+                    component="div"
                     variant="subtitle2"
                     color="text.primary"
                   >
@@ -130,19 +131,20 @@ export default function renderNotify(
               }
               secondary={
                 <React.Fragment>
-                  <ListItemIcon sx={{ alignItems: 'center' }}>
-                    <AccessTimeFilledIcon fontSize="inherit" color="action" />
-                    <Typography variant="caption" color="grey.500" sx={{ ml: 1, fontSize: '0.8rem' }}>
-                      {moment(notification.date).fromNow()}
-                    </Typography>
-                  </ListItemIcon>
+                  <AccessTimeFilledIcon fontSize="inherit" color="action" />
+                  <Typography variant="caption" color="grey.500" sx={{ ml: 1, fontSize: '0.8rem' }}>
+                    {moment(notification.date).fromNow()}
+                  </Typography>
                 </React.Fragment>
               }
             />
           </MenuItem>
         ))
       }
-      <Typography variant="caption" sx={{ px: 2, py: 1 }}>
+      <Typography
+        component="div"
+        variant="caption"
+        sx={{ px: 2, py: 1 }}>
         <strong>BEFORE THAT</strong>
       </Typography>
       {
@@ -159,7 +161,7 @@ export default function renderNotify(
                 <React.Fragment>
                   <Typography
                     sx={{ display: 'inline' }}
-                    component="span"
+                    component="div"
                     variant="subtitle2"
                     color="text.primary"
                   >
@@ -178,12 +180,10 @@ export default function renderNotify(
               }
               secondary={
                 <React.Fragment>
-                  <ListItemIcon sx={{ alignItems: 'center' }}>
-                    <AccessTimeFilledIcon fontSize="inherit" color="action" />
-                    <Typography variant="caption" color="grey.500" sx={{ ml: 1, fontSize: '0.8rem' }}>
-                      {moment(notification.date).fromNow()}
-                    </Typography>
-                  </ListItemIcon>
+                  <AccessTimeFilledIcon fontSize="inherit" color="action" />
+                  <Typography variant="caption" color="grey.500" sx={{ ml: 1, fontSize: '0.8rem' }}>
+                    {moment(notification.date).fromNow()}
+                  </Typography>
                 </React.Fragment>
               }
             />
@@ -197,7 +197,7 @@ export default function renderNotify(
         borderRadius: 2,
       }}>
         <Typography
-          component="span"
+          component="div"
           variant="subtitle2"
           sx={{
             width: '100%',
