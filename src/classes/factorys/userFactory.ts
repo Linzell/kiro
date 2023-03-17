@@ -94,4 +94,4 @@ class createUserFromJson {
   }
 }
 
-export default NewUser;
+export default { NewUser, createUserFromJson };

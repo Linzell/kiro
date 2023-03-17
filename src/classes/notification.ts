@@ -22,7 +22,7 @@ interface NotificationInterface {
  * )
  * ```
  */
-class Notification implements NotificationInterface {
+class Notification {
   private notificationInterface: NotificationInterface;
 
   constructor(

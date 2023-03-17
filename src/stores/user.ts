@@ -1,6 +1,6 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import NewUser from '#/factorys/userFactory';
+import UserFactory from '#/factorys/userFactory';
 import type { RootState } from '$/index';
 import User from '#/user';
 
@@ -19,7 +19,7 @@ interface userStoreInterface {
 
 // TODO: Temporaire, à supprimer
 function getCurrentUser(): User {
-  return new NewUser().factoryMethod(
+  return new UserFactory.NewUser().factoryMethod(
     '123456789',
     'd4fg56df4g654df65g4d65f4g65df4',
   );

@@ -88,4 +88,4 @@ class createTagFromJson extends TagFactory {
   }
 }
 
-export default [newTag, createTagFromJson];
+export default { newTag, createTagFromJson };

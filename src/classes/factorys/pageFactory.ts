@@ -91,4 +91,4 @@ class createPageFromJson extends PageCreator {
   }
 }
 
-export default [newPage, createPageFromJson];
+export default { newPage, createPageFromJson };

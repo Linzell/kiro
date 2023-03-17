@@ -66,4 +66,4 @@ class createTeamFromJson extends TeamCreator {
   }
 }
 
-export default [newTeam, createTeamFromJson];
+export default { newTeam, createTeamFromJson };

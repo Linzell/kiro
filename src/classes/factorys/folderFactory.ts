@@ -88,4 +88,4 @@ class createFolderFromJson extends FolderCreator {
   }
 }
 
-export default [newFolder, createFolderFromJson];
+export default { newFolder, createFolderFromJson };
