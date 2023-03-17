@@ -135,9 +135,9 @@ export default function UploadImage(
           textAlign="center"
           color="textSecondary"
         >
-          <Trans i18nKey="settings.allowed_format" format={format}>
-            Allowed {{ format }}
-          </Trans> <br />
+          <Trans i18nKey="settings.allowed_format">
+            Allowed
+          </Trans>  *.jpeg, *.jpg, *.png, *.gif<br />
           <Trans i18nKey="settings.maxSizeOf_size" size={size}>
             maximum size of {{ size }}
           </Trans>

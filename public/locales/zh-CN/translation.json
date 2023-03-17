@@ -34,7 +34,7 @@
     "appIdentity": "应用身份",
     "uploadImage": "上传图片",
     "deleteImage": "删除图片",
-    "allowed_format": "允许的格式 {{format}}",
+    "allowed_format": "允许的格式",
     "maxSizeOf_size": "最大尺寸 {{size}}"
   }
 }

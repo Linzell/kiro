@@ -34,7 +34,7 @@
     "appIdentity": "Identité de l'application",
     "uploadImage": "Télécharger une image",
     "deleteImage": "Supprimer l'image",
-    "allowed_format": "Formats autorisés {{format}}",
+    "allowed_format": "Formats autorisés",
     "maxSizeOf_size": "taille maximale {{size}}"
   }
 }

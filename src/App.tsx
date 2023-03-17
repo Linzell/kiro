@@ -1,11 +1,12 @@
 /* eslint-disable import/no-extraneous-dependencies */
 // import { invoke } from "@tauri-apps/api/tauri";
+import React from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { FireproofCtx, useFireproof } from '@fireproof/core/hooks/use-fireproof';
-import { Provider } from 'react-redux';
+import { useAppDispatch } from '$/hooks';
+import { updateUser } from '$/user';
 import defineIndexes from '$/defineDatabaseFn';
 import loadFixtures from '$/setupDatabaseFn';
-import store from './stores';
 
 import routes from '§/router/router';
 
@@ -14,17 +15,33 @@ const router = createBrowserRouter(routes);
 function App() {
   // const [greetMsg, setGreetMsg] = useState("");
   const fpCtxValue = useFireproof(defineIndexes, loadFixtures);
+  const { ready, database, addSubscriber } = React.useContext(FireproofCtx);
+
+  const getUsersUpdate = async () => {
+    const dispatch = useAppDispatch();
+    dispatch(updateUser(await database.get('users')));
+  };
+
+  React.useEffect(() => {
+    if (ready) {
+      getUsersUpdate();
+    }
+  }, [ready]);
+
+  addSubscriber('users', getUsersUpdate);
 
   /* async function greet() {
     // Learn more about Tauri commands at https://tauri.app/v1/guides/features/command
     setGreetMsg(await invoke("greet", { name }));
   } */
 
+  /* const getDataFn = async () => {
+    setUser(await database.get(user.id));
+  }; */
+
   return (
     <FireproofCtx.Provider value={fpCtxValue}>
-      <Provider store={store}>
-        <RouterProvider router={router} fallbackElement={null} />
-      </Provider>
+      <RouterProvider router={router} fallbackElement={null} />
     </FireproofCtx.Provider>
   );
 }

@@ -1,5 +1,4 @@
-import React, { useContext, useEffect } from 'react';
-import { FireproofCtx } from '@fireproof/core/hooks/use-fireproof';
+import React from 'react';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import TextField from '@mui/material/TextField';
@@ -12,36 +11,18 @@ export default function userForm(
     setUser: React.Dispatch<React.SetStateAction<User>>,
   },
 ) {
-  const { ready, database, addSubscriber } = useContext(FireproofCtx);
   const [user, setUser] = React.useState(props.user);
   const [name, setName] = React.useState(props.user.name);
   const [email, setEmail] = React.useState(props.user.email);
   const [description, setDescription] = React.useState(props.user.description);
-
-  useEffect(() => {
+  React.useEffect(() => {
     setUser(props.user);
   }, [props.user]);
-
-  const getDataFn = async () => {
-    setUser(await database.get(user.id));
-  };
-
-  addSubscriber('users', getDataFn);
-
-  useEffect(() => {
-    if (ready) {
-      getDataFn();
-    }
-  }, [ready]);
-
-  const updateFn = async () => {
-    await database.put({ _id: user.id, user: user.toJSON() });
-  };
-  useEffect(() => {
+  React.useEffect(() => {
     user.name = name;
     user.email = email;
+    user.description = description;
     props.setUser(user);
-    updateFn();
   }, [name, email, description]);
   const emailValidator = (value: string) => {
     const regex = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
@@ -53,7 +34,6 @@ export default function userForm(
         width: { xs: '85vw', md: '60vw' },
         padding: 2,
       }}>
-      <pre>{JSON.stringify(user)}</pre>
       <CardContent
         sx={{
           display: 'flex',

@@ -34,7 +34,7 @@
     "appIdentity": "アプリケーションID",
     "uploadImage": "画像をアップロード",
     "deleteImage": "画像を削除",
-    "allowed_format": "許可されたフォーマット {{format}}",
+    "allowed_format": "許可されたフォーマット",
     "maxSizeOf_size": "最大サイズ {{size}}"
   }
 }
