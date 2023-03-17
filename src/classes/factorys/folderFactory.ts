@@ -62,4 +62,30 @@ class newFolder extends FolderCreator {
   }
 }
 
-export default [newFolder];
+/**
+ * Generates a new instance of a Folder from a json payload
+ * @factoryMethod returns a new instance of a Folder
+ * @param jsonPayload [Required] - json payload of the folder
+ */
+class createFolderFromJson extends FolderCreator {
+  // eslint-disable-next-line class-methods-use-this
+  public factoryMethod(jsonPayload: any): Folder {
+    return new Folder(
+      jsonPayload.id,
+      jsonPayload.cid,
+      jsonPayload.name,
+      jsonPayload.ownerId,
+      jsonPayload.description,
+      jsonPayload.content,
+      jsonPayload.imgUrl,
+      jsonPayload.createdDate,
+      jsonPayload.modifiedDate,
+      jsonPayload.tags,
+      jsonPayload.followerIds,
+      jsonPayload.expertsIds,
+      jsonPayload.items,
+    );
+  }
+}
+
+export default [newFolder, createFolderFromJson];

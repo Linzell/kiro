@@ -68,4 +68,30 @@ class NewUser extends UserCreator {
   }
 }
 
+class createUserFromJson {
+  // eslint-disable-next-line class-methods-use-this
+  public factoryMethod(
+    jsonPayload: any,
+  ): User {
+    return new User(
+      jsonPayload.id,
+      jsonPayload.cid,
+      jsonPayload.name,
+      jsonPayload.ownerId,
+      jsonPayload.description,
+      jsonPayload.content,
+      jsonPayload.imgUrl,
+      jsonPayload.createdDate,
+      jsonPayload.modifiedDate,
+      jsonPayload.tags,
+      jsonPayload.followerIds,
+      jsonPayload.expertsIds,
+      jsonPayload.email,
+      jsonPayload.peerId,
+      jsonPayload.publicKey,
+      jsonPayload.onlineStatus,
+    );
+  }
+}
+
 export default NewUser;

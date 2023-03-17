@@ -11,37 +11,49 @@ function mulberry32(a: number) {
 }
 const rand = mulberry32(1); // determinstic fixtures
 
-export default async function loadFixtures(database: any) {
+// TODO: Prendre les données depuis les Factory
+
+function initFolderStore() {
+  return [];
+}
+
+function initPageStore() {
+  return [];
+}
+
+function initTagStore() {
+  return [];
+}
+
+function initTeamStore() {
+  return [];
+}
+
+function initUserStore() {
+  return [];
+}
+
+export default async function loadFixtures<T>(database: any): Promise<T> {
   const nextId = (prefix = '') => prefix + rand().toString(32).slice(2);
-  const listTitles = ['Building Apps', 'Having Fun', 'Getting Groceries'];
-  const todoTitles = [
-    [
-      'In the browser',
-      'On the phone',
-      'With or without Redux',
-      'Login components',
-      'GraphQL queries',
-      'Automatic replication and versioning',
-    ],
-    ['Rollerskating meetup', 'Motorcycle ride', 'Write a sci-fi story with ChatGPT'],
-    ['Macadamia nut milk', 'Avocado toast', 'Coffee', 'Bacon', 'Sourdough bread', 'Fruit salad'],
+  const listStores = ['folder', 'page', 'tag', 'team', 'user'];
+  const storesDataBase = [
+    initFolderStore(),
+    initPageStore(),
+    initTagStore(),
+    initTeamStore(),
+    initUserStore(),
   ];
   let ok;
-  for (let j = 0; j < 3; j + 1) {
+  await Promise.all(listStores.map(async (listStore, index) => {
     ok = await database.put({
-      title: listTitles[j],
-      type: 'list',
+      title: listStore,
+      type: 'store',
       // eslint-disable-next-line prefer-template
-      _id: nextId('' + j),
+      _id: nextId('' + index),
     });
-    for (let i = 0; i < todoTitles[j].length; i + 1) {
-      await database.put({
-        _id: nextId(),
-        title: todoTitles[j][i],
-        listId: ok.id,
-        completed: rand() > 0.75,
-        type: 'todo',
-      });
-    }
-  }
+    storesDataBase[index].map(async (store: any) => {
+      await database.put(store);
+    });
+  }));
+  return ok as T;
 }

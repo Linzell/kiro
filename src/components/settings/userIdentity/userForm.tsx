@@ -17,14 +17,17 @@ export default function userForm(
   const [name, setName] = React.useState(props.user.name);
   const [email, setEmail] = React.useState(props.user.email);
   const [description, setDescription] = React.useState(props.user.description);
+
   useEffect(() => {
     setUser(props.user);
   }, [props.user]);
+
   const getDataFn = async () => {
     setUser(await database.get(user.id));
   };
 
   addSubscriber('users', getDataFn);
+
   useEffect(() => {
     if (ready) {
       getDataFn();
@@ -50,7 +53,7 @@ export default function userForm(
         width: { xs: '85vw', md: '60vw' },
         padding: 2,
       }}>
-      <pre>{ JSON.stringify(user) }</pre>
+      <pre>{JSON.stringify(user)}</pre>
       <CardContent
         sx={{
           display: 'flex',

@@ -47,4 +47,23 @@ class newTeam extends TeamCreator {
   }
 }
 
-export default [newTeam];
+/**
+ * Generates a new instance of a Team from a json payload
+ * @factoryMethod returns a new instance of a Team
+ * @param jsonPayload [Required] - json payload of the team
+ */
+class createTeamFromJson extends TeamCreator {
+  // eslint-disable-next-line class-methods-use-this
+  public factoryMethod(jsonPayload: any): Team {
+    return new Team(
+      jsonPayload.id,
+      jsonPayload.name,
+      jsonPayload.ownerId,
+      jsonPayload.adminsIds,
+      jsonPayload.usersIds,
+      jsonPayload.description,
+    );
+  }
+}
+
+export default [newTeam, createTeamFromJson];

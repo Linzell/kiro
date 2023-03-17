@@ -65,4 +65,30 @@ class newPage extends PageCreator {
   }
 }
 
-export default [newPage];
+/**
+ * Generates a new instance of a Page from a json payload
+ * @factoryMethod returns a new instance of a Page
+ * @param jsonPayload [Required] - json payload of the page
+ */
+class createPageFromJson extends PageCreator {
+  // eslint-disable-next-line class-methods-use-this
+  public factoryMethod(jsonPayload: any): Page {
+    return new Page(
+      jsonPayload.id,
+      jsonPayload.cid,
+      jsonPayload.name,
+      jsonPayload.ownerId,
+      jsonPayload.description,
+      jsonPayload.content,
+      jsonPayload.imgUrl,
+      jsonPayload.createdDate,
+      jsonPayload.modifiedDate,
+      jsonPayload.tags,
+      jsonPayload.followerIds,
+      jsonPayload.expertsIds,
+      jsonPayload.parentId,
+    );
+  }
+}
+
+export default [newPage, createPageFromJson];

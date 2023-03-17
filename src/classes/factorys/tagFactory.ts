@@ -62,4 +62,30 @@ class newTag extends TagFactory {
   }
 }
 
-export default [newTag];
+/**
+ * Generates a new instance of a Tag from a json payload
+ * @factoryMethod returns a new instance of a Tag
+ * @param jsonPayload [Required] - json payload of the tag
+ */
+class createTagFromJson extends TagFactory {
+  // eslint-disable-next-line class-methods-use-this
+  public factoryMethod(jsonPayload: any): Tag {
+    return new Tag(
+      jsonPayload.id,
+      jsonPayload.cid,
+      jsonPayload.name,
+      jsonPayload.ownerId,
+      jsonPayload.description,
+      jsonPayload.content,
+      jsonPayload.imgUrl,
+      jsonPayload.createdDate,
+      jsonPayload.modifiedDate,
+      jsonPayload.tags,
+      jsonPayload.followerIds,
+      jsonPayload.expertsIds,
+      jsonPayload.colorTag,
+    );
+  }
+}
+
+export default [newTag, createTagFromJson];
