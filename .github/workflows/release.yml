@@ -26,6 +26,8 @@ jobs:
           registry-url: "https://npm.pkg.github.com"
       - name: Pnpm Install
         run: pnpm install --no-frozen-lockfile
+      - name: Install gdk-3.0
+        run: sudo apt-get install libgtk-3-dev
       - name: build
         run: 
           pnpm tauri build
