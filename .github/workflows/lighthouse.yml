@@ -23,7 +23,7 @@ jobs:
           cache: "npm"
           registry-url: "https://npm.pkg.github.com"
       - name: Pnpm Install
-        run: pnpm install && pnpm add @lhci/cli@0.9.x
+        run: pnpm install --no-frozen-lockfile && pnpm add @lhci/cli@0.9.x
       - name: build
         run: 
           pnpm vite build
