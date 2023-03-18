@@ -11,7 +11,7 @@ updates:
       interval: "weekly"
     # Add assignees
     assignees:
-      - "linzell"
+      - "Linzell"
     commit-message:
       # Prefix all commit messages with "GA: ""
       prefix: "GA"
@@ -22,7 +22,7 @@ updates:
     target-branch: "master"
     # Add assignees
     assignees:
-      - "linzell"
+      - "Linzell"
     commit-message:
       # Prefix all commit messages with "npm: "
       prefix: "npm"
