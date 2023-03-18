@@ -17,18 +17,18 @@ function App() {
   const fpCtxValue = useFireproof(defineIndexes, loadFixtures);
   const { ready, database, addSubscriber } = React.useContext(FireproofCtx);
 
-  const getUsersUpdate = async () => {
+  const getUsers = async () => {
     const dispatch = useAppDispatch();
     dispatch(updateUser(await database.get('users')));
   };
 
   React.useEffect(() => {
     if (ready) {
-      getUsersUpdate();
+      getUsers();
     }
   }, [ready]);
 
-  addSubscriber('users', getUsersUpdate);
+  addSubscriber('users', getUsers);
 
   /* async function greet() {
     // Learn more about Tauri commands at https://tauri.app/v1/guides/features/command

@@ -31,7 +31,7 @@ abstract class FolderCreator {
  * @param expertsIds - expert ids of the folder
  * @param items - items of the folder
  */
-class newFolder extends FolderCreator {
+class NewFolder extends FolderCreator {
   // eslint-disable-next-line class-methods-use-this
   public factoryMethod(
     name: string,
@@ -67,7 +67,7 @@ class newFolder extends FolderCreator {
  * @factoryMethod returns a new instance of a Folder
  * @param jsonPayload [Required] - json payload of the folder
  */
-class createFolderFromJson extends FolderCreator {
+class CreateFolderFromJson extends FolderCreator {
   // eslint-disable-next-line class-methods-use-this
   public factoryMethod(jsonPayload: any): Folder {
     return new Folder(
@@ -88,4 +88,4 @@ class createFolderFromJson extends FolderCreator {
   }
 }
 
-export default { newFolder, createFolderFromJson };
+export default { NewFolder, CreateFolderFromJson };

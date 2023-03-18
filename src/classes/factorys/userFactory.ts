@@ -68,7 +68,7 @@ class NewUser extends UserCreator {
   }
 }
 
-class createUserFromJson {
+class CreateUserFromJson {
   // eslint-disable-next-line class-methods-use-this
   public factoryMethod(
     jsonPayload: any,
@@ -94,4 +94,4 @@ class createUserFromJson {
   }
 }
 
-export default { NewUser, createUserFromJson };
+export default { NewUser, CreateUserFromJson };

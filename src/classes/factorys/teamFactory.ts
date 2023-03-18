@@ -27,7 +27,7 @@ abstract class TeamCreator {
  * @param usersIds - user ids of the team
  * @param description - description of the team
  */
-class newTeam extends TeamCreator {
+class NewTeam extends TeamCreator {
   // eslint-disable-next-line class-methods-use-this
   public factoryMethod(
     name: string,
@@ -52,7 +52,7 @@ class newTeam extends TeamCreator {
  * @factoryMethod returns a new instance of a Team
  * @param jsonPayload [Required] - json payload of the team
  */
-class createTeamFromJson extends TeamCreator {
+class CreateTeamFromJson extends TeamCreator {
   // eslint-disable-next-line class-methods-use-this
   public factoryMethod(jsonPayload: any): Team {
     return new Team(
@@ -66,4 +66,4 @@ class createTeamFromJson extends TeamCreator {
   }
 }
 
-export default { newTeam, createTeamFromJson };
+export default { NewTeam, CreateTeamFromJson };

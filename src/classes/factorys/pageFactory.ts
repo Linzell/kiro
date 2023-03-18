@@ -34,7 +34,7 @@ abstract class PageCreator {
  * @param followerIds - follower ids of the page
  * @param expertsIds - expert ids of the page
  */
-class newPage extends PageCreator {
+class NewPage extends PageCreator {
   // eslint-disable-next-line class-methods-use-this
   public factoryMethod(
     name: string,
@@ -70,7 +70,7 @@ class newPage extends PageCreator {
  * @factoryMethod returns a new instance of a Page
  * @param jsonPayload [Required] - json payload of the page
  */
-class createPageFromJson extends PageCreator {
+class CreatePageFromJson extends PageCreator {
   // eslint-disable-next-line class-methods-use-this
   public factoryMethod(jsonPayload: any): Page {
     return new Page(
@@ -91,4 +91,4 @@ class createPageFromJson extends PageCreator {
   }
 }
 
-export default { newPage, createPageFromJson };
+export default { NewPage, CreatePageFromJson };

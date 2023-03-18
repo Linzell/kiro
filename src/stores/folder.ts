@@ -1,6 +1,7 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import type { RootState } from '$/index';
+import FolderFactory from '#/factorys/folderFactory';
 import Folder from '#/folder';
 
 /**
@@ -12,12 +13,21 @@ interface folderStoreInterface {
   folders: Array<Folder>;
 }
 
+function getFolderStoreFromJson(folderStoreJson: string): Folder[] {
+  if (folderStoreJson) {
+    const folderStore = JSON.parse(folderStoreJson);
+    return folderStore.map((folder: Folder) => new FolderFactory
+      .CreateFolderFromJson().factoryMethod(folder));
+  }
+  return [];
+}
+
 /**
  * Initial state for Redux store
  * @type {folderStoreInterface}
  */
 const initialState: folderStoreInterface = {
-  folders: [],
+  folders: getFolderStoreFromJson(localStorage.getItem('folderStore') as string) || [],
 };
 
 /**
@@ -32,12 +42,14 @@ const foldersSlice = createSlice({
      */
     addFolder: (state, action: PayloadAction<Folder>) => {
       state.folders.push(action.payload);
+      localStorage.setItem('folderStore', JSON.stringify(state.folders));
     },
     /**
      * Remove a folder from the collection
      */
     removeFolder: (state, action: PayloadAction<Folder>) => {
       state.folders = state.folders.filter((folder) => folder.id !== action.payload.id);
+      localStorage.setItem('folderStore', JSON.stringify(state.folders));
     },
     /**
      * Update a folder in the collection
@@ -49,6 +61,7 @@ const foldersSlice = createSlice({
         }
         return folder;
       });
+      localStorage.setItem('folderStore', JSON.stringify(state.folders));
     },
   },
 });

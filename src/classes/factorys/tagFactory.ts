@@ -31,7 +31,7 @@ abstract class TagFactory {
  * @param expertsIds - expert ids of the tag
  * @param colorTag - color of the tag
  */
-class newTag extends TagFactory {
+class NewTag extends TagFactory {
   // eslint-disable-next-line class-methods-use-this
   public factoryMethod(
     name: string,
@@ -67,7 +67,7 @@ class newTag extends TagFactory {
  * @factoryMethod returns a new instance of a Tag
  * @param jsonPayload [Required] - json payload of the tag
  */
-class createTagFromJson extends TagFactory {
+class CreateTagFromJson extends TagFactory {
   // eslint-disable-next-line class-methods-use-this
   public factoryMethod(jsonPayload: any): Tag {
     return new Tag(
@@ -88,4 +88,4 @@ class createTagFromJson extends TagFactory {
   }
 }
 
-export default { newTag, createTagFromJson };
+export default { NewTag, CreateTagFromJson };
