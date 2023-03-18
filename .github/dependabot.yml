@@ -26,18 +26,3 @@ updates:
     commit-message:
       # Prefix all commit messages with "npm: "
       prefix: "npm"
-jobs:
-    name: Dependabot
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node: [ 16 ]
-    permissions:
-      contents: read
-      pull-requests: write 
-    steps:
-      - uses: pnpm/action-setup@v2
-        with:
-          version: 6.0.2
-      - name: Pnpm Install
-        run: pnpm install
