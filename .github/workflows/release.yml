@@ -20,18 +20,18 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node }}
-          cache: "yarn"
+          cache: "pnpm"
           registry-url: "https://npm.pkg.github.com"
-      - name: Yarn Install
+      - name: Pnpm Install
         env:
           # also other environment variable
           NODE_AUTH_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-        run: yarn
+        run: pnpm
       - name: Install dependencies
         uses: bahmutov/npm-install@v1
       - name: build
         run: 
-          yarn build
+          pnpm build
       - name: "Build & test"
         run: |
           echo "done!"
