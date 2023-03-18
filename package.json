@@ -10,7 +10,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "vite build",
     "preview": "vite preview",
     "linter": "tsc && eslint --ext .ts,.tsx --ignore-path .gitignore --fix src",
     "tauri:dev": "tauri dev",
