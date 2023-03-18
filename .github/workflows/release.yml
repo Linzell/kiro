@@ -26,11 +26,9 @@ jobs:
           registry-url: "https://npm.pkg.github.com"
       - name: Pnpm Install
         run: pnpm install --no-frozen-lockfile
-      - name: Install dependencies
-        uses: bahmutov/npm-install@v1
       - name: build
         run: 
-          pnpm vite build
+          pnpm tauri build
       - name: "Build & test"
         run: |
           echo "done!"
