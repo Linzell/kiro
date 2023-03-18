@@ -11,6 +11,9 @@ jobs:
       contents: read
       pull-requests: write 
     steps:
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 6.0.2
       - uses: actions/checkout@v3
         with:
           ref: ${{ github.event.pull_request.head.sha }}
@@ -19,11 +22,11 @@ jobs:
           node-version: ${{ matrix.node }}
           cache: "npm"
           registry-url: "https://npm.pkg.github.com"
-      - name: Npm Install
-        run: npm install && npm global add @lhci/cli@0.9.x
+      - name: Pnpm Install
+        run: pnpm install && pnpm add @lhci/cli@0.9.x
       - name: build
         run: 
-          npm vite build
+          pnpm vite build
       - name: Lighthouse Benchmark
         run: lhci autorun
       - name: Comment PR
