@@ -1,8 +1,8 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import UserFactory from '#/factorys/userFactory';
+import { getUserStore, getCurrentUser } from '%/importDataStorage';
 import type { RootState } from '$/index';
-import User from '#/user';
+import type User from '#/user';
 
 /**
  * Interface for Redux store
@@ -17,20 +17,12 @@ interface userStoreInterface {
   privateKey: string;
 }
 
-// TODO: Temporaire, à supprimer
-function getCurrentUser(): User {
-  return new UserFactory.NewUser().factoryMethod(
-    '123456789',
-    'd4fg56df4g654df65g4d65f4g65df4',
-  );
-}
-
 /**
  * Initial state for Redux store
  * @type {userStoreInterface}
  */
 const initialState: userStoreInterface = {
-  users: [getCurrentUser()],
+  users: getUserStore(),
   currentUser: getCurrentUser(),
   privateKey: '456',
 };
@@ -47,12 +39,14 @@ const usersSlice = createSlice({
      */
     addUser: (state, action: PayloadAction<User>) => {
       state.users.push(action.payload);
+      localStorage.setItem('userStore', JSON.stringify(state.users));
     },
     /**
      * Remove a user from the collection
      */
     removeUser: (state, action: PayloadAction<User>) => {
       state.users = state.users.filter((user) => user.id !== action.payload.id);
+      localStorage.setItem('userStore', JSON.stringify(state.users));
     },
     /**
      * Update a user in the collection
@@ -64,12 +58,14 @@ const usersSlice = createSlice({
         }
         return user;
       });
+      localStorage.setItem('userStore', JSON.stringify(state.users));
     },
     /**
      * Add current user to the collection
      */
     addCurrentUser: (state, action: PayloadAction<User>) => {
       state.currentUser = action.payload;
+      localStorage.setItem('currentUser', JSON.stringify(state.currentUser.toJSON));
     },
     /**
      * Remove current user from the collection
@@ -82,6 +78,7 @@ const usersSlice = createSlice({
      */
     updateCurrentUser: (state, action: PayloadAction<User>) => {
       state.currentUser = action.payload;
+      localStorage.setItem('currentUser', JSON.stringify(state.currentUser.toJSON));
     },
     /**
      * Set private key for current user

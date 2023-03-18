@@ -1,7 +1,8 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { getTagStore } from '%/importDataStorage';
 import type { RootState } from '$/index';
-import Tag from '#/tag';
+import type Tag from '#/tag';
 
 /**
  * Interface for Redux store
@@ -17,7 +18,7 @@ interface tagStoreInterface {
  * @type {tagStoreInterface}
  */
 const initialState: tagStoreInterface = {
-  tags: [],
+  tags: getTagStore(),
 };
 
 /**
@@ -32,12 +33,14 @@ const tagsSlice = createSlice({
      */
     addTag: (state, action: PayloadAction<Tag>) => {
       state.tags.push(action.payload);
+      localStorage.setItem('tagStore', JSON.stringify(state.tags));
     },
     /**
      * Remove a tag from the collection
      */
     removeTag: (state, action: PayloadAction<Tag>) => {
       state.tags = state.tags.filter((tag) => tag.id !== action.payload.id);
+      localStorage.setItem('tagStore', JSON.stringify(state.tags));
     },
     /**
      * Update a tag in the collection
@@ -49,6 +52,7 @@ const tagsSlice = createSlice({
         }
         return tag;
       });
+      localStorage.setItem('tagStore', JSON.stringify(state.tags));
     },
   },
 });
