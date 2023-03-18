@@ -1,3 +1,5 @@
+[![Eslint Linter](https://github.com/Linzell/kiro/actions/workflows/linter.yml/badge.svg?branch=master)](https://github.com/Linzell/kiro/actions/workflows/linter.yml) [![.github/workflows/lighthouse.yml](https://github.com/Linzell/kiro/actions/workflows/lighthouse.yml/badge.svg?branch=master)](https://github.com/Linzell/kiro/actions/workflows/lighthouse.yml)
+
 # キロ　A decentralized editor
 
 Project realized for the lives of the channel [Linzellart](https://www.twitch.tv/linzellart) 🎥

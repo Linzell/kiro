@@ -11,19 +11,18 @@ jobs:
       contents: read
       pull-requests: write 
     steps:
-      - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2
         with:
-          ref: ${{ github.event.pull_request.head.sha }}
+          version: 7.29.1
+      - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node }}
-          cache: "npm"
           registry-url: "https://npm.pkg.github.com"
-      - name: Npm Install
-        run: npm install && npm global add @lhci/cli@0.9.x
+      - name: Pnpm Install
+        run: pnpm install --no-frozen-lockfile && pnpm add @lhci/cli@0.9.x
       - name: build
         run: 
-          npm vite build
+          pnpm vite build
       - name: Lighthouse Benchmark
         run: lhci autorun
-      - name: Comment PR
