@@ -7,6 +7,7 @@ specifiers:
   '@mui/icons-material': ^5.11.11
   '@mui/material': ^5.11.13
   '@reduxjs/toolkit': ^1.9.3
+  '@remirror/extension-mention-atom': ^2.0.15
   '@remirror/pm': ^2.0.4
   '@remirror/react': ^2.0.27
   '@remirror/react-editors': ^1.0.27
@@ -47,6 +48,7 @@ dependencies:
   '@fireproof/core': 0.0.4
   '@mui/icons-material': 5.11.11_4lyzeezzeeal3x6jtb4ni26w7u
   '@mui/material': 5.11.13_xqeqsl5kvjjtyxwyi3jhw3yuli
+  '@remirror/extension-mention-atom': 2.0.15_b26u7ws7gibcwhwdgobfu6bmhe
   '@remirror/pm': 2.0.4
   '@remirror/react': 2.0.27_tomxlufd3jef3aml6xqfb2yn74
   '@remirror/react-editors': 1.0.27_6n55nxih34hfthhbuzsjzlfggi

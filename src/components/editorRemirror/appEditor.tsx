@@ -1,57 +1,23 @@
 import React from 'react';
-import { useHelpers, useRemirrorContext } from '@remirror/react';
-import { SocialEditor } from '@remirror/react-editors/social';
+import { EditorComponent, useRemirror, Remirror } from '@remirror/react';
+import extensions from './editorManager';
+import Menu from './editorMenu';
 
-const TAGS = ['editor', 'remirror', 'opensource', 'prosemirror'];
-
-const ALL_USERS = [
-  { id: 'joe', label: 'Joe' },
-  { id: 'sue', label: 'Sue' },
-  { id: 'pat', label: 'Pat' },
-  { id: 'tom', label: 'Tom' },
-  { id: 'jim', label: 'Jim' },
-];
-
-const SAMPLE_DOC = {
-  type: 'doc',
-  content: [
-    {
-      type: 'paragraph',
-      attrs: { dir: null, ignoreBidiAutoUpdate: null },
-      content: [{ type: 'text', text: 'Loaded content' }],
-    },
-  ],
-};
-
-function LoadButton() {
-  const { setContent } = useRemirrorContext();
-  const handleClick = React.useCallback(() => setContent(SAMPLE_DOC), [setContent]);
-
-  return (
-    <button onMouseDown={(event) => event.preventDefault()} onClick={handleClick}>
-      Load
-    </button>
-  );
-}
-
-function SaveButton() {
-  const { getJSON } = useHelpers();
-  const handleClick = React.useCallback(() => alert(JSON.stringify(getJSON())), [getJSON]);
-
-  return (
-    <button onMouseDown={(event) => event.preventDefault()} onClick={handleClick}>
-      Save
-    </button>
-  );
-}
+import 'remirror/styles/all.css';
 
 export default function appEditor() {
+  const { manager, state } = useRemirror({
+    extensions,
+    content: '<p>I love <b>Remirror</b></p>',
+    selection: 'start',
+    stringHandler: 'html',
+  });
   return (
-    <div>
-      <SocialEditor placeholder='Mention @joe or add #remirror' users={ALL_USERS} tags={TAGS}>
-        {/* <LoadButton />
-      <SaveButton /> */}
-      </SocialEditor>
+    <div className='remirror-theme'>
+      <Remirror manager={manager} initialContent={state}>
+        <EditorComponent />
+        <Menu />
+      </Remirror>
     </div>
   );
 }

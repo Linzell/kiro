@@ -22,6 +22,7 @@
     "@fireproof/core": "^0.0.4",
     "@mui/icons-material": "^5.11.11",
     "@mui/material": "^5.11.13",
+    "@remirror/extension-mention-atom": "^2.0.15",
     "@remirror/pm": "^2.0.4",
     "@remirror/react": "^2.0.27",
     "@remirror/react-editors": "^1.0.27",
