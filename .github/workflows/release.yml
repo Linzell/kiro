@@ -61,8 +61,6 @@ jobs:
           version: 7.29.1
       - name: Pnpm Install
         run: pnpm install --no-frozen-lockfile
-      - name: Bump version
-        run: pnpm version patch
       - uses: tauri-apps/tauri-action@v0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
