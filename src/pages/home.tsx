@@ -1,9 +1,10 @@
 import React from 'react';
+import AppEditor from '@/editorRemirror/appEditor';
 
 export default function Home() {
   return (
     <div>
-      <h1>Home</h1>
+      <AppEditor />
     </div>
   );
 }

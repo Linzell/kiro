@@ -1,7 +1,8 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { getPageStore } from '%/importDataStorage';
 import type { RootState } from '$/index';
-import Page from '#/page';
+import type Page from '#/page';
 
 /**
  * Interface for Redux store
@@ -17,7 +18,7 @@ interface pageStoreInterface {
  * @type {pageStoreInterface}
  */
 const initialState: pageStoreInterface = {
-  pages: [],
+  pages: getPageStore(),
 };
 
 /**
@@ -32,12 +33,14 @@ const pagesSlice = createSlice({
      */
     addPage: (state, action: PayloadAction<Page>) => {
       state.pages.push(action.payload);
+      localStorage.setItem('pageStore', JSON.stringify(state.pages));
     },
     /**
      * Remove a page from the collection
      */
     removePage: (state, action: PayloadAction<Page>) => {
       state.pages = state.pages.filter((page) => page.id !== action.payload.id);
+      localStorage.setItem('pageStore', JSON.stringify(state.pages));
     },
     /**
      * Update a page in the collection
@@ -49,6 +52,7 @@ const pagesSlice = createSlice({
         }
         return page;
       });
+      localStorage.setItem('pageStore', JSON.stringify(state.pages));
     },
   },
 });

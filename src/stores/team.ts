@@ -1,7 +1,8 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { getTeamStore } from '%/importDataStorage';
 import type { RootState } from '$/index';
-import Team from '#/team';
+import type Team from '#/team';
 
 /**
  * Interface for Redux store
@@ -17,7 +18,7 @@ interface teamStoreInterface {
  * @type {teamStoreInterface}
  */
 const initialState: teamStoreInterface = {
-  teams: [],
+  teams: getTeamStore(),
 };
 
 /**
@@ -32,12 +33,14 @@ const teamsSlice = createSlice({
      */
     addTeam: (state, action: PayloadAction<Team>) => {
       state.teams.push(action.payload);
+      localStorage.setItem('teamStore', JSON.stringify(state.teams));
     },
     /**
      * Remove a team from the collection
      */
     removeTeam: (state, action: PayloadAction<Team>) => {
       state.teams = state.teams.filter((team) => team.id !== action.payload.id);
+      localStorage.setItem('teamStore', JSON.stringify(state.teams));
     },
     /**
      * Update a team in the collection
@@ -49,6 +52,7 @@ const teamsSlice = createSlice({
         }
         return team;
       });
+      localStorage.setItem('teamStore', JSON.stringify(state.teams));
     },
   },
 });

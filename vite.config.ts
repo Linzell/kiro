@@ -17,6 +17,7 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': `${process.cwd()}/src/components`,
+      '%': `${process.cwd()}/src/services`,
       '#': `${process.cwd()}/src/classes`,
       '$': `${process.cwd()}/src/stores`,
       '&': `${process.cwd()}/src/pages`,

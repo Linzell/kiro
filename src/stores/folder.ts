@@ -1,8 +1,8 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { getFolderStore } from '%/importDataStorage';
 import type { RootState } from '$/index';
-import FolderFactory from '#/factorys/folderFactory';
-import Folder from '#/folder';
+import type Folder from '#/folder';
 
 /**
  * Interface for Redux store
@@ -13,21 +13,12 @@ interface folderStoreInterface {
   folders: Array<Folder>;
 }
 
-function getFolderStoreFromJson(folderStoreJson: string): Folder[] {
-  if (folderStoreJson) {
-    const folderStore = JSON.parse(folderStoreJson);
-    return folderStore.map((folder: Folder) => new FolderFactory
-      .CreateFolderFromJson().factoryMethod(folder));
-  }
-  return [];
-}
-
 /**
  * Initial state for Redux store
  * @type {folderStoreInterface}
  */
 const initialState: folderStoreInterface = {
-  folders: getFolderStoreFromJson(localStorage.getItem('folderStore') as string) || [],
+  folders: getFolderStore(),
 };
 
 /**
