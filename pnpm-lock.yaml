@@ -7,11 +7,13 @@ specifiers:
   '@mui/icons-material': ^5.11.11
   '@mui/material': ^5.11.14
   '@reduxjs/toolkit': ^1.9.3
+  '@remirror/extension-annotation': ^2.0.15
   '@remirror/extension-mention-atom': ^2.0.15
   '@remirror/extension-yjs': ^3.0.13
   '@remirror/pm': ^2.0.4
   '@remirror/react': ^2.0.27
   '@remirror/react-editors': ^1.0.27
+  '@remirror/styles': ^2.0.4
   '@tauri-apps/api': ^1.2.0
   '@tauri-apps/cli': ^1.2.3
   '@types/node': ^18.15.6
@@ -51,11 +53,13 @@ dependencies:
   '@fireproof/core': 0.0.4
   '@mui/icons-material': 5.11.11_apxknyxvl46cjjhrrp53pe5pxy
   '@mui/material': 5.11.14_xqeqsl5kvjjtyxwyi3jhw3yuli
+  '@remirror/extension-annotation': 2.0.15_vrjbz7jrltupzo2yyv4bihw2ui
   '@remirror/extension-mention-atom': 2.0.15_vrjbz7jrltupzo2yyv4bihw2ui
   '@remirror/extension-yjs': 3.0.13_3yrtjyqq3snqpkayyjc6i2n3wu
   '@remirror/pm': 2.0.4
   '@remirror/react': 2.0.27_ihcyqxfcka3xunkjigwxjwizyq
   '@remirror/react-editors': 1.0.27_uddz5tlsh5uvd7zgb2dkn4uv3e
+  '@remirror/styles': 2.0.4_d2lgyfpecxdc2bsiwyag5wf7ti
   '@tauri-apps/api': 1.2.0
   autoprefixer: 10.4.14_postcss@8.4.21
   eslint-plugin-react-refresh: 0.3.4_eslint@8.36.0
