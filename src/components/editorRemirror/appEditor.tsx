@@ -124,7 +124,7 @@ export default function appEditor() {
             initialContent={state}
             autoRender='end'
           >
-            <EmojiPicker />
+            {/* <EmojiPicker />  // TODO: Fix emoji picker */}
             <Toolbar>
               <ToggleBoldButton />
               <ToggleBlockquoteButton />
