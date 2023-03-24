@@ -6,7 +6,7 @@
     "github": "linzell"
   },
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -19,7 +19,7 @@
   "dependencies": {
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
-    "@fireproof/core": "^0.0.4",
+    "@fireproof/core": "^0.0.6",
     "@mui/icons-material": "^5.11.11",
     "@mui/material": "^5.11.14",
     "@remirror/extension-annotation": "^2.0.15",
@@ -51,7 +51,7 @@
     "yjs": "^13.5.51"
   },
   "devDependencies": {
-    "@fireproof/core": "^0.0.4",
+    "@fireproof/core": "^0.0.6",
     "@reduxjs/toolkit": "^1.9.3",
     "@tauri-apps/cli": "^1.2.3",
     "@types/node": "^18.15.6",
@@ -66,7 +66,7 @@
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-react": "^7.32.2",
     "tailwindcss": "^3.2.7",
-    "typescript": "^4.9.5",
+    "typescript": "^5.0.2",
     "vite": "^4.2.1"
   }
 }
