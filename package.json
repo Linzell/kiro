@@ -20,6 +20,7 @@
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
     "@fireproof/core": "^0.0.4",
+    "@joeattardi/emoji-button": "^4.6.4",
     "@mui/icons-material": "^5.11.11",
     "@mui/material": "^5.11.14",
     "@remirror/extension-annotation": "^2.0.15",
