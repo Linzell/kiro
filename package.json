@@ -23,6 +23,7 @@
     "@mui/icons-material": "^5.11.11",
     "@mui/material": "^5.11.14",
     "@remirror/extension-annotation": "^2.0.15",
+    "@remirror/extension-find": "^0.1.5",
     "@remirror/extension-mention-atom": "^2.0.15",
     "@remirror/extension-yjs": "^3.0.13",
     "@remirror/pm": "^2.0.4",
@@ -44,6 +45,7 @@
     "react-router-dom": "^6.9.0",
     "refractor": "^4.8.1",
     "remirror": "^2.0.26",
+    "svgmoji": "^3.2.0",
     "uuid": "^9.0.0",
     "y-webrtc": "^10.2.5",
     "yjs": "^13.5.51"
