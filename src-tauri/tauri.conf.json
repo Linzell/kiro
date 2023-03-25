@@ -7,8 +7,8 @@
     "withGlobalTauri": false
   },
   "package": {
-    "productName": "editor-tauri",
-    "version": "0.0.0"
+    "productName": "kiro",
+    "version": "../package.json"
   },
   "tauri": {
     "allowlist": {
