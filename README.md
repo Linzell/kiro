@@ -1,4 +1,4 @@
-[![Eslint Linter](https://github.com/Linzell/kiro/actions/workflows/linter.yml/badge.svg)](https://github.com/Linzell/kiro/actions/workflows/linter.yml) [![.github/workflows/lighthouse.yml](https://github.com/Linzell/kiro/actions/workflows/lighthouse.yml/badge.svg?branch=master)](https://github.com/Linzell/kiro/actions/workflows/lighthouse.yml)
+[![Eslint Linter](https://github.com/Linzell/kiro/actions/workflows/linter.yml/badge.svg)](https://github.com/Linzell/kiro/actions/workflows/linter.yml) 
 
 # キロ　A decentralized editor
 
