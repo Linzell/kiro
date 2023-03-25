@@ -4,16 +4,12 @@ on:
     branches:
       - "master"
 
-env:
-  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
 jobs:
   package-json-enforcer:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
         with:
-          fetch-depth: '0'
-      - uses: thepassle/changelog-enforcer@0.0.6
-        with:
-          skipLabel: 'New Version'
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+      - uses: Wawa27/automatic-version-bump@main
