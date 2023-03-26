@@ -11,6 +11,7 @@ specifiers:
   '@remirror/extension-annotation': ^2.0.15
   '@remirror/extension-find': ^0.1.5
   '@remirror/extension-mention-atom': ^2.0.15
+  '@remirror/extension-react-tables': ^2.2.14
   '@remirror/extension-yjs': ^3.0.13
   '@remirror/pm': ^2.0.4
   '@remirror/react': ^2.0.27
@@ -61,6 +62,7 @@ dependencies:
   '@remirror/extension-annotation': 2.0.15_vrjbz7jrltupzo2yyv4bihw2ui
   '@remirror/extension-find': 0.1.5_vrjbz7jrltupzo2yyv4bihw2ui
   '@remirror/extension-mention-atom': 2.0.15_vrjbz7jrltupzo2yyv4bihw2ui
+  '@remirror/extension-react-tables': 2.2.14_ihcyqxfcka3xunkjigwxjwizyq
   '@remirror/extension-yjs': 3.0.13_3yrtjyqq3snqpkayyjc6i2n3wu
   '@remirror/pm': 2.0.4
   '@remirror/react': 2.0.27_ihcyqxfcka3xunkjigwxjwizyq

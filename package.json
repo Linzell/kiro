@@ -26,6 +26,7 @@
     "@remirror/extension-annotation": "^2.0.15",
     "@remirror/extension-find": "^0.1.5",
     "@remirror/extension-mention-atom": "^2.0.15",
+    "@remirror/extension-react-tables": "^2.2.14",
     "@remirror/extension-yjs": "^3.0.13",
     "@remirror/pm": "^2.0.4",
     "@remirror/react": "^2.0.27",
