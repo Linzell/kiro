@@ -7,6 +7,7 @@ specifiers:
   '@mui/icons-material': ^5.11.11
   '@mui/material': ^5.11.14
   '@reduxjs/toolkit': ^1.9.3
+  '@remirror/core': ^2.0.12
   '@remirror/extension-annotation': ^2.0.15
   '@remirror/extension-find': ^0.1.5
   '@remirror/extension-mention-atom': ^2.0.15
@@ -56,6 +57,7 @@ dependencies:
   '@fireproof/core': 0.0.6
   '@mui/icons-material': 5.11.11_apxknyxvl46cjjhrrp53pe5pxy
   '@mui/material': 5.11.14_xqeqsl5kvjjtyxwyi3jhw3yuli
+  '@remirror/core': 2.0.12_vrjbz7jrltupzo2yyv4bihw2ui
   '@remirror/extension-annotation': 2.0.15_vrjbz7jrltupzo2yyv4bihw2ui
   '@remirror/extension-find': 0.1.5_vrjbz7jrltupzo2yyv4bihw2ui
   '@remirror/extension-mention-atom': 2.0.15_vrjbz7jrltupzo2yyv4bihw2ui

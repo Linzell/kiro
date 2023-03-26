@@ -1,3 +1,5 @@
+import 'remirror/styles/all.css';
+
 import React from 'react';
 import { YjsExtension } from '@remirror/extension-yjs';
 import { AnnotationExtension } from '@remirror/extension-annotation';
@@ -10,9 +12,11 @@ import json from 'refractor/lang/json.js';
 import markdown from 'refractor/lang/markdown.js';
 import typescript from 'refractor/lang/typescript.js';
 import rust from 'refractor/lang/rust.js';
+import { cx } from '@remirror/core';
 import {
   BlockquoteExtension,
   BoldExtension,
+  BulletListExtension,
   CalloutExtension,
   CodeBlockExtension,
   CodeExtension,
@@ -23,12 +27,16 @@ import {
   EmojiExtension,
   FontFamilyExtension,
   FontSizeExtension,
+  HardBreakExtension,
   HeadingExtension,
   HistoryExtension,
   ImageExtension,
   ItalicExtension,
   LinkExtension,
+  MentionAtomExtension,
+  OrderedListExtension,
   ShortcutHandlerProps,
+  TaskListExtension,
 } from 'remirror/extensions';
 import { AllStyledComponent } from '@remirror/styles/emotion';
 import { WebrtcProvider } from 'y-webrtc';
@@ -47,6 +55,8 @@ import {
   /* FindReplaceComponent, */
   HistoryButtonGroup,
   IncreaseFontSizeButton,
+  ListButtonGroup,
+  MentionAtomNodeAttributes,
   Remirror,
   ThemeProvider,
   ToggleBoldButton,
@@ -62,6 +72,7 @@ import {
   useCommands,
   useCurrentSelection,
   useExtensionEvent,
+  useMentionAtom,
   useUpdateReason,
   useRemirror,
   VerticalDivider,
@@ -87,6 +98,20 @@ const FONT_FAMILIES: Array<[React.CSSProperties['fontFamily'], string]> = [
   ['sans-serif', 'San serif'],
   ['cursive', 'Cursive'],
   ['fantasy', 'Fantasy'],
+];
+
+const ALL_USERS = [
+  { id: 'joe', label: 'Joe' },
+  { id: 'sue', label: 'Sue' },
+  { id: 'pat', label: 'Pat' },
+  { id: 'tom', label: 'Tom' },
+  { id: 'jim', label: 'Jim' },
+];
+
+const ALL_TAGS = [
+  { id: 'cel', label: 'Celebrity' },
+  { id: 'ed', label: 'Education' },
+  { id: 'tech', label: 'Tech' },
 ];
 
 const FONT_SIZES = ['8', '10', '12', '14', '16', '18', '24', '30'];
@@ -321,11 +346,69 @@ const FloatingLinkToolbar = () => {
   );
 };
 
+const MentionSuggestor: React.FC = () => {
+  const [options, setOptions] = React.useState<MentionAtomNodeAttributes[]>([]);
+  const {
+    state,
+    getMenuProps,
+    getItemProps,
+    indexIsHovered,
+    indexIsSelected,
+  } = useMentionAtom({
+    items: options,
+  });
+
+  React.useEffect(() => {
+    if (!state) {
+      return;
+    }
+
+    const searchTerm = state.query.full.toLowerCase();
+    let filteredOptions: MentionAtomNodeAttributes[] = [];
+
+    if (state.name === 'tag') {
+      filteredOptions = ALL_TAGS.filter((tag) => tag.label.toLowerCase().includes(searchTerm));
+    } else if (state.name === 'at') {
+      filteredOptions = ALL_USERS.filter((user) => user.label.toLowerCase().includes(searchTerm));
+    }
+
+    filteredOptions = filteredOptions.sort().slice(0, 5);
+    setOptions(filteredOptions);
+  }, [state]);
+
+  const enabled = Boolean(state);
+
+  return (
+    <FloatingWrapper positioner='cursor' enabled={enabled} placement='bottom-start'>
+      <div {...getMenuProps()} className='suggestions'>
+        {enabled && options.map((user: { id: string, label: string }, index: number) => {
+          const isHighlighted = indexIsSelected(index);
+          const isHovered = indexIsHovered(index);
+
+          return (
+            <div
+              key={user.id}
+              className={cx('suggestion', isHighlighted && 'highlighted', isHovered && 'hovered')}
+              {...getItemProps({
+                item: user,
+                index,
+              })}
+            >
+              {user.label}
+            </div>
+          );
+        })}
+      </div>
+    </FloatingWrapper>
+  );
+};
+
 const extensions = () => [
   new YjsExtension({ getProvider: () => provider, disableUndo: true }),
   new AnnotationExtension(),
   new BlockquoteExtension(),
   new BoldExtension(),
+  new BulletListExtension(),
   new CalloutExtension(),
   new CodeBlockExtension({
     supportedLanguages: [css, javascript, json, markdown, typescript, rust],
@@ -337,17 +420,27 @@ const extensions = () => [
   new FindExtension(),
   new FontFamilyExtension(),
   new FontSizeExtension({ defaultSize: '16', unit: 'px' }),
+  new HardBreakExtension(),
   new HeadingExtension(),
   new HistoryExtension(),
   new ImageExtension({ enableResizing: true }),
   new ItalicExtension(),
   new LinkExtension({ autoLink: true }),
+  new OrderedListExtension(),
+  new TaskListExtension(),
+  new MentionAtomExtension({
+    matchers: [
+      { name: 'at', char: '@' },
+      { name: 'tag', char: '#' },
+    ],
+  }),
 ];
 
 export default function appEditor() {
   const { manager, state, onChange } = useRemirror({
     extensions: React.useCallback(extensions, []),
     core: { excludeExtensions: ['history'] },
+    selection: 'start',
     content:
       '<tbody><tr><td class="sidebar-pretitle">Part of <a href="https://en.wikipedia.org/wiki/Category:Law" title="Category:Law">a series</a> on</td></tr><tr><th class="sidebar-title-with-pretitle"><a class="mw-selflink selflink">Law</a></th></tr><tr><td class="sidebar-image"><a href="/wiki/File:Imbalanced_justice_scale_silhouette.svg" class="image"><img alt="Imbalanced justice scale silhouette.svg" src="//upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Imbalanced_justice_scale_silhouette.svg/125px-Imbalanced_justice_scale_silhouette.svg.png" decoding="async" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Imbalanced_justice_scale_silhouette.svg/188px-Imbalanced_justice_scale_silhouette.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Imbalanced_justice_scale_silhouette.svg/250px-Imbalanced_justice_scale_silhouette.svg.png 2x" data-file-width="512" data-file-height="522" width="125" height="127"></a></td></tr><tr><th class="sidebar-heading" style="background:#aaddff; color:#000;">Foundations and Philosophy</th></tr><tr><td class="sidebar-content"><ul><li><a href="/wiki/Definition_of_law" class="mw-redirect" title="Definition of law">Definition</a></li><li><a href="/wiki/Philosophy_of_law" title="Philosophy of law">Philosophy</a></li><li><a href="/wiki/Legal_history" title="Legal history">History</a></li></ul></td></tr><tr><th class="sidebar-heading" style="background:#aaddff; color:#000;">Legal theory</th></tr><tr><td class="sidebar-content"><ul><li><a href="/wiki/Jurisprudence" title="Jurisprudence">Jurisprudence</a></li><li><a href="/wiki/Judicial_interpretation" title="Judicial interpretation">Judicial interpretation</a></li><li><a href="/wiki/Positive_law" title="Positive law">Positive law</a></li><li><a href="/wiki/Law_and_economics" title="Law and economics">Law and economics</a></li><li><a href="/wiki/Sociology_of_law" title="Sociology of law">Sociology of law</a></li></ul></td></tr><tr><th class="sidebar-heading" style="background:#aaddff; color:#000;">Methodological background</th></tr><tr><td class="sidebar-content"><ul><li><a href="/wiki/Normative" class="mw-redirect" title="Normative">Normative</a></li><li><a href="/wiki/Prescriptive" class="mw-redirect" title="Prescriptive">Prescriptive</a></li></ul></td></tr><tr><td class="sidebar-navbar"><link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r1129693374"><style data-mw-deduplicate="TemplateStyles:r1063604349">.mw-parser-output .navbar{display:inline;font-size:88%;font-weight:normal}.mw-parser-output .navbar-collapse{float:left;text-align:left}.mw-parser-output .navbar-boxtext{word-spacing:0}.mw-parser-output .navbar ul{display:inline-block;white-space:nowrap;line-height:inherit}.mw-parser-output .navbar-brackets::before{margin-right:-0.125em;content:"[ "}.mw-parser-output .navbar-brackets::after{margin-left:-0.125em;content:" ]"}.mw-parser-output .navbar li{word-spacing:-0.125em}.mw-parser-output .navbar a>span,.mw-parser-output .navbar a>abbr{text-decoration:inherit}.mw-parser-output .navbar-mini abbr{font-variant:small-caps;border-bottom:none;text-decoration:none;cursor:inherit}.mw-parser-output .navbar-ct-full{font-size:114%;margin:0 7em}.mw-parser-output .navbar-ct-mini{font-size:114%;margin:0 4em}</style><div class="navbar plainlinks hlist navbar-mini"><ul><li class="nv-view"><a href="/wiki/Template:Law_sidebar" title="Template:Law sidebar"><abbr title="View this template">v</abbr></a></li><li class="nv-talk"><a href="/wiki/Template_talk:Law_sidebar" title="Template talk:Law sidebar"><abbr title="Discuss this template">t</abbr></a></li><li class="nv-edit"><a class="external text" href="https://en.wikipedia.org/w/index.php?title=Template:Law_sidebar&amp;action=edit"><abbr title="Edit this template">e</abbr></a></li></ul></div></td></tr></tbody>',
     stringHandler: htmlToProsemirrorNode,
@@ -382,6 +475,7 @@ export default function appEditor() {
               <ToggleBlockquoteButton />
               <ToggleCodeBlockButton />
               <ToggleCodeButton />
+              <ListButtonGroup />
               <VerticalDivider />
               <CommandButtonGroup>
                 <ToggleColumnsButton attrs={TWO_COLUMNS} />
@@ -390,6 +484,7 @@ export default function appEditor() {
               <VerticalDivider />
               <CalloutTypeButtonGroup />
             </Toolbar>
+            <MentionSuggestor />
             <FloatingLinkToolbar />
             {/* <FindReplaceComponent /> // TODO: Move this is action after text ctrl + F */}
           </Remirror>
