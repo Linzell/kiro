@@ -12,43 +12,57 @@ import typescript from 'refractor/lang/typescript.js';
 import rust from 'refractor/lang/rust.js';
 import {
   BlockquoteExtension,
-  FontFamilyExtension,
   BoldExtension,
   CalloutExtension,
-  FontSizeExtension,
-  DropCursorExtension,
-  HistoryExtension,
-  HeadingExtension,
-  EmojiExtension,
-  ColumnAttributes,
-  ColumnsExtension,
   CodeBlockExtension,
   CodeExtension,
+  ColumnAttributes,
+  ColumnsExtension,
+  createMarkPositioner,
+  DropCursorExtension,
+  EmojiExtension,
+  FontFamilyExtension,
+  FontSizeExtension,
+  HeadingExtension,
+  HistoryExtension,
+  ImageExtension,
+  ItalicExtension,
+  LinkExtension,
+  ShortcutHandlerProps,
 } from 'remirror/extensions';
 import { AllStyledComponent } from '@remirror/styles/emotion';
 import { WebrtcProvider } from 'y-webrtc';
 import * as Y from 'yjs';
 import {
+  CalloutTypeButtonGroup,
+  CommandButton,
   CommandButtonGroup,
   CommandMenuItem,
   HeadingLevelButtonGroup,
-  DropdownButton,
-  CalloutTypeButtonGroup,
-  HistoryButtonGroup,
-  EmojiPopupComponent,
   DecreaseFontSizeButton,
+  DropdownButton,
+  EmojiPopupComponent,
+  FloatingToolbar,
+  FloatingWrapper,
+  /* FindReplaceComponent, */
+  HistoryButtonGroup,
   IncreaseFontSizeButton,
   Remirror,
-  /* FindReplaceComponent, */
   ThemeProvider,
   ToggleBoldButton,
   ToggleBlockquoteButton,
   ToggleCodeBlockButton,
   ToggleCodeButton,
   ToggleColumnsButton,
+  ToggleItalicButton,
   Toolbar,
   useActive,
+  useAttrs,
+  useChainedCommands,
   useCommands,
+  useCurrentSelection,
+  useExtensionEvent,
+  useUpdateReason,
   useRemirror,
   VerticalDivider,
 } from '@remirror/react';
@@ -119,6 +133,194 @@ const FontSizeButtons = () => {
   );
 };
 
+function useLinkShortcut() {
+  const [linkShortcut, setLinkShortcut] = React.useState<ShortcutHandlerProps | undefined>();
+  const [isEditing, setIsEditing] = React.useState(false);
+
+  useExtensionEvent(
+    LinkExtension,
+    'onShortcut',
+    React.useCallback(
+      (props) => {
+        if (!isEditing) {
+          setIsEditing(true);
+        }
+
+        return setLinkShortcut(props);
+      },
+      [isEditing],
+    ),
+  );
+
+  return { linkShortcut, isEditing, setIsEditing };
+}
+
+function useFloatingLinkState() {
+  const chain = useChainedCommands();
+  const { isEditing, linkShortcut, setIsEditing } = useLinkShortcut();
+  const { to, empty } = useCurrentSelection();
+
+  const url = (useAttrs().link()?.href as string) ?? '';
+  const [href, setHref] = React.useState<string>(url);
+
+  // A positioner which only shows for links.
+  const linkPositioner = React.useMemo(() => createMarkPositioner({ type: 'link' }), []);
+
+  const onRemove = React.useCallback(() => chain.removeLink().focus().run(), [chain]);
+  const updateReason = useUpdateReason();
+
+  React.useLayoutEffect(() => {
+    if (!isEditing) {
+      return;
+    }
+
+    if (updateReason.doc || updateReason.selection) {
+      setIsEditing(false);
+    }
+  }, [isEditing, setIsEditing, updateReason.doc, updateReason.selection]);
+
+  React.useEffect(() => {
+    setHref(url);
+  }, [url]);
+
+  const submitHref = React.useCallback(() => {
+    setIsEditing(false);
+    const range = linkShortcut ?? undefined;
+
+    if (href === '') {
+      chain.removeLink();
+    } else {
+      chain.updateLink({ href, auto: false }, range);
+    }
+
+    chain.focus(range?.to ?? to).run();
+  }, [setIsEditing, linkShortcut, chain, href, to]);
+
+  const cancelHref = React.useCallback(() => {
+    setIsEditing(false);
+  }, [setIsEditing]);
+
+  const clickEdit = React.useCallback(() => {
+    if (empty) {
+      chain.selectLink();
+    }
+
+    setIsEditing(true);
+  }, [chain, empty, setIsEditing]);
+
+  return React.useMemo(
+    () => ({
+      href,
+      setHref,
+      linkShortcut,
+      linkPositioner,
+      isEditing,
+      clickEdit,
+      onRemove,
+      submitHref,
+      cancelHref,
+    }),
+    [href, linkShortcut, linkPositioner, isEditing, clickEdit, onRemove, submitHref, cancelHref],
+  );
+}
+
+// eslint-disable-next-line react/prop-types
+const DelayAutoFocusInput = ({ autoFocus, ...rest }: React.HTMLProps<HTMLInputElement>) => {
+  const inputRef = React.useRef<HTMLInputElement>(null);
+
+  React.useEffect(() => {
+    if (!autoFocus) {
+      return;
+    }
+
+    const frame = window.requestAnimationFrame(() => {
+      inputRef.current?.focus();
+    });
+
+    // eslint-disable-next-line consistent-return
+    return () => {
+      window.cancelAnimationFrame(frame);
+    };
+  }, [autoFocus]);
+
+  return <input ref={inputRef} {...rest} />;
+};
+
+const FloatingLinkToolbar = () => {
+  const {
+    isEditing,
+    linkPositioner,
+    clickEdit,
+    onRemove,
+    submitHref,
+    href,
+    setHref,
+    cancelHref,
+  } = useFloatingLinkState();
+  const active = useActive();
+  const activeLink = active.link();
+  const { empty } = useCurrentSelection();
+
+  const handleClickEdit = React.useCallback(() => {
+    clickEdit();
+  }, [clickEdit]);
+
+  const linkEditButtons = activeLink ? (
+    <>
+      <ToggleBoldButton />
+      <ToggleItalicButton />
+      <CommandButton
+        commandName='updateLink'
+        onSelect={handleClickEdit}
+        icon='pencilLine'
+        enabled
+      />
+      <CommandButton commandName='removeLink' onSelect={onRemove} icon='linkUnlink' enabled />
+    </>
+  ) : (
+    <>
+      <ToggleBoldButton />
+      <ToggleItalicButton />
+      <CommandButton commandName='updateLink' onSelect={handleClickEdit} icon='link' enabled />
+    </>
+  );
+
+  return (
+    <>
+      {!isEditing && <FloatingToolbar>{linkEditButtons}</FloatingToolbar>}
+      {!isEditing && empty && (
+        <FloatingToolbar positioner={linkPositioner}>{linkEditButtons}</FloatingToolbar>
+      )}
+
+      <FloatingWrapper
+        positioner='always'
+        placement='bottom'
+        enabled={isEditing}
+        renderOutsideEditor
+      >
+        <DelayAutoFocusInput
+          style={{ zIndex: 20 }}
+          autoFocus
+          placeholder='Enter link...'
+          onChange={(event: React.ChangeEvent<HTMLInputElement>) => setHref(event.target.value)}
+          value={href}
+          onKeyPress={(event: React.KeyboardEvent<HTMLInputElement>) => {
+            const { code } = event;
+
+            if (code === 'Enter') {
+              submitHref();
+            }
+
+            if (code === 'Escape') {
+              cancelHref();
+            }
+          }}
+        />
+      </FloatingWrapper>
+    </>
+  );
+};
+
 const extensions = () => [
   new YjsExtension({ getProvider: () => provider, disableUndo: true }),
   new AnnotationExtension(),
@@ -137,6 +339,9 @@ const extensions = () => [
   new FontSizeExtension({ defaultSize: '16', unit: 'px' }),
   new HeadingExtension(),
   new HistoryExtension(),
+  new ImageExtension({ enableResizing: true }),
+  new ItalicExtension(),
+  new LinkExtension({ autoLink: true }),
 ];
 
 export default function appEditor() {
@@ -144,7 +349,7 @@ export default function appEditor() {
     extensions: React.useCallback(extensions, []),
     core: { excludeExtensions: ['history'] },
     content:
-      '<p>Remirror is a wrapper library for ProseMirror, it is an abstraction layer that makes ProseMirror easier to work with, and provides React and ProseMirror integration. ProseMirror is a toolkit for building rich text editors, it is not an out-the-box solution like Draft.JS for instance. This means ProseMirror has a steep learning curve - there are many concepts and terms to learn, and it can be difficult to structure you codebase in a logic manner. Remirror provides extensions, that abstract over various ProseMirror concepts such as schemas, commands and plugins, making it much simpler to group related logic together. Think of Remirror like Lego, you can follow the instructions to construct an out-of-the-box style editor, or as the basis of something much more bespoke, via its commands, helpers and hooks. This means we can provide both "out-of-the-box" and "bespoke" experiences, maintaining the power and flexibility that ProseMirror is known for.</p>',
+      '<tbody><tr><td class="sidebar-pretitle">Part of <a href="https://en.wikipedia.org/wiki/Category:Law" title="Category:Law">a series</a> on</td></tr><tr><th class="sidebar-title-with-pretitle"><a class="mw-selflink selflink">Law</a></th></tr><tr><td class="sidebar-image"><a href="/wiki/File:Imbalanced_justice_scale_silhouette.svg" class="image"><img alt="Imbalanced justice scale silhouette.svg" src="//upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Imbalanced_justice_scale_silhouette.svg/125px-Imbalanced_justice_scale_silhouette.svg.png" decoding="async" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Imbalanced_justice_scale_silhouette.svg/188px-Imbalanced_justice_scale_silhouette.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Imbalanced_justice_scale_silhouette.svg/250px-Imbalanced_justice_scale_silhouette.svg.png 2x" data-file-width="512" data-file-height="522" width="125" height="127"></a></td></tr><tr><th class="sidebar-heading" style="background:#aaddff; color:#000;">Foundations and Philosophy</th></tr><tr><td class="sidebar-content"><ul><li><a href="/wiki/Definition_of_law" class="mw-redirect" title="Definition of law">Definition</a></li><li><a href="/wiki/Philosophy_of_law" title="Philosophy of law">Philosophy</a></li><li><a href="/wiki/Legal_history" title="Legal history">History</a></li></ul></td></tr><tr><th class="sidebar-heading" style="background:#aaddff; color:#000;">Legal theory</th></tr><tr><td class="sidebar-content"><ul><li><a href="/wiki/Jurisprudence" title="Jurisprudence">Jurisprudence</a></li><li><a href="/wiki/Judicial_interpretation" title="Judicial interpretation">Judicial interpretation</a></li><li><a href="/wiki/Positive_law" title="Positive law">Positive law</a></li><li><a href="/wiki/Law_and_economics" title="Law and economics">Law and economics</a></li><li><a href="/wiki/Sociology_of_law" title="Sociology of law">Sociology of law</a></li></ul></td></tr><tr><th class="sidebar-heading" style="background:#aaddff; color:#000;">Methodological background</th></tr><tr><td class="sidebar-content"><ul><li><a href="/wiki/Normative" class="mw-redirect" title="Normative">Normative</a></li><li><a href="/wiki/Prescriptive" class="mw-redirect" title="Prescriptive">Prescriptive</a></li></ul></td></tr><tr><td class="sidebar-navbar"><link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r1129693374"><style data-mw-deduplicate="TemplateStyles:r1063604349">.mw-parser-output .navbar{display:inline;font-size:88%;font-weight:normal}.mw-parser-output .navbar-collapse{float:left;text-align:left}.mw-parser-output .navbar-boxtext{word-spacing:0}.mw-parser-output .navbar ul{display:inline-block;white-space:nowrap;line-height:inherit}.mw-parser-output .navbar-brackets::before{margin-right:-0.125em;content:"[ "}.mw-parser-output .navbar-brackets::after{margin-left:-0.125em;content:" ]"}.mw-parser-output .navbar li{word-spacing:-0.125em}.mw-parser-output .navbar a>span,.mw-parser-output .navbar a>abbr{text-decoration:inherit}.mw-parser-output .navbar-mini abbr{font-variant:small-caps;border-bottom:none;text-decoration:none;cursor:inherit}.mw-parser-output .navbar-ct-full{font-size:114%;margin:0 7em}.mw-parser-output .navbar-ct-mini{font-size:114%;margin:0 4em}</style><div class="navbar plainlinks hlist navbar-mini"><ul><li class="nv-view"><a href="/wiki/Template:Law_sidebar" title="Template:Law sidebar"><abbr title="View this template">v</abbr></a></li><li class="nv-talk"><a href="/wiki/Template_talk:Law_sidebar" title="Template talk:Law sidebar"><abbr title="Discuss this template">t</abbr></a></li><li class="nv-edit"><a class="external text" href="https://en.wikipedia.org/w/index.php?title=Template:Law_sidebar&amp;action=edit"><abbr title="Edit this template">e</abbr></a></li></ul></div></td></tr></tbody>',
     stringHandler: htmlToProsemirrorNode,
   });
   return (
@@ -164,6 +369,7 @@ export default function appEditor() {
               <HistoryButtonGroup />
               <HeadingLevelButtonGroup showAll />
               <ToggleBoldButton />
+              <ToggleItalicButton />
               <VerticalDivider />
               <CommandButtonGroup>
                 <DecreaseFontSizeButton />
@@ -184,6 +390,7 @@ export default function appEditor() {
               <VerticalDivider />
               <CalloutTypeButtonGroup />
             </Toolbar>
+            <FloatingLinkToolbar />
             {/* <FindReplaceComponent /> // TODO: Move this is action after text ctrl + F */}
           </Remirror>
         </ThemeProvider>
