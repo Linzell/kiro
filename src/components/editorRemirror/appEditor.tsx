@@ -17,6 +17,7 @@ import {
   CalloutExtension,
   FontSizeExtension,
   DropCursorExtension,
+  HistoryExtension,
   HeadingExtension,
   EmojiExtension,
   ColumnAttributes,
@@ -33,6 +34,8 @@ import {
   HeadingLevelButtonGroup,
   DropdownButton,
   CalloutTypeButtonGroup,
+  HistoryButtonGroup,
+  EmojiPopupComponent,
   DecreaseFontSizeButton,
   IncreaseFontSizeButton,
   Remirror,
@@ -133,6 +136,7 @@ const extensions = () => [
   new FontFamilyExtension(),
   new FontSizeExtension({ defaultSize: '16', unit: 'px' }),
   new HeadingExtension(),
+  new HistoryExtension(),
 ];
 
 export default function appEditor() {
@@ -156,6 +160,8 @@ export default function appEditor() {
             placeholder='Enter your text'
           >
             <Toolbar>
+              <EmojiPopupComponent />
+              <HistoryButtonGroup />
               <HeadingLevelButtonGroup showAll />
               <ToggleBoldButton />
               <VerticalDivider />
