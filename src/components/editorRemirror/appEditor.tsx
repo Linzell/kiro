@@ -1,53 +1,17 @@
 import React from 'react';
 import { htmlToProsemirrorNode } from 'remirror';
 import { TableComponents } from '@remirror/extension-react-tables';
-import {
-  ColumnAttributes,
-} from 'remirror/extensions';
 import { AllStyledComponent } from '@remirror/styles/emotion';
 import {
-  CalloutTypeButtonGroup,
-  CommandButtonGroup,
-  HeadingLevelButtonGroup,
-  DecreaseFontSizeButton,
-  EmojiPopupComponent,
   /* FindReplaceComponent, */
-  HistoryButtonGroup,
-  IncreaseFontSizeButton,
-  IndentationButtonGroup,
-  ListButtonGroup,
   Remirror,
-  TextAlignmentButtonGroup,
   ThemeProvider,
-  ToggleBoldButton,
-  ToggleBlockquoteButton,
-  ToggleCodeBlockButton,
-  ToggleCodeButton,
-  ToggleColumnsButton,
-  ToggleItalicButton,
-  ToggleStrikeButton,
-  ToggleUnderlineButton,
-  Toolbar,
   useRemirror,
-  VerticalDivider,
 } from '@remirror/react';
-import FontFamilyButtons from '@/editorRemirror/extensions/fontFamilyButtons';
-import FontSizeButtons from '@/editorRemirror/extensions/fontSizeButtons';
 import FloatingLinkToolbar from '@/editorRemirror/floatingLinkToolbar';
-import LineHeightButtonDropdown from './extensions/lineHeightButtonDropDown';
 import MentionSuggestor from '@/editorRemirror/extensions/mentionSuggestor';
 import extensions from './extensions';
-
-const TWO_COLUMNS: ColumnAttributes = {
-  count: 2,
-  fill: 'balance',
-  gap: '2em',
-};
-const THREE_COLUMNS: ColumnAttributes = {
-  count: 3,
-  fill: 'balance',
-  gap: '2em',
-};
+import Toolbar from './toolbar';
 
 export default function appEditor() {
   const { manager, state, setState } = useRemirror({
@@ -79,39 +43,8 @@ export default function appEditor() {
             autoRender='end'
             placeholder='Enter your text'
           >
-            <Toolbar>
-              <EmojiPopupComponent />
-              <HistoryButtonGroup />
-              <HeadingLevelButtonGroup showAll />
-              <ToggleBoldButton />
-              <ToggleItalicButton />
-              <ToggleStrikeButton />
-              <ToggleUnderlineButton />
-              <VerticalDivider />
-              <CommandButtonGroup>
-                <DecreaseFontSizeButton />
-                <FontSizeButtons />
-                <IncreaseFontSizeButton />
-              </CommandButtonGroup>
-              <VerticalDivider />
-              <TextAlignmentButtonGroup />
-              <IndentationButtonGroup />
-              <LineHeightButtonDropdown />
-              <FontFamilyButtons />
-              <VerticalDivider />
-              <ToggleBlockquoteButton />
-              <ToggleCodeBlockButton />
-              <ToggleCodeButton />
-              <ListButtonGroup />
-              <VerticalDivider />
-              <CommandButtonGroup>
-                <ToggleColumnsButton attrs={TWO_COLUMNS} />
-                <ToggleColumnsButton attrs={THREE_COLUMNS} />
-              </CommandButtonGroup>
-              <VerticalDivider />
-              <CalloutTypeButtonGroup />
-            </Toolbar>
             <MentionSuggestor />
+            <Toolbar />
             <FloatingLinkToolbar />
             <TableComponents />
             {/* <FindReplaceComponent /> // TODO: Move this is action after text ctrl + F */}

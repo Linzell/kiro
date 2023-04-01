@@ -6,6 +6,7 @@ import {
   MentionAtomNodeAttributes,
 } from '@remirror/react';
 
+// TODO: use real data
 const ALL_USERS = [
   { id: 'joe', label: 'Joe' },
   { id: 'sue', label: 'Sue' },
@@ -14,6 +15,7 @@ const ALL_USERS = [
   { id: 'jim', label: 'Jim' },
 ];
 
+// TODO: use real data
 const ALL_TAGS = [
   { id: 'cel', label: 'Celebrity' },
   { id: 'ed', label: 'Education' },
