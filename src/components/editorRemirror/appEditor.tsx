@@ -3,6 +3,7 @@ import { YjsExtension } from '@remirror/extension-yjs';
 import { AnnotationExtension } from '@remirror/extension-annotation';
 import { htmlToProsemirrorNode } from 'remirror';
 import { FindExtension } from '@remirror/extension-find';
+import Box from '@mui/material/Box';
 import data from 'svgmoji/emoji.json';
 import css from 'refractor/lang/css.js';
 import javascript from 'refractor/lang/javascript.js';
