@@ -1,3 +1,4 @@
+import Box from '@mui/material/Box';
 import {
   CalloutTypeButtonGroup,
   CommandButtonGroup,
@@ -27,37 +28,125 @@ import COLUMNS_DATA from '@/editorRemirror/data/columnsData';
 
 export default function toolbar() {
   return (
-    <Toolbar>
-      <EmojiPopupComponent />
-      <HistoryButtonGroup />
-      <HeadingLevelButtonGroup showAll />
-      <ToggleBoldButton />
-      <ToggleItalicButton />
-      <ToggleStrikeButton />
-      <ToggleUnderlineButton />
-      <VerticalDivider />
-      <CommandButtonGroup>
-        <DecreaseFontSizeButton />
-        <FontSizeButtons />
-        <IncreaseFontSizeButton />
-      </CommandButtonGroup>
-      <VerticalDivider />
-      <TextAlignmentButtonGroup />
-      <IndentationButtonGroup />
-      <LineHeightButtonDropdown />
-      <FontFamilyButtons />
-      <VerticalDivider />
-      <ToggleBlockquoteButton />
-      <ToggleCodeBlockButton />
-      <ToggleCodeButton />
-      <ListButtonGroup />
-      <VerticalDivider />
-      <CommandButtonGroup>
-        <ToggleColumnsButton attrs={COLUMNS_DATA.two} />
-        <ToggleColumnsButton attrs={COLUMNS_DATA.three} />
-      </CommandButtonGroup>
-      <VerticalDivider />
-      <CalloutTypeButtonGroup />
-    </Toolbar>
+    <>
+      <Box sx={{
+        display: { xs: 'none', sm: 'none', md: 'flex' },
+        maxWidth: '100%',
+        width: '100%',
+        backgroundColor: 'background.transparent',
+      }}>
+        <Toolbar>
+          <EmojiPopupComponent />
+          <HistoryButtonGroup />
+          <HeadingLevelButtonGroup showAll />
+          <ToggleBoldButton />
+          <ToggleItalicButton />
+          <ToggleStrikeButton />
+          <ToggleUnderlineButton />
+          <VerticalDivider />
+          <CommandButtonGroup>
+            <DecreaseFontSizeButton />
+            <FontSizeButtons />
+            <IncreaseFontSizeButton />
+          </CommandButtonGroup>
+          <VerticalDivider />
+          <TextAlignmentButtonGroup />
+          <IndentationButtonGroup />
+          <LineHeightButtonDropdown />
+          <FontFamilyButtons />
+          <VerticalDivider />
+          <ToggleBlockquoteButton />
+          <ToggleCodeBlockButton />
+          <ToggleCodeButton />
+          <ListButtonGroup />
+          <VerticalDivider />
+          <CommandButtonGroup>
+            <ToggleColumnsButton attrs={COLUMNS_DATA.two} />
+            <ToggleColumnsButton attrs={COLUMNS_DATA.three} />
+          </CommandButtonGroup>
+          <VerticalDivider />
+          <CalloutTypeButtonGroup />
+        </Toolbar>
+      </Box>
+      <Box sx={{
+        display: { xs: 'flex', sm: 'none', md: 'none' },
+        flexDirection: 'column',
+        maxWidth: '100%',
+        alignItems: 'center',
+        width: '100%',
+        gap: '0.1rem',
+        backgroundColor: 'background.transparent',
+      }}>
+        <EmojiPopupComponent />
+        <Toolbar>
+          <HeadingLevelButtonGroup showAll />
+          <HistoryButtonGroup />
+          <LineHeightButtonDropdown />
+        </Toolbar>
+        <Toolbar>
+          <ToggleBoldButton />
+          <ToggleItalicButton />
+          <ToggleStrikeButton />
+          <ToggleUnderlineButton />
+          <CommandButtonGroup>
+            <DecreaseFontSizeButton />
+            <FontSizeButtons />
+            <IncreaseFontSizeButton />
+          </CommandButtonGroup>
+        </Toolbar>
+        <Toolbar>
+          <TextAlignmentButtonGroup />
+          <ToggleBlockquoteButton />
+          <ToggleCodeBlockButton />
+          <ToggleCodeButton />
+        </Toolbar>
+        <Toolbar>
+          <ListButtonGroup />
+          <CommandButtonGroup>
+            <ToggleColumnsButton attrs={COLUMNS_DATA.two} />
+            <ToggleColumnsButton attrs={COLUMNS_DATA.three} />
+          </CommandButtonGroup>
+          <IndentationButtonGroup />
+        </Toolbar>
+      </Box>
+      <Box sx={{
+        display: { xs: 'none', sm: 'flex', md: 'none' },
+        flexDirection: 'column',
+        maxWidth: '100%',
+        alignItems: 'center',
+        width: '100%',
+        gap: '0.5rem',
+        backgroundColor: 'background.transparent',
+      }}>
+        <EmojiPopupComponent />
+        <Toolbar>
+          <HeadingLevelButtonGroup showAll />
+          <HistoryButtonGroup />
+          <LineHeightButtonDropdown />
+          <FontFamilyButtons />
+          <ToggleBoldButton />
+          <ToggleItalicButton />
+          <ToggleStrikeButton />
+          <ToggleUnderlineButton />
+          <CommandButtonGroup>
+            <DecreaseFontSizeButton />
+            <FontSizeButtons />
+            <IncreaseFontSizeButton />
+          </CommandButtonGroup>
+        </Toolbar>
+        <Toolbar>
+          <TextAlignmentButtonGroup />
+          <IndentationButtonGroup />
+          <ToggleBlockquoteButton />
+          <ToggleCodeBlockButton />
+          <ToggleCodeButton />
+          <ListButtonGroup />
+          <CommandButtonGroup>
+            <ToggleColumnsButton attrs={COLUMNS_DATA.two} />
+            <ToggleColumnsButton attrs={COLUMNS_DATA.three} />
+          </CommandButtonGroup>
+        </Toolbar>
+      </Box>
+    </>
   );
 }
