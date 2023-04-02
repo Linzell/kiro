@@ -1,5 +1,6 @@
 import Box from '@mui/material/Box';
 import {
+  CalloutTypeButtonGroup,
   CommandButtonGroup,
   HeadingLevelButtonGroup,
   DecreaseFontSizeButton,
@@ -103,6 +104,7 @@ export default function toolbar() {
             <ToggleColumnsButton attrs={COLUMNS_DATA.two} />
             <ToggleColumnsButton attrs={COLUMNS_DATA.three} />
           </CommandButtonGroup>
+          <CalloutTypeButtonGroup />
         </Toolbar>
       </Box>
     </>
