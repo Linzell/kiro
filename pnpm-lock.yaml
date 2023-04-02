@@ -19,7 +19,7 @@ specifiers:
   '@remirror/styles': ^2.0.4
   '@tauri-apps/api': ^1.2.0
   '@tauri-apps/cli': ^1.2.3
-  '@types/node': ^18.15.11
+  '@types/node': ^18.15.6
   '@types/react': ^18.0.32
   '@types/react-dom': ^18.0.11
   '@types/uuid': ^9.0.1
