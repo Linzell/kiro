@@ -1,6 +1,5 @@
 import Box from '@mui/material/Box';
 import {
-  CalloutTypeButtonGroup,
   CommandButtonGroup,
   HeadingLevelButtonGroup,
   DecreaseFontSizeButton,
@@ -19,7 +18,6 @@ import {
   ToggleStrikeButton,
   ToggleUnderlineButton,
   Toolbar,
-  VerticalDivider,
 } from '@remirror/react';
 import FontFamilyButtons from '@/editorRemirror/extensions/fontFamilyButtons';
 import FontSizeButtons from '@/editorRemirror/extensions/fontSizeButtons';
@@ -29,45 +27,6 @@ import COLUMNS_DATA from '@/editorRemirror/data/columnsData';
 export default function toolbar() {
   return (
     <>
-      <Box sx={{
-        display: { xs: 'none', sm: 'none', md: 'flex' },
-        maxWidth: '100%',
-        width: '100%',
-        backgroundColor: 'background.transparent',
-      }}>
-        <Toolbar>
-          <EmojiPopupComponent />
-          <HistoryButtonGroup />
-          <HeadingLevelButtonGroup showAll />
-          <ToggleBoldButton />
-          <ToggleItalicButton />
-          <ToggleStrikeButton />
-          <ToggleUnderlineButton />
-          <VerticalDivider />
-          <CommandButtonGroup>
-            <DecreaseFontSizeButton />
-            <FontSizeButtons />
-            <IncreaseFontSizeButton />
-          </CommandButtonGroup>
-          <VerticalDivider />
-          <TextAlignmentButtonGroup />
-          <IndentationButtonGroup />
-          <LineHeightButtonDropdown />
-          <FontFamilyButtons />
-          <VerticalDivider />
-          <ToggleBlockquoteButton />
-          <ToggleCodeBlockButton />
-          <ToggleCodeButton />
-          <ListButtonGroup />
-          <VerticalDivider />
-          <CommandButtonGroup>
-            <ToggleColumnsButton attrs={COLUMNS_DATA.two} />
-            <ToggleColumnsButton attrs={COLUMNS_DATA.three} />
-          </CommandButtonGroup>
-          <VerticalDivider />
-          <CalloutTypeButtonGroup />
-        </Toolbar>
-      </Box>
       <Box sx={{
         display: { xs: 'flex', sm: 'none', md: 'none' },
         flexDirection: 'column',
@@ -110,10 +69,9 @@ export default function toolbar() {
         </Toolbar>
       </Box>
       <Box sx={{
-        display: { xs: 'none', sm: 'flex', md: 'none' },
+        display: { xs: 'none', sm: 'flex', md: 'flex' },
         flexDirection: 'column',
         maxWidth: '100%',
-        alignItems: 'center',
         width: '100%',
         gap: '0.5rem',
         backgroundColor: 'background.transparent',
