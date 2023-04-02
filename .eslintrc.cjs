@@ -51,7 +51,7 @@ module.exports = {
     'import/export': 'error',
     'import/extensions': 'off',
     'import/no-unresolved': 'off',
-    'import/no-extraneous-dependencies': 'error',
+    'import/no-extraneous-dependencies': 'off',
     'import/prefer-default-export': 'error',
     'prefer-promise-reject-errors': 'off',
     'react/react-in-jsx-scope': 'off',
