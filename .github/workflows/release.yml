@@ -3,8 +3,26 @@ on:
   push:
     branches:
       - "release"
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
 jobs:
+  delete-old-release:
+    permissions:
+      contents: write
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: sgpublic/delete-release-action@v1.0
+        with:
+          pre-release-drop: true
+          pre-release-keep-count: -1
+          pre-release-drop-tag: true
+          draft-drop: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
   create-release:
+    needs: delete-old-release
     permissions:
       contents: write
     runs-on: ubuntu-20.04
