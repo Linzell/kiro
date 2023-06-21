@@ -47,8 +47,8 @@ dependencies:
     specifier: ^2.0.4
     version: 2.0.4(@emotion/react@11.10.6)(@emotion/styled@11.10.6)(@types/react@18.0.35)(react@18.2.0)
   '@tauri-apps/api':
-    specifier: ^1.2.0
-    version: 1.2.0
+    specifier: ^1.4.0
+    version: 1.4.0
   autoprefixer:
     specifier: ^10.4.14
     version: 10.4.14(postcss@8.4.21)
@@ -112,7 +112,7 @@ devDependencies:
     specifier: ^1.2.3
     version: 1.2.3
   '@types/node':
-    specifier: ^20.1.0
+    specifier: ^20.3.1
     version: 20.3.1
   '@types/react':
     specifier: ^18.0.35
@@ -2597,8 +2597,8 @@ packages:
       '@svgmoji/core': 3.2.0
     dev: false
 
-  /@tauri-apps/api@1.2.0:
-    resolution: {integrity: sha512-lsI54KI6HGf7VImuf/T9pnoejfgkNoXveP14pVV7XarrQ46rOejIVJLFqHI9sRReJMGdh2YuCoI3cc/yCWCsrw==}
+  /@tauri-apps/api@1.4.0:
+    resolution: {integrity: sha512-Jd6HPoTM1PZSFIzq7FB8VmMu3qSSyo/3lSwLpoapW+lQ41CL5Dow2KryLg+gyazA/58DRWI9vu/XpEeHK4uMdw==}
     engines: {node: '>= 14.6.0', npm: '>= 6.6.0', yarn: '>= 1.19.1'}
     dev: false
 
