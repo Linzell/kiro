@@ -34,7 +34,7 @@ dependencies:
     version: 2.0.15(@remirror/pm@2.0.4)(@types/node@20.3.1)
   '@remirror/extension-react-tables':
     specifier: ^2.2.14
-    version: 2.2.14(@remirror/pm@2.0.4)(@types/node@20.3.1)(@types/react-dom@18.0.11)(@types/react@18.0.35)(react-dom@18.2.0)(react@18.2.0)
+    version: 2.2.14(@remirror/pm@2.0.4)(@types/node@20.3.1)(@types/react-dom@18.2.7)(@types/react@18.0.35)(react-dom@18.2.0)(react@18.2.0)
   '@remirror/extension-yjs':
     specifier: ^3.0.13
     version: 3.0.13(@remirror/pm@2.0.4)(@types/node@20.3.1)(yjs@13.5.52)
@@ -43,10 +43,10 @@ dependencies:
     version: 2.0.4
   '@remirror/react':
     specifier: ^2.0.27
-    version: 2.0.27(@remirror/pm@2.0.4)(@types/node@20.3.1)(@types/react-dom@18.0.11)(@types/react@18.0.35)(react-dom@18.2.0)(react@18.2.0)
+    version: 2.0.27(@remirror/pm@2.0.4)(@types/node@20.3.1)(@types/react-dom@18.2.7)(@types/react@18.0.35)(react-dom@18.2.0)(react@18.2.0)
   '@remirror/react-editors':
     specifier: ^1.0.27
-    version: 1.0.27(@emotion/react@11.10.6)(@emotion/styled@11.10.6)(@types/node@20.3.1)(@types/react-dom@18.0.11)(@types/react@18.0.35)(react-dom@18.2.0)(react@18.2.0)
+    version: 1.0.27(@emotion/react@11.10.6)(@emotion/styled@11.10.6)(@types/node@20.3.1)(@types/react-dom@18.2.7)(@types/react@18.0.35)(react-dom@18.2.0)(react@18.2.0)
   '@remirror/styles':
     specifier: ^2.0.4
     version: 2.0.4(@emotion/react@11.10.6)(@emotion/styled@11.10.6)(@types/react@18.0.35)(react@18.2.0)
@@ -85,7 +85,7 @@ dependencies:
     version: 12.2.0(i18next@22.4.14)(react-dom@18.2.0)(react@18.2.0)
   react-redux:
     specifier: ^8.1.2
-    version: 8.1.2(@types/react-dom@18.0.11)(@types/react@18.0.35)(react-dom@18.2.0)(react@18.2.0)(redux@4.2.1)
+    version: 8.1.2(@types/react-dom@18.2.7)(@types/react@18.0.35)(react-dom@18.2.0)(react@18.2.0)(redux@4.2.1)
   react-router-dom:
     specifier: ^6.14.2
     version: 6.14.2(react-dom@18.2.0)(react@18.2.0)
@@ -122,8 +122,8 @@ devDependencies:
     specifier: ^18.0.35
     version: 18.0.35
   '@types/react-dom':
-    specifier: ^18.0.11
-    version: 18.0.11
+    specifier: ^18.2.7
+    version: 18.2.7
   '@types/uuid':
     specifier: ^9.0.1
     version: 9.0.1
@@ -1095,7 +1095,7 @@ packages:
     dependencies:
       immer: 9.0.21
       react: 18.2.0
-      react-redux: 8.1.2(@types/react-dom@18.0.11)(@types/react@18.0.35)(react-dom@18.2.0)(react@18.2.0)(redux@4.2.1)
+      react-redux: 8.1.2(@types/react-dom@18.2.7)(@types/react@18.0.35)(react-dom@18.2.0)(react@18.2.0)(redux@4.2.1)
       redux: 4.2.1
       redux-thunk: 2.4.2(redux@4.2.1)
       reselect: 4.1.7
@@ -1769,7 +1769,7 @@ packages:
       - jsdom
     dev: false
 
-  /@remirror/extension-react-component@2.0.12(@remirror/pm@2.0.4)(@types/node@20.3.1)(@types/react-dom@18.0.11)(@types/react@18.0.35)(react-dom@18.2.0)(react@18.2.0):
+  /@remirror/extension-react-component@2.0.12(@remirror/pm@2.0.4)(@types/node@20.3.1)(@types/react-dom@18.2.7)(@types/react@18.0.35)(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-D1/ey92uBmFZZmDDmf4j7IsJ/q9gqZDz2EEqqtDPPBr09yOtYaakuLh8/FJ5ntlCTjIWO4646eBfKHBcZOCFhA==}
     peerDependencies:
       '@remirror/pm': ^2.0.4
@@ -1788,7 +1788,7 @@ packages:
       '@remirror/messages': 2.0.2
       '@remirror/pm': 2.0.4
       '@types/react': 18.0.35
-      '@types/react-dom': 18.0.11
+      '@types/react-dom': 18.2.7
       nanoevents: 5.1.13
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
@@ -1797,7 +1797,7 @@ packages:
       - jsdom
     dev: false
 
-  /@remirror/extension-react-tables@2.2.14(@remirror/pm@2.0.4)(@types/node@20.3.1)(@types/react-dom@18.0.11)(@types/react@18.0.35)(react-dom@18.2.0)(react@18.2.0):
+  /@remirror/extension-react-tables@2.2.14(@remirror/pm@2.0.4)(@types/node@20.3.1)(@types/react-dom@18.2.7)(@types/react@18.0.35)(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-ElzTY1KGbg6LdDk9hMQobZ6krjyfQB5Pkc+0JhurwrEDjEFE0ccvb89UlNDRO88PmABU71G7WGutlZec3RMKoQ==}
     peerDependencies:
       '@remirror/pm': ^2.0.4
@@ -1820,9 +1820,9 @@ packages:
       '@remirror/messages': 2.0.2
       '@remirror/pm': 2.0.4
       '@remirror/preset-core': 2.0.15(@remirror/pm@2.0.4)(@types/node@20.3.1)
-      '@remirror/react-components': 2.1.11(@remirror/pm@2.0.4)(@types/node@20.3.1)(@types/react-dom@18.0.11)(@types/react@18.0.35)(react-dom@18.2.0)(react@18.2.0)
-      '@remirror/react-core': 2.0.16(@remirror/pm@2.0.4)(@types/node@20.3.1)(@types/react-dom@18.0.11)(@types/react@18.0.35)(react-dom@18.2.0)(react@18.2.0)
-      '@remirror/react-hooks': 2.0.21(@remirror/pm@2.0.4)(@types/node@20.3.1)(@types/react-dom@18.0.11)(@types/react@18.0.35)(react-dom@18.2.0)(react@18.2.0)
+      '@remirror/react-components': 2.1.11(@remirror/pm@2.0.4)(@types/node@20.3.1)(@types/react-dom@18.2.7)(@types/react@18.0.35)(react-dom@18.2.0)(react@18.2.0)
+      '@remirror/react-core': 2.0.16(@remirror/pm@2.0.4)(@types/node@20.3.1)(@types/react-dom@18.2.7)(@types/react@18.0.35)(react-dom@18.2.0)(react@18.2.0)
+      '@remirror/react-hooks': 2.0.21(@remirror/pm@2.0.4)(@types/node@20.3.1)(@types/react-dom@18.2.7)(@types/react@18.0.35)(react-dom@18.2.0)(react@18.2.0)
       '@remirror/theme': 2.0.6(@remirror/pm@2.0.4)
       jsx-dom-cjs: 8.0.5
       react: 18.2.0
@@ -2141,7 +2141,7 @@ packages:
       - jsdom
     dev: false
 
-  /@remirror/preset-react@2.0.13(@remirror/pm@2.0.4)(@types/node@20.3.1)(@types/react-dom@18.0.11)(@types/react@18.0.35)(react-dom@18.2.0)(react@18.2.0):
+  /@remirror/preset-react@2.0.13(@remirror/pm@2.0.4)(@types/node@20.3.1)(@types/react-dom@18.2.7)(@types/react@18.0.35)(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-NZTyQllH+YZb8zsiiuUSOxbIdmy9nWu5R94GR3ITIrUlvjBxo2fwb0rjV/NDr9DT89mdTSvHqQ2JFsmtjHswVQ==}
     peerDependencies:
       '@remirror/pm': ^2.0.4
@@ -2158,11 +2158,11 @@ packages:
       '@babel/runtime': 7.21.0
       '@remirror/core': 2.0.12(@remirror/pm@2.0.4)(@types/node@20.3.1)
       '@remirror/extension-placeholder': 2.0.13(@remirror/pm@2.0.4)(@types/node@20.3.1)
-      '@remirror/extension-react-component': 2.0.12(@remirror/pm@2.0.4)(@types/node@20.3.1)(@types/react-dom@18.0.11)(@types/react@18.0.35)(react-dom@18.2.0)(react@18.2.0)
+      '@remirror/extension-react-component': 2.0.12(@remirror/pm@2.0.4)(@types/node@20.3.1)(@types/react-dom@18.2.7)(@types/react@18.0.35)(react-dom@18.2.0)(react@18.2.0)
       '@remirror/pm': 2.0.4
       '@remirror/react-utils': 2.0.4(@remirror/pm@2.0.4)(@types/react@18.0.35)(react@18.2.0)
       '@types/react': 18.0.35
-      '@types/react-dom': 18.0.11
+      '@types/react-dom': 18.2.7
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
     transitivePeerDependencies:
@@ -2206,7 +2206,7 @@ packages:
       - prettier
     dev: false
 
-  /@remirror/react-components@2.1.11(@remirror/pm@2.0.4)(@types/node@20.3.1)(@types/react-dom@18.0.11)(@types/react@18.0.35)(react-dom@18.2.0)(react@18.2.0):
+  /@remirror/react-components@2.1.11(@remirror/pm@2.0.4)(@types/node@20.3.1)(@types/react-dom@18.2.7)(@types/react@18.0.35)(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-2JYxMryRdsR50GmNwVV2ff2DRu4uVCJ5g1ZZCpDxTFOJeOqFIPFNKtoGjBdUhkTQihKkIN5NFvG6tci1LsqgqA==}
     peerDependencies:
       '@remirror/pm': ^2.0.4
@@ -2253,14 +2253,14 @@ packages:
       '@remirror/icons': 2.0.1
       '@remirror/messages': 2.0.2
       '@remirror/pm': 2.0.4
-      '@remirror/react-core': 2.0.16(@remirror/pm@2.0.4)(@types/node@20.3.1)(@types/react-dom@18.0.11)(@types/react@18.0.35)(react-dom@18.2.0)(react@18.2.0)
-      '@remirror/react-hooks': 2.0.21(@remirror/pm@2.0.4)(@types/node@20.3.1)(@types/react-dom@18.0.11)(@types/react@18.0.35)(react-dom@18.2.0)(react@18.2.0)
+      '@remirror/react-core': 2.0.16(@remirror/pm@2.0.4)(@types/node@20.3.1)(@types/react-dom@18.2.7)(@types/react@18.0.35)(react-dom@18.2.0)(react@18.2.0)
+      '@remirror/react-hooks': 2.0.21(@remirror/pm@2.0.4)(@types/node@20.3.1)(@types/react-dom@18.2.7)(@types/react@18.0.35)(react-dom@18.2.0)(react@18.2.0)
       '@remirror/react-utils': 2.0.4(@remirror/pm@2.0.4)(@types/react@18.0.35)(react@18.2.0)
       '@remirror/theme': 2.0.6(@remirror/pm@2.0.4)
       '@seznam/compose-react-refs': 1.0.6
       '@types/react': 18.0.35
       '@types/react-color': 3.0.6
-      '@types/react-dom': 18.0.11
+      '@types/react-dom': 18.2.7
       create-context-state: 2.0.0(@types/react@18.0.35)(react@18.2.0)
       match-sorter: 6.3.1
       multishift: 2.0.7(@remirror/pm@2.0.4)(@types/react@18.0.35)(react-dom@18.2.0)(react@18.2.0)
@@ -2274,7 +2274,7 @@ packages:
       - prettier
     dev: false
 
-  /@remirror/react-core@2.0.16(@remirror/pm@2.0.4)(@types/node@20.3.1)(@types/react-dom@18.0.11)(@types/react@18.0.35)(react-dom@18.2.0)(react@18.2.0):
+  /@remirror/react-core@2.0.16(@remirror/pm@2.0.4)(@types/node@20.3.1)(@types/react-dom@18.2.7)(@types/react@18.0.35)(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-x70HJWGK30d4DbPPyPNN/qgwDAhnerD9Jb0eC2ykkrh7jushyma5fSCbAi7FbixKN47knC7aQg8+5PmiKxluAQ==}
     peerDependencies:
       '@remirror/pm': ^2.0.4
@@ -2291,17 +2291,17 @@ packages:
       '@babel/runtime': 7.21.0
       '@remirror/core': 2.0.12(@remirror/pm@2.0.4)(@types/node@20.3.1)
       '@remirror/extension-positioner': 2.1.7(@remirror/pm@2.0.4)(@types/node@20.3.1)
-      '@remirror/extension-react-component': 2.0.12(@remirror/pm@2.0.4)(@types/node@20.3.1)(@types/react-dom@18.0.11)(@types/react@18.0.35)(react-dom@18.2.0)(react@18.2.0)
+      '@remirror/extension-react-component': 2.0.12(@remirror/pm@2.0.4)(@types/node@20.3.1)(@types/react-dom@18.2.7)(@types/react@18.0.35)(react-dom@18.2.0)(react@18.2.0)
       '@remirror/i18n': 2.0.2
       '@remirror/pm': 2.0.4
       '@remirror/preset-core': 2.0.15(@remirror/pm@2.0.4)(@types/node@20.3.1)
-      '@remirror/preset-react': 2.0.13(@remirror/pm@2.0.4)(@types/node@20.3.1)(@types/react-dom@18.0.11)(@types/react@18.0.35)(react-dom@18.2.0)(react@18.2.0)
+      '@remirror/preset-react': 2.0.13(@remirror/pm@2.0.4)(@types/node@20.3.1)(@types/react-dom@18.2.7)(@types/react@18.0.35)(react-dom@18.2.0)(react@18.2.0)
       '@remirror/react-renderer': 2.0.12(@remirror/pm@2.0.4)(@types/node@20.3.1)(@types/react@18.0.35)(react@18.2.0)
       '@remirror/react-utils': 2.0.4(@remirror/pm@2.0.4)(@types/react@18.0.35)(react@18.2.0)
       '@remirror/theme': 2.0.6(@remirror/pm@2.0.4)
       '@seznam/compose-react-refs': 1.0.6
       '@types/react': 18.0.35
-      '@types/react-dom': 18.0.11
+      '@types/react-dom': 18.2.7
       create-context-state: 2.0.0(@types/react@18.0.35)(react@18.2.0)
       fast-deep-equal: 3.1.3
       react: 18.2.0
@@ -2313,7 +2313,7 @@ packages:
       - jsdom
     dev: false
 
-  /@remirror/react-editors@1.0.27(@emotion/react@11.10.6)(@emotion/styled@11.10.6)(@types/node@20.3.1)(@types/react-dom@18.0.11)(@types/react@18.0.35)(react-dom@18.2.0)(react@18.2.0):
+  /@remirror/react-editors@1.0.27(@emotion/react@11.10.6)(@emotion/styled@11.10.6)(@types/node@20.3.1)(@types/react-dom@18.2.7)(@types/react@18.0.35)(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-GAp52PL7cDRjNhYGFZsFbbZNWMrvBSB2Y/8xR/VHvVdMCByoU1dJelXwZ7Ksk9IX9KX/vkpFqiA56ZnWG/KQ5w==}
     peerDependencies:
       '@types/react': ^16.14.0 || ^17 || ^18
@@ -2328,13 +2328,13 @@ packages:
     dependencies:
       '@babel/runtime': 7.21.0
       '@remirror/core-helpers': 2.0.1
-      '@remirror/extension-react-tables': 2.2.14(@remirror/pm@2.0.4)(@types/node@20.3.1)(@types/react-dom@18.0.11)(@types/react@18.0.35)(react-dom@18.2.0)(react@18.2.0)
+      '@remirror/extension-react-tables': 2.2.14(@remirror/pm@2.0.4)(@types/node@20.3.1)(@types/react-dom@18.2.7)(@types/react@18.0.35)(react-dom@18.2.0)(react@18.2.0)
       '@remirror/pm': 2.0.4
-      '@remirror/react': 2.0.27(@remirror/pm@2.0.4)(@types/node@20.3.1)(@types/react-dom@18.0.11)(@types/react@18.0.35)(react-dom@18.2.0)(react@18.2.0)
+      '@remirror/react': 2.0.27(@remirror/pm@2.0.4)(@types/node@20.3.1)(@types/react-dom@18.2.7)(@types/react@18.0.35)(react-dom@18.2.0)(react@18.2.0)
       '@remirror/styles': 2.0.4(@emotion/react@11.10.6)(@emotion/styled@11.10.6)(@types/react@18.0.35)(react@18.2.0)
       '@svgmoji/noto': 3.2.0
       '@types/react': 18.0.35
-      '@types/react-dom': 18.0.11
+      '@types/react-dom': 18.2.7
       '@types/refractor': 3.0.2
       create-context-state: 2.0.0(@types/react@18.0.35)(react@18.2.0)
       react: 18.2.0
@@ -2354,7 +2354,7 @@ packages:
       - styled-components
     dev: false
 
-  /@remirror/react-hooks@2.0.21(@remirror/pm@2.0.4)(@types/node@20.3.1)(@types/react-dom@18.0.11)(@types/react@18.0.35)(react-dom@18.2.0)(react@18.2.0):
+  /@remirror/react-hooks@2.0.21(@remirror/pm@2.0.4)(@types/node@20.3.1)(@types/react-dom@18.2.7)(@types/react@18.0.35)(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-40P+vooE4lIJ9m+xS/gRkKv+R4jRZvESx+YRKlaAknc3L841iU/KfUmTCES64ass0nTCRxwYU6Q2evSBLx547g==}
     peerDependencies:
       '@remirror/pm': ^2.0.4
@@ -2382,10 +2382,10 @@ packages:
       '@remirror/extension-positioner': 2.1.7(@remirror/pm@2.0.4)(@types/node@20.3.1)
       '@remirror/i18n': 2.0.2
       '@remirror/pm': 2.0.4
-      '@remirror/react-core': 2.0.16(@remirror/pm@2.0.4)(@types/node@20.3.1)(@types/react-dom@18.0.11)(@types/react@18.0.35)(react-dom@18.2.0)(react@18.2.0)
+      '@remirror/react-core': 2.0.16(@remirror/pm@2.0.4)(@types/node@20.3.1)(@types/react-dom@18.2.7)(@types/react@18.0.35)(react-dom@18.2.0)(react@18.2.0)
       '@remirror/react-utils': 2.0.4(@remirror/pm@2.0.4)(@types/react@18.0.35)(react@18.2.0)
       '@types/react': 18.0.35
-      '@types/react-dom': 18.0.11
+      '@types/react-dom': 18.2.7
       multishift: 2.0.7(@remirror/pm@2.0.4)(@types/react@18.0.35)(react-dom@18.2.0)(react@18.2.0)
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
@@ -2434,7 +2434,7 @@ packages:
       - '@remirror/pm'
     dev: false
 
-  /@remirror/react@2.0.27(@remirror/pm@2.0.4)(@types/node@20.3.1)(@types/react-dom@18.0.11)(@types/react@18.0.35)(react-dom@18.2.0)(react@18.2.0):
+  /@remirror/react@2.0.27(@remirror/pm@2.0.4)(@types/node@20.3.1)(@types/react-dom@18.2.7)(@types/react@18.0.35)(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-BsJjoHo6sx5a0wWN9XzWYo6yukbquv2cLWoyAfEvqgXV3MQdGv9NAGD94nNDk0Bzi5iQu5pdx4/pkcVAW/NeXA==}
     peerDependencies:
       '@types/react': ^16.14.0 || ^17 || ^18
@@ -2450,16 +2450,16 @@ packages:
       '@babel/runtime': 7.21.0
       '@remirror/extension-placeholder': 2.0.13(@remirror/pm@2.0.4)(@types/node@20.3.1)
       '@remirror/extension-positioner': 2.1.7(@remirror/pm@2.0.4)(@types/node@20.3.1)
-      '@remirror/extension-react-component': 2.0.12(@remirror/pm@2.0.4)(@types/node@20.3.1)(@types/react-dom@18.0.11)(@types/react@18.0.35)(react-dom@18.2.0)(react@18.2.0)
-      '@remirror/extension-react-tables': 2.2.14(@remirror/pm@2.0.4)(@types/node@20.3.1)(@types/react-dom@18.0.11)(@types/react@18.0.35)(react-dom@18.2.0)(react@18.2.0)
-      '@remirror/preset-react': 2.0.13(@remirror/pm@2.0.4)(@types/node@20.3.1)(@types/react-dom@18.0.11)(@types/react@18.0.35)(react-dom@18.2.0)(react@18.2.0)
-      '@remirror/react-components': 2.1.11(@remirror/pm@2.0.4)(@types/node@20.3.1)(@types/react-dom@18.0.11)(@types/react@18.0.35)(react-dom@18.2.0)(react@18.2.0)
-      '@remirror/react-core': 2.0.16(@remirror/pm@2.0.4)(@types/node@20.3.1)(@types/react-dom@18.0.11)(@types/react@18.0.35)(react-dom@18.2.0)(react@18.2.0)
-      '@remirror/react-hooks': 2.0.21(@remirror/pm@2.0.4)(@types/node@20.3.1)(@types/react-dom@18.0.11)(@types/react@18.0.35)(react-dom@18.2.0)(react@18.2.0)
+      '@remirror/extension-react-component': 2.0.12(@remirror/pm@2.0.4)(@types/node@20.3.1)(@types/react-dom@18.2.7)(@types/react@18.0.35)(react-dom@18.2.0)(react@18.2.0)
+      '@remirror/extension-react-tables': 2.2.14(@remirror/pm@2.0.4)(@types/node@20.3.1)(@types/react-dom@18.2.7)(@types/react@18.0.35)(react-dom@18.2.0)(react@18.2.0)
+      '@remirror/preset-react': 2.0.13(@remirror/pm@2.0.4)(@types/node@20.3.1)(@types/react-dom@18.2.7)(@types/react@18.0.35)(react-dom@18.2.0)(react@18.2.0)
+      '@remirror/react-components': 2.1.11(@remirror/pm@2.0.4)(@types/node@20.3.1)(@types/react-dom@18.2.7)(@types/react@18.0.35)(react-dom@18.2.0)(react@18.2.0)
+      '@remirror/react-core': 2.0.16(@remirror/pm@2.0.4)(@types/node@20.3.1)(@types/react-dom@18.2.7)(@types/react@18.0.35)(react-dom@18.2.0)(react@18.2.0)
+      '@remirror/react-hooks': 2.0.21(@remirror/pm@2.0.4)(@types/node@20.3.1)(@types/react-dom@18.2.7)(@types/react@18.0.35)(react-dom@18.2.0)(react@18.2.0)
       '@remirror/react-renderer': 2.0.12(@remirror/pm@2.0.4)(@types/node@20.3.1)(@types/react@18.0.35)(react@18.2.0)
       '@remirror/react-utils': 2.0.4(@remirror/pm@2.0.4)(@types/react@18.0.35)(react@18.2.0)
       '@types/react': 18.0.35
-      '@types/react-dom': 18.0.11
+      '@types/react-dom': 18.2.7
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
     transitivePeerDependencies:
@@ -2795,8 +2795,8 @@ packages:
       '@types/reactcss': 1.2.6
     dev: false
 
-  /@types/react-dom@18.0.11:
-    resolution: {integrity: sha512-O38bPbI2CWtgw/OoQoY+BRelw7uysmXbWvw3nLWO21H1HSh+GOlqPuXshJfjmpNlKiiSDG9cc1JZAaMmVdcTlw==}
+  /@types/react-dom@18.2.7:
+    resolution: {integrity: sha512-GRaAEriuT4zp9N4p1i8BDBYmEyfo+xQ3yHjJU4eiK5NDa1RmUZG+unZABUTK4/Ox/M+GaHwb6Ow8rUITrtjszA==}
     dependencies:
       '@types/react': 18.0.35
 
@@ -6233,7 +6233,7 @@ packages:
   /react-is@18.2.0:
     resolution: {integrity: sha512-xWGDIW6x921xtzPkhiULtthJHoJvBbF3q26fzloPCK0hsvxtPVelvftw3zjbHWSkR2km9Z+4uxbDDK/6Zw9B8w==}
 
-  /react-redux@8.1.2(@types/react-dom@18.0.11)(@types/react@18.0.35)(react-dom@18.2.0)(react@18.2.0)(redux@4.2.1):
+  /react-redux@8.1.2(@types/react-dom@18.2.7)(@types/react@18.0.35)(react-dom@18.2.0)(react@18.2.0)(redux@4.2.1):
     resolution: {integrity: sha512-xJKYI189VwfsFc4CJvHqHlDrzyFTY/3vZACbE+rr/zQ34Xx1wQfB4OTOSeOSNrF6BDVe8OOdxIrAnMGXA3ggfw==}
     peerDependencies:
       '@types/react': ^16.8 || ^17.0 || ^18.0
@@ -6257,7 +6257,7 @@ packages:
       '@babel/runtime': 7.21.0
       '@types/hoist-non-react-statics': 3.3.1
       '@types/react': 18.0.35
-      '@types/react-dom': 18.0.11
+      '@types/react-dom': 18.2.7
       '@types/use-sync-external-store': 0.0.3
       hoist-non-react-statics: 3.3.2
       react: 18.2.0
