@@ -1,5 +1,9 @@
 lockfileVersion: '6.0'
 
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
 dependencies:
   '@emotion/react':
     specifier: ^11.11.1
@@ -56,8 +60,8 @@ dependencies:
     specifier: ^0.4.3
     version: 0.4.3(eslint@8.47.0)
   i18next:
-    specifier: ^22.5.1
-    version: 22.5.1
+    specifier: ^23.4.6
+    version: 23.4.6
   i18next-browser-languagedetector:
     specifier: ^7.1.0
     version: 7.1.0
@@ -78,7 +82,7 @@ dependencies:
     version: 18.2.0(react@18.2.0)
   react-i18next:
     specifier: ^12.3.1
-    version: 12.3.1(i18next@22.5.1)(react-dom@18.2.0)(react@18.2.0)
+    version: 12.3.1(i18next@23.4.6)(react-dom@18.2.0)(react@18.2.0)
   react-redux:
     specifier: ^8.1.2
     version: 8.1.2(@types/react-dom@18.2.7)(@types/react@18.2.20)(react-dom@18.2.0)(react@18.2.0)(redux@4.2.1)
@@ -4967,8 +4971,8 @@ packages:
       - encoding
     dev: false
 
-  /i18next@22.5.1:
-    resolution: {integrity: sha512-8TGPgM3pAD+VRsMtUMNknRz3kzqwp/gPALrWMsDnmC1mKqJwpWyooQRLMcbTwq8z8YwSmuj+ZYvc+xCuEpkssA==}
+  /i18next@23.4.6:
+    resolution: {integrity: sha512-jBE8bui969Ygv7TVYp0pwDZB7+he0qsU+nz7EcfdqSh+QvKjEfl9YPRQd/KrGiMhTYFGkeuPaeITenKK/bSFDg==}
     dependencies:
       '@babel/runtime': 7.22.10
     dev: false
@@ -6346,7 +6350,7 @@ packages:
       react: 18.2.0
       scheduler: 0.23.0
 
-  /react-i18next@12.3.1(i18next@22.5.1)(react-dom@18.2.0)(react@18.2.0):
+  /react-i18next@12.3.1(i18next@23.4.6)(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-5v8E2XjZDFzK7K87eSwC7AJcAkcLt5xYZ4+yTPDAW1i7C93oOY1dnr4BaQM7un4Hm+GmghuiPvevWwlca5PwDA==}
     peerDependencies:
       i18next: '>= 19.0.0'
@@ -6361,7 +6365,7 @@ packages:
     dependencies:
       '@babel/runtime': 7.22.10
       html-parse-stringify: 3.0.1
-      i18next: 22.5.1
+      i18next: 23.4.6
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
     dev: false
@@ -7612,7 +7616,3 @@ packages:
   /yocto-queue@0.1.0:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
-
-settings:
-  autoInstallPeers: true
-  excludeLinksFromLockfile: false
