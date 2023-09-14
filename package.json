@@ -21,7 +21,7 @@
     "@emotion/styled": "^11.11.0",
     "@fireproof/core": "^0.12.8",
     "@mui/icons-material": "^5.14.3",
-    "@mui/material": "^5.14.4",
+    "@mui/material": "^5.14.8",
     "@remirror/core": "^2.0.19",
     "@remirror/extension-annotation": "^2.0.16",
     "@remirror/extension-find": "^0.1.6",
