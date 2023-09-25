@@ -21,7 +21,7 @@ jobs:
           registry-url: "https://npm.pkg.github.com"
       - name: Pnpm Install
         run: pnpm install --no-frozen-lockfile
-      - uses: sibiraj-s/action-eslint@v2
+      - uses: sibiraj-s/action-eslint@v3
         with:
           eslint-args: '--ignore-path=.gitignore --quiet'
           extensions: 'js,jsx,ts,tsx'
