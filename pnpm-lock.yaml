@@ -37,7 +37,7 @@ dependencies:
     version: 2.2.19(@remirror/pm@2.0.8)(@types/node@20.5.0)(@types/react-dom@18.2.7)(@types/react@18.2.37)(react-dom@18.2.0)(react@18.2.0)
   '@remirror/extension-yjs':
     specifier: ^3.0.15
-    version: 3.0.15(@remirror/pm@2.0.8)(@types/node@20.5.0)(yjs@13.6.7)
+    version: 3.0.15(@remirror/pm@2.0.8)(@types/node@20.5.0)(yjs@13.6.9)
   '@remirror/pm':
     specifier: ^2.0.8
     version: 2.0.8
@@ -105,8 +105,8 @@ dependencies:
     specifier: ^10.2.5
     version: 10.2.5
   yjs:
-    specifier: ^13.6.7
-    version: 13.6.7
+    specifier: ^13.6.9
+    version: 13.6.9
 
 devDependencies:
   '@reduxjs/toolkit':
@@ -2416,7 +2416,7 @@ packages:
       - supports-color
     dev: false
 
-  /@remirror/extension-yjs@3.0.15(@remirror/pm@2.0.8)(@types/node@20.5.0)(yjs@13.6.7):
+  /@remirror/extension-yjs@3.0.15(@remirror/pm@2.0.8)(@types/node@20.5.0)(yjs@13.6.9):
     resolution: {integrity: sha512-XLKWueyyXsdmv5KSitW86kwAYUrKKE5dAazv+WlHZMtKWjWhfhxMMWgct8R1Gp1sOfVHZhbGf+KxgOfxxMDsRg==}
     peerDependencies:
       '@remirror/pm': ^2.0.8
@@ -2429,9 +2429,9 @@ packages:
       prosemirror-model: 1.19.3
       prosemirror-state: 1.4.3
       prosemirror-view: 1.31.7
-      y-prosemirror: 1.2.1(prosemirror-model@1.19.3)(prosemirror-state@1.4.3)(prosemirror-view@1.31.7)(y-protocols@1.0.5)(yjs@13.6.7)
+      y-prosemirror: 1.2.1(prosemirror-model@1.19.3)(prosemirror-state@1.4.3)(prosemirror-view@1.31.7)(y-protocols@1.0.5)(yjs@13.6.9)
       y-protocols: 1.0.5
-      yjs: 13.6.7
+      yjs: 13.6.9
     transitivePeerDependencies:
       - '@types/node'
       - jsdom
@@ -5676,6 +5676,14 @@ packages:
       isomorphic.js: 0.2.5
     dev: false
 
+  /lib0@0.2.87:
+    resolution: {integrity: sha512-TbB63XJixvNToW2IHWAFsCJj9tVnajmwjE14p69i51Rx8byOQd2IP4ourE8v4d7vhyO++nVm1sQk3ePslfbucg==}
+    engines: {node: '>=16'}
+    hasBin: true
+    dependencies:
+      isomorphic.js: 0.2.5
+    dev: false
+
   /lilconfig@2.1.0:
     resolution: {integrity: sha512-utWOt/GHzuUxnLKxB6dk81RoOeoNeHgbrXiuGk4yyF5qlRz+iIVWu56E2fqGHFrXz0QNUhLB/8nKqvRH66JKGQ==}
     engines: {node: '>=10'}
@@ -6924,7 +6932,7 @@ packages:
       '@remirror/extension-trailing-node': 2.0.13(@remirror/pm@2.0.8)(@types/node@20.5.0)
       '@remirror/extension-underline': 2.0.13(@remirror/pm@2.0.8)(@types/node@20.5.0)
       '@remirror/extension-whitespace': 2.0.13(@remirror/pm@2.0.8)(@types/node@20.5.0)
-      '@remirror/extension-yjs': 3.0.15(@remirror/pm@2.0.8)(@types/node@20.5.0)(yjs@13.6.7)
+      '@remirror/extension-yjs': 3.0.15(@remirror/pm@2.0.8)(@types/node@20.5.0)(yjs@13.6.9)
       '@remirror/icons': 2.0.3
       '@remirror/pm': 2.0.8
       '@remirror/preset-core': 2.0.16(@remirror/pm@2.0.8)(@types/node@20.5.0)
@@ -6935,7 +6943,7 @@ packages:
       '@types/refractor': 3.0.2
       codemirror: 5.65.14
       refractor: 3.6.0
-      yjs: 13.6.7
+      yjs: 13.6.9
     transitivePeerDependencies:
       - '@types/node'
       - jsdom
@@ -7749,7 +7757,7 @@ packages:
     engines: {node: '>=0.4'}
     dev: false
 
-  /y-prosemirror@1.2.1(prosemirror-model@1.19.3)(prosemirror-state@1.4.3)(prosemirror-view@1.31.7)(y-protocols@1.0.5)(yjs@13.6.7):
+  /y-prosemirror@1.2.1(prosemirror-model@1.19.3)(prosemirror-state@1.4.3)(prosemirror-view@1.31.7)(y-protocols@1.0.5)(yjs@13.6.9):
     resolution: {integrity: sha512-czMBfB1eL2awqmOSxQM8cS/fsUOGE6fjvyPLInrh4crPxFiw67wDpwIW+EGBYKRa04sYbS0ScGj7ZgvWuDrmBQ==}
     peerDependencies:
       prosemirror-model: ^1.7.1
@@ -7763,7 +7771,7 @@ packages:
       prosemirror-state: 1.4.3
       prosemirror-view: 1.31.7
       y-protocols: 1.0.5
-      yjs: 13.6.7
+      yjs: 13.6.9
     dev: false
 
   /y-protocols@1.0.5:
@@ -7804,11 +7812,11 @@ packages:
     engines: {node: '>= 14'}
     dev: true
 
-  /yjs@13.6.7:
-    resolution: {integrity: sha512-mCZTh4kjvUS2DnaktsYN6wLH3WZCJBLqrTdkWh1bIDpA/sB/GNFaLA/dyVJj2Hc7KwONuuoC/vWe9bwBBosZLQ==}
+  /yjs@13.6.9:
+    resolution: {integrity: sha512-kn5QVWRdMrdfAs5DyhMB/1Yc038N7kpD4dianzwfsh2dShQgbN+UIq1c8eqbumwrdL6w5ersJLJ/pllL/N8KXA==}
     engines: {node: '>=16.0.0', npm: '>=8.0.0'}
     dependencies:
-      lib0: 0.2.80
+      lib0: 0.2.87
     dev: false
 
   /yocto-queue@0.1.0:
