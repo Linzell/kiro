@@ -57,8 +57,8 @@ dependencies:
     specifier: ^10.4.15
     version: 10.4.15(postcss@8.4.31)
   eslint-plugin-react-refresh:
-    specifier: ^0.4.3
-    version: 0.4.3(eslint@8.53.0)
+    specifier: ^0.4.4
+    version: 0.4.4(eslint@8.53.0)
   i18next:
     specifier: ^23.5.1
     version: 23.5.1
@@ -4633,8 +4633,8 @@ packages:
       - supports-color
     dev: true
 
-  /eslint-plugin-react-refresh@0.4.3(eslint@8.53.0):
-    resolution: {integrity: sha512-Hh0wv8bUNY877+sI0BlCUlsS0TYYQqvzEwJsJJPM2WF4RnTStSnSR3zdJYa2nPOJgg3UghXi54lVyMSmpCalzA==}
+  /eslint-plugin-react-refresh@0.4.4(eslint@8.53.0):
+    resolution: {integrity: sha512-eD83+65e8YPVg6603Om2iCIwcQJf/y7++MWm4tACtEswFLYMwxwVWAfwN+e19f5Ad/FOyyNg9Dfi5lXhH3Y3rA==}
     peerDependencies:
       eslint: '>=7'
     dependencies:
