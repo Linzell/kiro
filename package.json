@@ -30,7 +30,7 @@
     "@remirror/extension-yjs": "^3.0.15",
     "@remirror/pm": "^2.0.8",
     "@remirror/react": "^2.0.35",
-    "@remirror/react-editors": "^1.0.38",
+    "@remirror/react-editors": "^1.0.40",
     "@remirror/styles": "^2.0.7",
     "@tauri-apps/api": "^1.4.0",
     "autoprefixer": "^10.4.15",
