@@ -63,8 +63,8 @@ dependencies:
     specifier: ^23.5.1
     version: 23.5.1
   i18next-browser-languagedetector:
-    specifier: ^7.1.0
-    version: 7.1.0
+    specifier: ^7.2.0
+    version: 7.2.0
   i18next-http-backend:
     specifier: ^2.3.1
     version: 2.3.1
@@ -448,13 +448,13 @@ packages:
     engines: {node: '>=6.9.0'}
     dependencies:
       regenerator-runtime: 0.14.0
+    dev: false
 
   /@babel/runtime@7.23.6:
     resolution: {integrity: sha512-zHd0eUrf5GZoOWVCXp6koAKQTfZV07eit6bGPmJgnZdnSAvvZee6zniW2XMF7Cmc4ISOOnPy3QaSiIJGJkVEDQ==}
     engines: {node: '>=6.9.0'}
     dependencies:
       regenerator-runtime: 0.14.0
-    dev: false
 
   /@babel/template@7.22.15:
     resolution: {integrity: sha512-QPErUVm4uyJa60rkI73qneDacvdvzxshT3kksGqlGWYdOTIUOwJ7RDUL8sGqslY1uXWSL6xMFKEXDS3ox2uF0w==}
@@ -509,7 +509,7 @@ packages:
     resolution: {integrity: sha512-m4HEDZleaaCH+XgDDsPF15Ht6wTLsgDTeR3WYj9Q/k76JtWhrJjcP4+/XlG8LGT/Rol9qUfOIztXeA84ATpqPQ==}
     dependencies:
       '@babel/helper-module-imports': 7.22.5
-      '@babel/runtime': 7.23.2
+      '@babel/runtime': 7.23.6
       '@emotion/hash': 0.9.1
       '@emotion/memoize': 0.8.1
       '@emotion/serialize': 1.1.2
@@ -1502,7 +1502,7 @@ packages:
       '@types/node':
         optional: true
     dependencies:
-      '@babel/runtime': 7.23.2
+      '@babel/runtime': 7.23.6
       '@remirror/core-constants': 2.0.2
       '@remirror/core-helpers': 3.0.0
       '@remirror/core-types': 2.0.5(@remirror/pm@2.0.8)
@@ -1848,7 +1848,7 @@ packages:
     peerDependencies:
       '@remirror/pm': ^2.0.7
     dependencies:
-      '@babel/runtime': 7.23.2
+      '@babel/runtime': 7.23.6
       '@remirror/core': 2.0.19(@remirror/pm@2.0.8)(@types/node@20.5.0)
       '@remirror/messages': 2.0.6
       '@remirror/pm': 2.0.8
@@ -2150,7 +2150,7 @@ packages:
     peerDependencies:
       '@remirror/pm': ^2.0.5
     dependencies:
-      '@babel/runtime': 7.23.2
+      '@babel/runtime': 7.23.6
       '@remirror/core': 2.0.19(@remirror/pm@2.0.8)(@types/node@20.5.0)
       '@remirror/messages': 2.0.6
       '@remirror/pm': 2.0.8
@@ -2166,7 +2166,7 @@ packages:
     peerDependencies:
       '@remirror/pm': ^2.0.5
     dependencies:
-      '@babel/runtime': 7.23.2
+      '@babel/runtime': 7.23.6
       '@remirror/core': 2.0.19(@remirror/pm@2.0.8)(@types/node@20.5.0)
       '@remirror/extension-events': 2.1.16(@remirror/pm@2.0.8)(@types/node@20.5.0)
       '@remirror/messages': 2.0.6
@@ -2193,7 +2193,7 @@ packages:
       '@types/react-dom':
         optional: true
     dependencies:
-      '@babel/runtime': 7.23.2
+      '@babel/runtime': 7.23.6
       '@remirror/core': 2.0.19(@remirror/pm@2.0.8)(@types/node@20.5.0)
       '@remirror/messages': 2.0.6
       '@remirror/pm': 2.0.8
@@ -2327,7 +2327,7 @@ packages:
     peerDependencies:
       '@remirror/pm': ^2.0.7
     dependencies:
-      '@babel/runtime': 7.23.2
+      '@babel/runtime': 7.23.6
       '@remirror/core': 2.0.19(@remirror/pm@2.0.8)(@types/node@20.5.0)
       '@remirror/extension-events': 2.1.16(@remirror/pm@2.0.8)(@types/node@20.5.0)
       '@remirror/extension-positioner': 2.1.8(@remirror/pm@2.0.8)(@types/node@20.5.0)
@@ -2492,7 +2492,7 @@ packages:
   /@remirror/i18n@2.0.5:
     resolution: {integrity: sha512-oZ2umZav60iu+lBoVZxr7i11yUNRYpczVUXCsClNiHN55PDPMyYwNQ9CaEJdyQCvt0lb5WCmBNpnw1mbLaj7lQ==}
     dependencies:
-      '@babel/runtime': 7.23.2
+      '@babel/runtime': 7.23.6
       '@lingui/core': 4.4.0
       '@lingui/detect-locale': 4.4.0
       '@remirror/core-helpers': 3.0.0
@@ -2502,14 +2502,14 @@ packages:
   /@remirror/icons@2.0.3:
     resolution: {integrity: sha512-ruOGU4FT6WJdXsdVwfNOurSaQvnk2Uo4AkMxxyLYkBPowxmR9Xe0lOn7d7UARai0wxmwFgX6IYaMSUVLIaaMCQ==}
     dependencies:
-      '@babel/runtime': 7.23.2
+      '@babel/runtime': 7.23.6
       '@remirror/core-helpers': 3.0.0
     dev: false
 
   /@remirror/messages@2.0.6:
     resolution: {integrity: sha512-JVnfuzuul4tcvnjiSM7Jj6iKDOP4hfaw79SciZ7t+cc2+iWyAcDYSrFMDV4Q50T+2IfWTYlWtKGpIhG6sfZaWw==}
     dependencies:
-      '@babel/runtime': 7.23.2
+      '@babel/runtime': 7.23.6
       '@lingui/core': 4.4.0
       '@remirror/core-helpers': 3.0.0
     dev: false
@@ -2543,7 +2543,7 @@ packages:
     peerDependencies:
       '@remirror/pm': ^2.0.5
     dependencies:
-      '@babel/runtime': 7.23.2
+      '@babel/runtime': 7.23.6
       '@remirror/core': 2.0.19(@remirror/pm@2.0.8)(@types/node@20.5.0)
       '@remirror/extension-doc': 2.1.5(@remirror/pm@2.0.8)(@types/node@20.5.0)
       '@remirror/extension-events': 2.1.16(@remirror/pm@2.0.8)(@types/node@20.5.0)
@@ -2601,7 +2601,7 @@ packages:
       '@types/react-dom':
         optional: true
     dependencies:
-      '@babel/runtime': 7.23.2
+      '@babel/runtime': 7.23.6
       '@remirror/core': 2.0.19(@remirror/pm@2.0.8)(@types/node@20.5.0)
       '@remirror/extension-placeholder': 2.0.14(@remirror/pm@2.0.8)(@types/node@20.5.0)
       '@remirror/extension-react-component': 2.0.13(@remirror/pm@2.0.8)(@types/node@20.5.0)(@types/react-dom@18.2.7)(@types/react@18.2.37)(react-dom@18.2.0)(react@18.2.0)
@@ -2668,7 +2668,7 @@ packages:
       '@types/react-dom':
         optional: true
     dependencies:
-      '@babel/runtime': 7.23.2
+      '@babel/runtime': 7.23.6
       '@emotion/react': 11.11.1(@types/react@18.2.37)(react@18.2.0)
       '@emotion/styled': 11.11.0(@emotion/react@11.11.1)(@types/react@18.2.37)(react@18.2.0)
       '@floating-ui/react': 0.24.8(react-dom@18.2.0)(react@18.2.0)
@@ -2737,7 +2737,7 @@ packages:
       '@types/react-dom':
         optional: true
     dependencies:
-      '@babel/runtime': 7.23.2
+      '@babel/runtime': 7.23.6
       '@remirror/core': 2.0.19(@remirror/pm@2.0.8)(@types/node@20.5.0)
       '@remirror/extension-positioner': 2.1.8(@remirror/pm@2.0.8)(@types/node@20.5.0)
       '@remirror/extension-react-component': 2.0.13(@remirror/pm@2.0.8)(@types/node@20.5.0)(@types/react-dom@18.2.7)(@types/react@18.2.37)(react-dom@18.2.0)(react@18.2.0)
@@ -2823,7 +2823,7 @@ packages:
       react-dom:
         optional: true
     dependencies:
-      '@babel/runtime': 7.23.2
+      '@babel/runtime': 7.23.6
       '@remirror/core': 2.0.19(@remirror/pm@2.0.8)(@types/node@20.5.0)
       '@remirror/extension-emoji': 2.0.17(@remirror/pm@2.0.8)(@types/node@20.5.0)
       '@remirror/extension-events': 2.1.16(@remirror/pm@2.0.8)(@types/node@20.5.0)
@@ -2857,7 +2857,7 @@ packages:
       '@types/react':
         optional: true
     dependencies:
-      '@babel/runtime': 7.23.2
+      '@babel/runtime': 7.23.6
       '@remirror/core': 2.0.19(@remirror/pm@2.0.8)(@types/node@20.5.0)
       '@types/react': 18.2.37
       react: 18.2.0
@@ -2877,7 +2877,7 @@ packages:
       '@types/react':
         optional: true
     dependencies:
-      '@babel/runtime': 7.23.2
+      '@babel/runtime': 7.23.6
       '@remirror/core-constants': 2.0.2
       '@remirror/core-helpers': 3.0.0
       '@remirror/core-types': 2.0.5(@remirror/pm@2.0.8)
@@ -2959,7 +2959,7 @@ packages:
   /@remirror/theme@2.0.9(@remirror/pm@2.0.8):
     resolution: {integrity: sha512-MI6j7C9KImVyfSBh9GR/WQCuLQKXRKQkE0HsS8Sc/BC8a/0n4QTt7dAg5/a/+MbakyymNaGlibCdts8URgGStg==}
     dependencies:
-      '@babel/runtime': 7.23.2
+      '@babel/runtime': 7.23.6
       '@linaria/core': 4.2.10
       '@remirror/core-types': 2.0.5(@remirror/pm@2.0.8)
       color2k: 2.0.2
@@ -5160,10 +5160,10 @@ packages:
     resolution: {integrity: sha512-ygGZLjmXfPHj+ZWh6LwbC37l43MhfztxetbFCoYTM2VjkIUpeHgSNn7QIyVFj7YQ1Wl9Cbw5sholVJPzWvC2MQ==}
     dev: false
 
-  /i18next-browser-languagedetector@7.1.0:
-    resolution: {integrity: sha512-cr2k7u1XJJ4HTOjM9GyOMtbOA47RtUoWRAtt52z43r3AoMs2StYKyjS3URPhzHaf+mn10hY9dZWamga5WPQjhA==}
+  /i18next-browser-languagedetector@7.2.0:
+    resolution: {integrity: sha512-U00DbDtFIYD3wkWsr2aVGfXGAj2TgnELzOX9qv8bT0aJtvPV9CRO77h+vgmHFBMe7LAxdwvT/7VkCWGya6L3tA==}
     dependencies:
-      '@babel/runtime': 7.22.10
+      '@babel/runtime': 7.23.6
     dev: false
 
   /i18next-http-backend@2.3.1:
@@ -6547,7 +6547,7 @@ packages:
       prosemirror-state: ^1.4.2
       prosemirror-view: ^1.31.2
     dependencies:
-      '@babel/runtime': 7.23.2
+      '@babel/runtime': 7.23.6
       '@remirror/core-constants': 2.0.2
       '@remirror/core-helpers': 3.0.0
       escape-string-regexp: 4.0.0
@@ -6593,7 +6593,7 @@ packages:
       prosemirror-state: ^1.4.2
       prosemirror-view: ^1.31.2
     dependencies:
-      '@babel/runtime': 7.23.2
+      '@babel/runtime': 7.23.6
       '@remirror/core-constants': 2.0.2
       '@remirror/core-helpers': 3.0.0
       '@remirror/types': 1.0.1
@@ -6881,7 +6881,7 @@ packages:
   /redux@4.2.1:
     resolution: {integrity: sha512-LAUYz4lc+Do8/g7aeRa8JkyDErK6ekstQaqWQrNRW//MY1TvCEpMtpTWvlQ+FPbWCx+Xixu/6SHt5N0HR+SB4w==}
     dependencies:
-      '@babel/runtime': 7.23.2
+      '@babel/runtime': 7.23.6
 
   /refractor@3.6.0:
     resolution: {integrity: sha512-MY9W41IOWxxk31o+YvFCNyNzdkc9M20NoZK5vq6jkv4I/uh2zkWcfudj0Q1fovjUQJrNewS9NMzeTtqPf+n5EA==}
