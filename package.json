@@ -55,7 +55,7 @@
   "devDependencies": {
     "@fireproof/core": "^0.12.8",
     "@reduxjs/toolkit": "^1.9.5",
-    "@tauri-apps/cli": "^1.5.9",
+    "@tauri-apps/cli": "^1.5.10",
     "@types/node": "^20.5.0",
     "@types/react": "^18.2.37",
     "@types/react-dom": "^18.2.18",
