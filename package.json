@@ -34,7 +34,7 @@
     "@remirror/styles": "^2.0.7",
     "@tauri-apps/api": "^1.5.3",
     "autoprefixer": "^10.4.15",
-    "eslint-plugin-react-refresh": "^0.4.3",
+    "eslint-plugin-react-refresh": "^0.4.6",
     "i18next": "^23.5.1",
     "i18next-browser-languagedetector": "^7.2.0",
     "i18next-http-backend": "^2.3.1",
