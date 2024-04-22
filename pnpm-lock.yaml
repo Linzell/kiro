@@ -66,8 +66,8 @@ dependencies:
     specifier: ^7.2.0
     version: 7.2.0
   i18next-http-backend:
-    specifier: ^2.3.1
-    version: 2.3.1
+    specifier: ^2.5.1
+    version: 2.5.1
   moment:
     specifier: ^2.29.4
     version: 2.29.4
@@ -5214,8 +5214,8 @@ packages:
       '@babel/runtime': 7.23.6
     dev: false
 
-  /i18next-http-backend@2.3.1:
-    resolution: {integrity: sha512-jnagFs5cnq4ryb+g92Hex4tB5kj3tWmiRWx8gHMCcE/PEgV1fjH5rC7xyJmPSgyb9r2xgcP8rvZxPKgsmvMqTw==}
+  /i18next-http-backend@2.5.1:
+    resolution: {integrity: sha512-+rNX1tghdVxdfjfPt0bI1sNg5ahGW9kA7OboG7b4t03Fp69NdDlRIze6yXhIbN8rbHxJ8IP4dzRm/okZ15lkQg==}
     dependencies:
       cross-fetch: 4.0.0
     transitivePeerDependencies:
