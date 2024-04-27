@@ -45,8 +45,8 @@ dependencies:
     specifier: ^2.0.35
     version: 2.0.35(@remirror/pm@2.0.8)(@types/node@20.5.0)(@types/react-dom@18.2.25)(@types/react@18.2.37)(react-dom@18.2.0)(react@18.2.0)
   '@remirror/react-editors':
-    specifier: ^1.0.40
-    version: 1.0.40(@emotion/react@11.11.1)(@emotion/styled@11.11.0)(@types/node@20.5.0)(@types/react-dom@18.2.25)(@types/react@18.2.37)(react-dom@18.2.0)(react@18.2.0)
+    specifier: ^1.0.41
+    version: 1.0.41(@emotion/react@11.11.1)(@emotion/styled@11.11.0)(@types/node@20.5.0)(@types/react-dom@18.2.25)(@types/react@18.2.37)(react-dom@18.2.0)(react@18.2.0)
   '@remirror/styles':
     specifier: ^2.0.7
     version: 2.0.7(@emotion/react@11.11.1)(@emotion/styled@11.11.0)(@types/react@18.2.37)(react@18.2.0)
@@ -1817,7 +1817,7 @@ packages:
     dependencies:
       '@babel/runtime': 7.23.6
       '@remirror/core': 2.0.19(@remirror/pm@2.0.8)(@types/node@20.5.0)
-      '@remirror/extension-events': 2.1.16(@remirror/pm@2.0.8)(@types/node@20.5.0)
+      '@remirror/extension-events': 2.1.17(@remirror/pm@2.0.8)(@types/node@20.5.0)
       '@remirror/extension-positioner': 2.1.8(@remirror/pm@2.0.8)(@types/node@20.5.0)
       '@remirror/pm': 2.0.8
     transitivePeerDependencies:
@@ -2032,7 +2032,7 @@ packages:
     dependencies:
       '@babel/runtime': 7.23.6
       '@remirror/core': 2.0.19(@remirror/pm@2.0.8)(@types/node@20.5.0)
-      '@remirror/extension-events': 2.1.16(@remirror/pm@2.0.8)(@types/node@20.5.0)
+      '@remirror/extension-events': 2.1.17(@remirror/pm@2.0.8)(@types/node@20.5.0)
       '@remirror/messages': 2.0.6
       '@remirror/pm': 2.0.8
       extract-domain: 2.2.1
@@ -2049,7 +2049,7 @@ packages:
     dependencies:
       '@babel/runtime': 7.23.6
       '@remirror/core': 2.0.19(@remirror/pm@2.0.8)(@types/node@20.5.0)
-      '@remirror/extension-events': 2.1.16(@remirror/pm@2.0.8)(@types/node@20.5.0)
+      '@remirror/extension-events': 2.1.17(@remirror/pm@2.0.8)(@types/node@20.5.0)
       '@remirror/messages': 2.0.6
       '@remirror/pm': 2.0.8
       '@remirror/theme': 2.0.9(@remirror/pm@2.0.8)
@@ -2061,6 +2061,26 @@ packages:
 
   /@remirror/extension-markdown@2.0.13(@remirror/pm@2.0.8)(@types/node@20.5.0):
     resolution: {integrity: sha512-f++5Sc9yfUFlt6YHPXId+KuzfK0gQSWYY67Vv4oz2pzP92AINKa+YULpySCxkKKj1gqvpkFlmDAUIsG5AGA+Aw==}
+    peerDependencies:
+      '@remirror/pm': ^2.0.5
+    dependencies:
+      '@babel/runtime': 7.23.6
+      '@remirror/core': 2.0.19(@remirror/pm@2.0.8)(@types/node@20.5.0)
+      '@remirror/messages': 2.0.6
+      '@remirror/pm': 2.0.8
+      '@types/marked': 4.3.1
+      '@types/turndown': 5.0.1
+      marked: 4.3.0
+      turndown: 7.1.2
+      turndown-plugin-gfm: 1.0.2
+    transitivePeerDependencies:
+      - '@types/node'
+      - jsdom
+      - supports-color
+    dev: false
+
+  /@remirror/extension-markdown@2.0.14(@remirror/pm@2.0.8)(@types/node@20.5.0):
+    resolution: {integrity: sha512-tv8h2KyAF6dvawqslW8FG/qftpfNzseQujaVc0o/KmV9iE8kQnIdTcDPClL0GWwk9fOqlLL8C2zkKnvLMKk4Cw==}
     peerDependencies:
       '@remirror/pm': ^2.0.5
     dependencies:
@@ -2103,7 +2123,7 @@ packages:
     dependencies:
       '@babel/runtime': 7.23.6
       '@remirror/core': 2.0.19(@remirror/pm@2.0.8)(@types/node@20.5.0)
-      '@remirror/extension-events': 2.1.16(@remirror/pm@2.0.8)(@types/node@20.5.0)
+      '@remirror/extension-events': 2.1.17(@remirror/pm@2.0.8)(@types/node@20.5.0)
       '@remirror/messages': 2.0.6
       '@remirror/pm': 2.0.8
       escape-string-regexp: 4.0.0
@@ -2166,7 +2186,7 @@ packages:
     dependencies:
       '@babel/runtime': 7.23.6
       '@remirror/core': 2.0.19(@remirror/pm@2.0.8)(@types/node@20.5.0)
-      '@remirror/extension-events': 2.1.16(@remirror/pm@2.0.8)(@types/node@20.5.0)
+      '@remirror/extension-events': 2.1.17(@remirror/pm@2.0.8)(@types/node@20.5.0)
       '@remirror/messages': 2.0.6
       '@remirror/pm': 2.0.8
       '@remirror/theme': 2.0.9(@remirror/pm@2.0.8)
@@ -2761,8 +2781,8 @@ packages:
       - supports-color
     dev: false
 
-  /@remirror/react-editors@1.0.40(@emotion/react@11.11.1)(@emotion/styled@11.11.0)(@types/node@20.5.0)(@types/react-dom@18.2.25)(@types/react@18.2.37)(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-jQbDSJ3gsENE6HMzOJLpMw7hBTOMN9SEJvIlxSYcveK3BaIgxCBKUYbORPVOujuGdrdO1loGKWu3LwGabdVF8w==}
+  /@remirror/react-editors@1.0.41(@emotion/react@11.11.1)(@emotion/styled@11.11.0)(@types/node@20.5.0)(@types/react-dom@18.2.25)(@types/react@18.2.37)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-2Jvax/FxFXeGyF7A5GiwFJhf9+Uc6YjD5EmqUs7DU0Qc71GZTbLBnZeKTQ4hH5duZBD/qHbSWPaI1xqs9A/Stw==}
     peerDependencies:
       '@types/react': ^16.14.0 || ^17 || ^18
       '@types/react-dom': ^16.9.0 || ^17 || ^18
@@ -2788,7 +2808,7 @@ packages:
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
       refractor: 3.6.0
-      remirror: 2.0.38(@remirror/pm@2.0.8)(@types/node@20.5.0)
+      remirror: 2.0.39(@remirror/pm@2.0.8)(@types/node@20.5.0)
       svgmoji: 3.2.0
     transitivePeerDependencies:
       - '@emotion/css'
@@ -7069,8 +7089,8 @@ packages:
       - supports-color
     dev: false
 
-  /remirror@2.0.38(@remirror/pm@2.0.8)(@types/node@20.5.0):
-    resolution: {integrity: sha512-X70dT3Gl4GUtok0czcHoG+GZmmYfKTHzKca4v8kI/2b4q2Ww7wJxj8ZErIcVfg5ngudVYq8rbzALiN80woAZCg==}
+  /remirror@2.0.39(@remirror/pm@2.0.8)(@types/node@20.5.0):
+    resolution: {integrity: sha512-H3hHIPVKrWINR/1ITNAFYAD74gGt6Dni7soEHcaCH/gnBWvCkruJk0sAt1gI/l+kpmZdScqz9TJnS1x5A8u5aw==}
     peerDependencies:
       '@remirror/pm': ^2.0.8
       '@types/prettier': ^2.7.2
@@ -7117,7 +7137,7 @@ packages:
       '@remirror/extension-italic': 2.0.13(@remirror/pm@2.0.8)(@types/node@20.5.0)
       '@remirror/extension-link': 2.0.17(@remirror/pm@2.0.8)(@types/node@20.5.0)
       '@remirror/extension-list': 2.0.16(@remirror/pm@2.0.8)(@types/node@20.5.0)
-      '@remirror/extension-markdown': 2.0.13(@remirror/pm@2.0.8)(@types/node@20.5.0)
+      '@remirror/extension-markdown': 2.0.14(@remirror/pm@2.0.8)(@types/node@20.5.0)
       '@remirror/extension-mention': 2.0.15(@remirror/pm@2.0.8)(@types/node@20.5.0)
       '@remirror/extension-mention-atom': 2.0.17(@remirror/pm@2.0.8)(@types/node@20.5.0)
       '@remirror/extension-node-formatting': 2.0.13(@remirror/pm@2.0.8)(@types/node@20.5.0)
