@@ -17,7 +17,7 @@
     "tauri:build": "tauri build"
   },
   "dependencies": {
-    "@emotion/react": "^11.11.1",
+    "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.0",
     "@fireproof/core": "^0.12.8",
     "@mui/icons-material": "^5.14.18",
