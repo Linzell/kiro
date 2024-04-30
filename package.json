@@ -32,7 +32,7 @@
     "@remirror/react": "^2.0.35",
     "@remirror/react-editors": "^1.0.41",
     "@remirror/styles": "^2.0.7",
-    "@tauri-apps/api": "^1.5.3",
+    "@tauri-apps/api": "^1.5.4",
     "autoprefixer": "^10.4.15",
     "eslint-plugin-react-refresh": "^0.4.3",
     "i18next": "^23.5.1",
