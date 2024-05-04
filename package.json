@@ -17,8 +17,8 @@
     "tauri:build": "tauri build"
   },
   "dependencies": {
-    "@emotion/react": "^11.11.1",
-    "@emotion/styled": "^11.11.0",
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
     "@fireproof/core": "^0.12.8",
     "@mui/icons-material": "^5.14.18",
     "@mui/material": "^5.15.2",
@@ -30,14 +30,14 @@
     "@remirror/extension-yjs": "^3.0.15",
     "@remirror/pm": "^2.0.8",
     "@remirror/react": "^2.0.35",
-    "@remirror/react-editors": "^1.0.40",
+    "@remirror/react-editors": "^1.0.41",
     "@remirror/styles": "^2.0.7",
-    "@tauri-apps/api": "^1.5.3",
+    "@tauri-apps/api": "^1.5.4",
     "autoprefixer": "^10.4.15",
     "eslint-plugin-react-refresh": "^0.4.3",
     "i18next": "^23.5.1",
     "i18next-browser-languagedetector": "^7.2.0",
-    "i18next-http-backend": "^2.3.1",
+    "i18next-http-backend": "^2.5.1",
     "moment": "^2.29.4",
     "postcss": "^8.4.31",
     "react": "^18.2.0",
@@ -58,7 +58,7 @@
     "@tauri-apps/cli": "^1.5.11",
     "@types/node": "^20.5.0",
     "@types/react": "^18.2.37",
-    "@types/react-dom": "^18.2.18",
+    "@types/react-dom": "^18.2.25",
     "@types/uuid": "^9.0.2",
     "@typescript-eslint/eslint-plugin": "^5.62.0",
     "@typescript-eslint/parser": "^5.62.0",
@@ -67,8 +67,8 @@
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.29.1",
     "eslint-plugin-react": "^7.34.1",
-    "tailwindcss": "^3.3.3",
+    "tailwindcss": "^3.4.3",
     "typescript": "^5.1.6",
-    "vite": "^4.5.2"
+    "vite": "^4.5.3"
   }
 }
