@@ -19,7 +19,7 @@
   "dependencies": {
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.5",
-    "@fireproof/core": "^0.12.8",
+    "@fireproof/core": "^0.17.8",
     "@mui/icons-material": "^5.14.18",
     "@mui/material": "^5.15.2",
     "@remirror/core": "^2.0.19",
@@ -53,7 +53,7 @@
     "yjs": "^13.6.9"
   },
   "devDependencies": {
-    "@fireproof/core": "^0.12.8",
+    "@fireproof/core": "^0.17.8",
     "@reduxjs/toolkit": "^1.9.5",
     "@tauri-apps/cli": "^1.5.11",
     "@types/node": "^20.5.0",
