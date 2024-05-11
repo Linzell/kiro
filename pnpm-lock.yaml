@@ -110,8 +110,8 @@ dependencies:
 
 devDependencies:
   '@reduxjs/toolkit':
-    specifier: ^1.9.5
-    version: 1.9.5(react-redux@8.1.2)(react@18.2.0)
+    specifier: ^1.9.7
+    version: 1.9.7(react-redux@8.1.2)(react@18.2.0)
   '@tauri-apps/cli':
     specifier: ^1.5.11
     version: 1.5.11
@@ -858,6 +858,7 @@ packages:
     transitivePeerDependencies:
       - encoding
       - eslint
+    dev: false
 
   /@fireproof/encrypted-blockstore@0.18.0(eslint@8.53.0):
     resolution: {integrity: sha512-W9uUl3LH2o6+TqE4uv9879w9GyRw+YA7aMc4RLfwBr+uZU/12qLPFBCd90YCyIUsYboX4AhghBRLCc2K2yOWiw==}
@@ -1456,8 +1457,8 @@ packages:
     resolution: {integrity: sha512-Vvn3zZrhQZkkBE8LSuW3em98c0FwgO4nxzv6OdSxPKJIEKY2bGbHn+mhGIPerzI4twdxaP8/0+06HBpwf345Lw==}
     dev: false
 
-  /@reduxjs/toolkit@1.9.5(react-redux@8.1.2)(react@18.2.0):
-    resolution: {integrity: sha512-Rt97jHmfTeaxL4swLRNPD/zV4OxTes4la07Xc4hetpUW/vc75t5m1ANyxG6ymnEQ2FsLQsoMlYB2vV1sO3m8tQ==}
+  /@reduxjs/toolkit@1.9.7(react-redux@8.1.2)(react@18.2.0):
+    resolution: {integrity: sha512-t7v8ZPxhhKgOKtU+uyJT13lu4vL7az5aFi4IdoDs/eS548edn2M8Ik9h8fxgvMjGoAUVFSt6ZC1P5cWmQ014QQ==}
     peerDependencies:
       react: ^16.9.0 || ^17.0.0 || ^18
       react-redux: ^7.2.1 || ^8.0.2
