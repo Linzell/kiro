@@ -81,8 +81,8 @@ dependencies:
     specifier: ^18.2.0
     version: 18.2.0(react@18.3.1)
   react-i18next:
-    specifier: ^14.1.1
-    version: 14.1.1(i18next@23.5.1)(react-dom@18.2.0)(react@18.3.1)
+    specifier: ^14.1.2
+    version: 14.1.2(i18next@23.5.1)(react-dom@18.2.0)(react@18.3.1)
   react-redux:
     specifier: ^8.1.2
     version: 8.1.2(@types/react-dom@18.2.25)(@types/react@18.3.2)(react-dom@18.2.0)(react@18.3.1)(redux@4.2.1)
@@ -634,7 +634,7 @@ packages:
     resolution: {integrity: sha512-m4HEDZleaaCH+XgDDsPF15Ht6wTLsgDTeR3WYj9Q/k76JtWhrJjcP4+/XlG8LGT/Rol9qUfOIztXeA84ATpqPQ==}
     dependencies:
       '@babel/helper-module-imports': 7.22.5
-      '@babel/runtime': 7.23.6
+      '@babel/runtime': 7.24.5
       '@emotion/hash': 0.9.1
       '@emotion/memoize': 0.8.1
       '@emotion/serialize': 1.1.4
@@ -6642,8 +6642,8 @@ packages:
       react: 18.3.1
       scheduler: 0.23.0
 
-  /react-i18next@14.1.1(i18next@23.5.1)(react-dom@18.2.0)(react@18.3.1):
-    resolution: {integrity: sha512-QSiKw+ihzJ/CIeIYWrarCmXJUySHDwQr5y8uaNIkbxoGRm/5DukkxZs+RPla79IKyyDPzC/DRlgQCABHtrQuQQ==}
+  /react-i18next@14.1.2(i18next@23.5.1)(react-dom@18.2.0)(react@18.3.1):
+    resolution: {integrity: sha512-FSIcJy6oauJbGEXfhUgVeLzvWBhIBIS+/9c6Lj4niwKZyGaGb4V4vUbATXSlsHJDXXB+ociNxqFNiFuV1gmoqg==}
     peerDependencies:
       i18next: '>= 23.2.3'
       react: '>= 16.8.0'
