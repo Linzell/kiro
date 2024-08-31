@@ -12,7 +12,7 @@ jobs:
       contents: write
     runs-on: ubuntu-20.04
     steps:
-      - uses: sgpublic/delete-release-action@v1.1
+      - uses: sgpublic/delete-release-action@v1.2
         with:
           pre-release-drop: true
           pre-release-keep-count: -1
