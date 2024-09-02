@@ -54,8 +54,8 @@ importers:
         specifier: ^2.0.7
         version: 2.0.7(@emotion/css@11.11.2)(@emotion/react@11.11.4(@types/react@18.3.2)(react@18.3.1))(@emotion/styled@11.11.5(@emotion/react@11.11.4(@types/react@18.3.2)(react@18.3.1))(@types/react@18.3.2)(react@18.3.1))(@types/react@18.3.2)(react@18.3.1)
       '@tauri-apps/api':
-        specifier: ^1.5.6
-        version: 1.5.6
+        specifier: ^1.6.0
+        version: 1.6.0
       autoprefixer:
         specifier: ^10.4.19
         version: 10.4.19(postcss@8.4.41)
@@ -63,11 +63,11 @@ importers:
         specifier: ^0.4.7
         version: 0.4.7(eslint@8.57.0)
       i18next:
-        specifier: ^23.12.2
+        specifier: ^23.5.1
         version: 23.12.2
       i18next-browser-languagedetector:
         specifier: ^7.2.0
-        version: 7.2.0
+        version: 7.2.1
       i18next-http-backend:
         specifier: ^2.5.1
         version: 2.5.1
@@ -1341,8 +1341,8 @@ packages:
   '@svgmoji/twemoji@3.2.0':
     resolution: {integrity: sha512-6xqZgh9viFDKf5wvrxw56ImCR3Ni84IqwK45lxojOe1Gc1Mni1GpPfr4gb7WHDKjumfx+K7BHSvX0KXt3Nr3CQ==}
 
-  '@tauri-apps/api@1.5.6':
-    resolution: {integrity: sha512-LH5ToovAHnDVe5Qa9f/+jW28I6DeMhos8bNDtBOmmnaDpPmJmYLyHdeDblAWWWYc7KKRDg9/66vMuKyq0WIeFA==}
+  '@tauri-apps/api@1.6.0':
+    resolution: {integrity: sha512-rqI++FWClU5I2UBp4HXFvl+sBWkdigBkxnpJDQUWttNyG7IZP4FwQGhTNL5EOw0vI8i6eSAJ5frLqO7n7jbJdg==}
     engines: {node: '>= 14.6.0', npm: '>= 6.6.0', yarn: '>= 1.19.1'}
 
   '@tauri-apps/cli-darwin-arm64@1.5.14':
@@ -2403,8 +2403,8 @@ packages:
   hyphenate-style-name@1.0.4:
     resolution: {integrity: sha512-ygGZLjmXfPHj+ZWh6LwbC37l43MhfztxetbFCoYTM2VjkIUpeHgSNn7QIyVFj7YQ1Wl9Cbw5sholVJPzWvC2MQ==}
 
-  i18next-browser-languagedetector@7.2.0:
-    resolution: {integrity: sha512-U00DbDtFIYD3wkWsr2aVGfXGAj2TgnELzOX9qv8bT0aJtvPV9CRO77h+vgmHFBMe7LAxdwvT/7VkCWGya6L3tA==}
+  i18next-browser-languagedetector@7.2.1:
+    resolution: {integrity: sha512-h/pM34bcH6tbz8WgGXcmWauNpQupCGr25XPp9cZwZInR9XHSjIFDYp1SIok7zSPsTOMxdvuLyu86V+g2Kycnfw==}
 
   i18next-http-backend@2.5.1:
     resolution: {integrity: sha512-+rNX1tghdVxdfjfPt0bI1sNg5ahGW9kA7OboG7b4t03Fp69NdDlRIze6yXhIbN8rbHxJ8IP4dzRm/okZ15lkQg==}
@@ -4436,7 +4436,7 @@ snapshots:
 
   '@lingui/core@4.4.0':
     dependencies:
-      '@babel/runtime': 7.24.5
+      '@babel/runtime': 7.25.0
       '@lingui/message-utils': 4.4.0
       unraw: 2.0.1
 
@@ -4483,7 +4483,7 @@ snapshots:
 
   '@mui/private-theming@5.16.6(@types/react@18.3.2)(react@18.3.1)':
     dependencies:
-      '@babel/runtime': 7.24.5
+      '@babel/runtime': 7.25.0
       '@mui/utils': 5.16.6(@types/react@18.3.2)(react@18.3.1)
       prop-types: 15.8.1
       react: 18.3.1
@@ -4492,7 +4492,7 @@ snapshots:
 
   '@mui/styled-engine@5.16.6(@emotion/react@11.11.4(@types/react@18.3.2)(react@18.3.1))(@emotion/styled@11.11.5(@emotion/react@11.11.4(@types/react@18.3.2)(react@18.3.1))(@types/react@18.3.2)(react@18.3.1))(react@18.3.1)':
     dependencies:
-      '@babel/runtime': 7.24.5
+      '@babel/runtime': 7.25.0
       '@emotion/cache': 11.11.0
       csstype: 3.1.3
       prop-types: 15.8.1
@@ -4689,7 +4689,7 @@ snapshots:
 
   '@remirror/dom@2.0.16(@remirror/pm@2.0.8)(@types/node@22.2.0)':
     dependencies:
-      '@babel/runtime': 7.24.5
+      '@babel/runtime': 7.25.0
       '@remirror/core': 2.0.19(@remirror/pm@2.0.8)(@types/node@22.2.0)
       '@remirror/pm': 2.0.8
       '@remirror/preset-core': 2.0.16(@remirror/pm@2.0.8)(@types/node@22.2.0)
@@ -4712,7 +4712,7 @@ snapshots:
 
   '@remirror/extension-bidi@2.0.14(@remirror/pm@2.0.8)(@types/node@22.2.0)':
     dependencies:
-      '@babel/runtime': 7.24.5
+      '@babel/runtime': 7.25.0
       '@remirror/core': 2.0.19(@remirror/pm@2.0.8)(@types/node@22.2.0)
       '@remirror/messages': 2.0.6
       '@remirror/pm': 2.0.8
@@ -4725,7 +4725,7 @@ snapshots:
 
   '@remirror/extension-blockquote@2.0.14(@remirror/pm@2.0.8)(@types/node@22.2.0)':
     dependencies:
-      '@babel/runtime': 7.24.5
+      '@babel/runtime': 7.25.0
       '@remirror/core': 2.0.19(@remirror/pm@2.0.8)(@types/node@22.2.0)
       '@remirror/messages': 2.0.6
       '@remirror/pm': 2.0.8
@@ -4737,7 +4737,7 @@ snapshots:
 
   '@remirror/extension-bold@2.0.13(@remirror/pm@2.0.8)(@types/node@22.2.0)':
     dependencies:
-      '@babel/runtime': 7.24.5
+      '@babel/runtime': 7.25.0
       '@remirror/core': 2.0.19(@remirror/pm@2.0.8)(@types/node@22.2.0)
       '@remirror/messages': 2.0.6
       '@remirror/pm': 2.0.8
@@ -4748,7 +4748,7 @@ snapshots:
 
   '@remirror/extension-callout@2.0.15(@remirror/pm@2.0.8)(@types/node@22.2.0)':
     dependencies:
-      '@babel/runtime': 7.24.5
+      '@babel/runtime': 7.25.0
       '@remirror/core': 2.0.19(@remirror/pm@2.0.8)(@types/node@22.2.0)
       '@remirror/messages': 2.0.6
       '@remirror/pm': 2.0.8
@@ -4760,7 +4760,7 @@ snapshots:
 
   '@remirror/extension-code-block@2.0.18(@remirror/pm@2.0.8)(@types/node@22.2.0)':
     dependencies:
-      '@babel/runtime': 7.24.5
+      '@babel/runtime': 7.25.0
       '@remirror/core': 2.0.19(@remirror/pm@2.0.8)(@types/node@22.2.0)
       '@remirror/messages': 2.0.6
       '@remirror/pm': 2.0.8
@@ -4774,7 +4774,7 @@ snapshots:
 
   '@remirror/extension-code@2.0.13(@remirror/pm@2.0.8)(@types/node@22.2.0)':
     dependencies:
-      '@babel/runtime': 7.24.5
+      '@babel/runtime': 7.25.0
       '@remirror/core': 2.0.19(@remirror/pm@2.0.8)(@types/node@22.2.0)
       '@remirror/messages': 2.0.6
       '@remirror/pm': 2.0.8
@@ -4785,7 +4785,7 @@ snapshots:
 
   '@remirror/extension-codemirror5@2.0.13(@remirror/pm@2.0.8)(@types/codemirror@5.60.8)(@types/node@22.2.0)(codemirror@5.65.14)':
     dependencies:
-      '@babel/runtime': 7.24.5
+      '@babel/runtime': 7.25.0
       '@remirror/core': 2.0.19(@remirror/pm@2.0.8)(@types/node@22.2.0)
       '@remirror/messages': 2.0.6
       '@remirror/pm': 2.0.8
@@ -4798,7 +4798,7 @@ snapshots:
 
   '@remirror/extension-collaboration@2.0.13(@remirror/pm@2.0.8)(@types/node@22.2.0)':
     dependencies:
-      '@babel/runtime': 7.24.5
+      '@babel/runtime': 7.25.0
       '@remirror/core': 2.0.19(@remirror/pm@2.0.8)(@types/node@22.2.0)
       '@remirror/messages': 2.0.6
       '@remirror/pm': 2.0.8
@@ -4809,7 +4809,7 @@ snapshots:
 
   '@remirror/extension-columns@2.0.14(@remirror/pm@2.0.8)(@types/node@22.2.0)':
     dependencies:
-      '@babel/runtime': 7.24.5
+      '@babel/runtime': 7.25.0
       '@remirror/core': 2.0.19(@remirror/pm@2.0.8)(@types/node@22.2.0)
       '@remirror/messages': 2.0.6
       '@remirror/pm': 2.0.8
@@ -4820,7 +4820,7 @@ snapshots:
 
   '@remirror/extension-diff@2.0.13(@remirror/pm@2.0.8)(@types/node@22.2.0)':
     dependencies:
-      '@babel/runtime': 7.24.5
+      '@babel/runtime': 7.25.0
       '@remirror/core': 2.0.19(@remirror/pm@2.0.8)(@types/node@22.2.0)
       '@remirror/messages': 2.0.6
       '@remirror/pm': 2.0.8
@@ -4831,7 +4831,7 @@ snapshots:
 
   '@remirror/extension-doc@2.1.5(@remirror/pm@2.0.8)(@types/node@22.2.0)':
     dependencies:
-      '@babel/runtime': 7.24.5
+      '@babel/runtime': 7.25.0
       '@remirror/core': 2.0.19(@remirror/pm@2.0.8)(@types/node@22.2.0)
       '@remirror/messages': 2.0.6
       '@remirror/pm': 2.0.8
@@ -4842,7 +4842,7 @@ snapshots:
 
   '@remirror/extension-drop-cursor@2.0.13(@remirror/pm@2.0.8)(@types/node@22.2.0)':
     dependencies:
-      '@babel/runtime': 7.24.5
+      '@babel/runtime': 7.25.0
       '@remirror/core': 2.0.19(@remirror/pm@2.0.8)(@types/node@22.2.0)
       '@remirror/messages': 2.0.6
       '@remirror/pm': 2.0.8
@@ -4853,7 +4853,7 @@ snapshots:
 
   '@remirror/extension-embed@2.0.14(@remirror/pm@2.0.8)(@types/node@22.2.0)':
     dependencies:
-      '@babel/runtime': 7.24.5
+      '@babel/runtime': 7.25.0
       '@remirror/core': 2.0.19(@remirror/pm@2.0.8)(@types/node@22.2.0)
       '@remirror/messages': 2.0.6
       '@remirror/pm': 2.0.8
@@ -4867,7 +4867,7 @@ snapshots:
 
   '@remirror/extension-emoji@2.0.17(@remirror/pm@2.0.8)(@types/node@22.2.0)':
     dependencies:
-      '@babel/runtime': 7.24.5
+      '@babel/runtime': 7.25.0
       '@ocavue/svgmoji-cjs': 0.1.1
       '@remirror/core': 2.0.19(@remirror/pm@2.0.8)(@types/node@22.2.0)
       '@remirror/messages': 2.0.6
@@ -4885,7 +4885,7 @@ snapshots:
 
   '@remirror/extension-entity-reference@2.2.6(@remirror/pm@2.0.8)(@types/node@22.2.0)':
     dependencies:
-      '@babel/runtime': 7.24.5
+      '@babel/runtime': 7.25.0
       '@remirror/core': 2.0.19(@remirror/pm@2.0.8)(@types/node@22.2.0)
       '@remirror/extension-events': 2.1.17(@remirror/pm@2.0.8)(@types/node@22.2.0)
       '@remirror/extension-positioner': 2.1.8(@remirror/pm@2.0.8)(@types/node@22.2.0)
@@ -4897,7 +4897,7 @@ snapshots:
 
   '@remirror/extension-epic-mode@2.0.13(@remirror/pm@2.0.8)(@types/node@22.2.0)':
     dependencies:
-      '@babel/runtime': 7.24.5
+      '@babel/runtime': 7.25.0
       '@remirror/core': 2.0.19(@remirror/pm@2.0.8)(@types/node@22.2.0)
       '@remirror/messages': 2.0.6
       '@remirror/pm': 2.0.8
@@ -4919,7 +4919,7 @@ snapshots:
 
   '@remirror/extension-events@2.1.17(@remirror/pm@2.0.8)(@types/node@22.2.0)':
     dependencies:
-      '@babel/runtime': 7.24.5
+      '@babel/runtime': 7.25.0
       '@remirror/core': 2.0.19(@remirror/pm@2.0.8)(@types/node@22.2.0)
       '@remirror/messages': 2.0.6
       '@remirror/pm': 2.0.8
@@ -4942,7 +4942,7 @@ snapshots:
 
   '@remirror/extension-font-family@2.0.13(@remirror/pm@2.0.8)(@types/node@22.2.0)':
     dependencies:
-      '@babel/runtime': 7.24.5
+      '@babel/runtime': 7.25.0
       '@remirror/core': 2.0.19(@remirror/pm@2.0.8)(@types/node@22.2.0)
       '@remirror/messages': 2.0.6
       '@remirror/pm': 2.0.8
@@ -4953,7 +4953,7 @@ snapshots:
 
   '@remirror/extension-font-size@2.0.13(@remirror/pm@2.0.8)(@types/node@22.2.0)':
     dependencies:
-      '@babel/runtime': 7.24.5
+      '@babel/runtime': 7.25.0
       '@remirror/core': 2.0.19(@remirror/pm@2.0.8)(@types/node@22.2.0)
       '@remirror/messages': 2.0.6
       '@remirror/pm': 2.0.8
@@ -4965,7 +4965,7 @@ snapshots:
 
   '@remirror/extension-gap-cursor@2.0.13(@remirror/pm@2.0.8)(@types/node@22.2.0)':
     dependencies:
-      '@babel/runtime': 7.24.5
+      '@babel/runtime': 7.25.0
       '@remirror/core': 2.0.19(@remirror/pm@2.0.8)(@types/node@22.2.0)
       '@remirror/messages': 2.0.6
       '@remirror/pm': 2.0.8
@@ -4976,7 +4976,7 @@ snapshots:
 
   '@remirror/extension-hard-break@2.0.13(@remirror/pm@2.0.8)(@types/node@22.2.0)':
     dependencies:
-      '@babel/runtime': 7.24.5
+      '@babel/runtime': 7.25.0
       '@remirror/core': 2.0.19(@remirror/pm@2.0.8)(@types/node@22.2.0)
       '@remirror/messages': 2.0.6
       '@remirror/pm': 2.0.8
@@ -4987,7 +4987,7 @@ snapshots:
 
   '@remirror/extension-heading@2.0.14(@remirror/pm@2.0.8)(@types/node@22.2.0)':
     dependencies:
-      '@babel/runtime': 7.24.5
+      '@babel/runtime': 7.25.0
       '@remirror/core': 2.0.19(@remirror/pm@2.0.8)(@types/node@22.2.0)
       '@remirror/messages': 2.0.6
       '@remirror/pm': 2.0.8
@@ -4998,7 +4998,7 @@ snapshots:
 
   '@remirror/extension-history@2.0.13(@remirror/pm@2.0.8)(@types/node@22.2.0)':
     dependencies:
-      '@babel/runtime': 7.24.5
+      '@babel/runtime': 7.25.0
       '@remirror/core': 2.0.19(@remirror/pm@2.0.8)(@types/node@22.2.0)
       '@remirror/messages': 2.0.6
       '@remirror/pm': 2.0.8
@@ -5009,7 +5009,7 @@ snapshots:
 
   '@remirror/extension-horizontal-rule@2.0.13(@remirror/pm@2.0.8)(@types/node@22.2.0)':
     dependencies:
-      '@babel/runtime': 7.24.5
+      '@babel/runtime': 7.25.0
       '@remirror/core': 2.0.19(@remirror/pm@2.0.8)(@types/node@22.2.0)
       '@remirror/messages': 2.0.6
       '@remirror/pm': 2.0.8
@@ -5020,7 +5020,7 @@ snapshots:
 
   '@remirror/extension-image@2.1.10(@remirror/pm@2.0.8)(@types/node@22.2.0)':
     dependencies:
-      '@babel/runtime': 7.24.5
+      '@babel/runtime': 7.25.0
       '@remirror/core': 2.0.19(@remirror/pm@2.0.8)(@types/node@22.2.0)
       '@remirror/messages': 2.0.6
       '@remirror/pm': 2.0.8
@@ -5033,7 +5033,7 @@ snapshots:
 
   '@remirror/extension-italic@2.0.13(@remirror/pm@2.0.8)(@types/node@22.2.0)':
     dependencies:
-      '@babel/runtime': 7.24.5
+      '@babel/runtime': 7.25.0
       '@remirror/core': 2.0.19(@remirror/pm@2.0.8)(@types/node@22.2.0)
       '@remirror/messages': 2.0.6
       '@remirror/pm': 2.0.8
@@ -5044,7 +5044,7 @@ snapshots:
 
   '@remirror/extension-link@2.0.17(@remirror/pm@2.0.8)(@types/node@22.2.0)':
     dependencies:
-      '@babel/runtime': 7.24.5
+      '@babel/runtime': 7.25.0
       '@remirror/core': 2.0.19(@remirror/pm@2.0.8)(@types/node@22.2.0)
       '@remirror/extension-events': 2.1.17(@remirror/pm@2.0.8)(@types/node@22.2.0)
       '@remirror/messages': 2.0.6
@@ -5057,7 +5057,7 @@ snapshots:
 
   '@remirror/extension-list@2.0.16(@remirror/pm@2.0.8)(@types/node@22.2.0)':
     dependencies:
-      '@babel/runtime': 7.24.5
+      '@babel/runtime': 7.25.0
       '@remirror/core': 2.0.19(@remirror/pm@2.0.8)(@types/node@22.2.0)
       '@remirror/extension-events': 2.1.17(@remirror/pm@2.0.8)(@types/node@22.2.0)
       '@remirror/messages': 2.0.6
@@ -5070,7 +5070,7 @@ snapshots:
 
   '@remirror/extension-markdown@2.0.14(@remirror/pm@2.0.8)(@types/node@22.2.0)':
     dependencies:
-      '@babel/runtime': 7.24.5
+      '@babel/runtime': 7.25.0
       '@remirror/core': 2.0.19(@remirror/pm@2.0.8)(@types/node@22.2.0)
       '@remirror/messages': 2.0.6
       '@remirror/pm': 2.0.8
@@ -5099,7 +5099,7 @@ snapshots:
 
   '@remirror/extension-mention@2.0.15(@remirror/pm@2.0.8)(@types/node@22.2.0)':
     dependencies:
-      '@babel/runtime': 7.24.5
+      '@babel/runtime': 7.25.0
       '@remirror/core': 2.0.19(@remirror/pm@2.0.8)(@types/node@22.2.0)
       '@remirror/extension-events': 2.1.17(@remirror/pm@2.0.8)(@types/node@22.2.0)
       '@remirror/messages': 2.0.6
@@ -5112,7 +5112,7 @@ snapshots:
 
   '@remirror/extension-node-formatting@2.0.13(@remirror/pm@2.0.8)(@types/node@22.2.0)':
     dependencies:
-      '@babel/runtime': 7.24.5
+      '@babel/runtime': 7.25.0
       '@remirror/core': 2.0.19(@remirror/pm@2.0.8)(@types/node@22.2.0)
       '@remirror/messages': 2.0.6
       '@remirror/pm': 2.0.8
@@ -5123,7 +5123,7 @@ snapshots:
 
   '@remirror/extension-paragraph@2.0.13(@remirror/pm@2.0.8)(@types/node@22.2.0)':
     dependencies:
-      '@babel/runtime': 7.24.5
+      '@babel/runtime': 7.25.0
       '@remirror/core': 2.0.19(@remirror/pm@2.0.8)(@types/node@22.2.0)
       '@remirror/messages': 2.0.6
       '@remirror/pm': 2.0.8
@@ -5206,7 +5206,7 @@ snapshots:
 
   '@remirror/extension-search@2.0.14(@remirror/pm@2.0.8)(@types/node@22.2.0)':
     dependencies:
-      '@babel/runtime': 7.24.5
+      '@babel/runtime': 7.25.0
       '@remirror/core': 2.0.19(@remirror/pm@2.0.8)(@types/node@22.2.0)
       '@remirror/messages': 2.0.6
       '@remirror/pm': 2.0.8
@@ -5218,7 +5218,7 @@ snapshots:
 
   '@remirror/extension-shortcuts@2.0.13(@remirror/pm@2.0.8)(@types/node@22.2.0)':
     dependencies:
-      '@babel/runtime': 7.24.5
+      '@babel/runtime': 7.25.0
       '@remirror/core': 2.0.19(@remirror/pm@2.0.8)(@types/node@22.2.0)
       '@remirror/pm': 2.0.8
     transitivePeerDependencies:
@@ -5228,7 +5228,7 @@ snapshots:
 
   '@remirror/extension-strike@2.0.13(@remirror/pm@2.0.8)(@types/node@22.2.0)':
     dependencies:
-      '@babel/runtime': 7.24.5
+      '@babel/runtime': 7.25.0
       '@remirror/core': 2.0.19(@remirror/pm@2.0.8)(@types/node@22.2.0)
       '@remirror/messages': 2.0.6
       '@remirror/pm': 2.0.8
@@ -5239,7 +5239,7 @@ snapshots:
 
   '@remirror/extension-sub@2.0.13(@remirror/pm@2.0.8)(@types/node@22.2.0)':
     dependencies:
-      '@babel/runtime': 7.24.5
+      '@babel/runtime': 7.25.0
       '@remirror/core': 2.0.19(@remirror/pm@2.0.8)(@types/node@22.2.0)
       '@remirror/messages': 2.0.6
       '@remirror/pm': 2.0.8
@@ -5250,7 +5250,7 @@ snapshots:
 
   '@remirror/extension-sup@2.0.13(@remirror/pm@2.0.8)(@types/node@22.2.0)':
     dependencies:
-      '@babel/runtime': 7.24.5
+      '@babel/runtime': 7.25.0
       '@remirror/core': 2.0.19(@remirror/pm@2.0.8)(@types/node@22.2.0)
       '@remirror/messages': 2.0.6
       '@remirror/pm': 2.0.8
@@ -5275,7 +5275,7 @@ snapshots:
 
   '@remirror/extension-tables@2.4.1(@remirror/pm@2.0.8)(@types/node@22.2.0)':
     dependencies:
-      '@babel/runtime': 7.24.5
+      '@babel/runtime': 7.25.0
       '@remirror/core': 2.0.19(@remirror/pm@2.0.8)(@types/node@22.2.0)
       '@remirror/extension-events': 2.1.17(@remirror/pm@2.0.8)(@types/node@22.2.0)
       '@remirror/extension-positioner': 2.1.8(@remirror/pm@2.0.8)(@types/node@22.2.0)
@@ -5289,7 +5289,7 @@ snapshots:
 
   '@remirror/extension-text-case@2.0.13(@remirror/pm@2.0.8)(@types/node@22.2.0)':
     dependencies:
-      '@babel/runtime': 7.24.5
+      '@babel/runtime': 7.25.0
       '@remirror/core': 2.0.19(@remirror/pm@2.0.8)(@types/node@22.2.0)
       '@remirror/messages': 2.0.6
       '@remirror/pm': 2.0.8
@@ -5300,7 +5300,7 @@ snapshots:
 
   '@remirror/extension-text-color@2.0.15(@remirror/pm@2.0.8)(@types/node@22.2.0)':
     dependencies:
-      '@babel/runtime': 7.24.5
+      '@babel/runtime': 7.25.0
       '@remirror/core': 2.0.19(@remirror/pm@2.0.8)(@types/node@22.2.0)
       '@remirror/i18n': 2.0.5
       '@remirror/messages': 2.0.6
@@ -5314,7 +5314,7 @@ snapshots:
 
   '@remirror/extension-text-highlight@2.0.14(@remirror/pm@2.0.8)(@types/node@22.2.0)':
     dependencies:
-      '@babel/runtime': 7.24.5
+      '@babel/runtime': 7.25.0
       '@remirror/core': 2.0.19(@remirror/pm@2.0.8)(@types/node@22.2.0)
       '@remirror/extension-text-color': 2.0.15(@remirror/pm@2.0.8)(@types/node@22.2.0)
       '@remirror/messages': 2.0.6
@@ -5326,7 +5326,7 @@ snapshots:
 
   '@remirror/extension-text@2.0.13(@remirror/pm@2.0.8)(@types/node@22.2.0)':
     dependencies:
-      '@babel/runtime': 7.24.5
+      '@babel/runtime': 7.25.0
       '@remirror/core': 2.0.19(@remirror/pm@2.0.8)(@types/node@22.2.0)
       '@remirror/messages': 2.0.6
       '@remirror/pm': 2.0.8
@@ -5337,7 +5337,7 @@ snapshots:
 
   '@remirror/extension-trailing-node@2.0.13(@remirror/pm@2.0.8)(@types/node@22.2.0)':
     dependencies:
-      '@babel/runtime': 7.24.5
+      '@babel/runtime': 7.25.0
       '@remirror/core': 2.0.19(@remirror/pm@2.0.8)(@types/node@22.2.0)
       '@remirror/messages': 2.0.6
       '@remirror/pm': 2.0.8
@@ -5348,7 +5348,7 @@ snapshots:
 
   '@remirror/extension-underline@2.0.13(@remirror/pm@2.0.8)(@types/node@22.2.0)':
     dependencies:
-      '@babel/runtime': 7.24.5
+      '@babel/runtime': 7.25.0
       '@remirror/core': 2.0.19(@remirror/pm@2.0.8)(@types/node@22.2.0)
       '@remirror/messages': 2.0.6
       '@remirror/pm': 2.0.8
@@ -5359,7 +5359,7 @@ snapshots:
 
   '@remirror/extension-whitespace@2.0.13(@remirror/pm@2.0.8)(@types/node@22.2.0)':
     dependencies:
-      '@babel/runtime': 7.24.5
+      '@babel/runtime': 7.25.0
       '@remirror/core': 2.0.19(@remirror/pm@2.0.8)(@types/node@22.2.0)
       '@remirror/messages': 2.0.6
       '@remirror/pm': 2.0.8
@@ -5445,7 +5445,7 @@ snapshots:
 
   '@remirror/preset-formatting@2.0.14(@remirror/pm@2.0.8)(@types/node@22.2.0)':
     dependencies:
-      '@babel/runtime': 7.24.5
+      '@babel/runtime': 7.25.0
       '@remirror/core': 2.0.19(@remirror/pm@2.0.8)(@types/node@22.2.0)
       '@remirror/extension-bold': 2.0.13(@remirror/pm@2.0.8)(@types/node@22.2.0)
       '@remirror/extension-columns': 2.0.14(@remirror/pm@2.0.8)(@types/node@22.2.0)
@@ -5487,7 +5487,7 @@ snapshots:
 
   '@remirror/preset-wysiwyg@2.0.19(@remirror/pm@2.0.8)(@types/node@22.2.0)':
     dependencies:
-      '@babel/runtime': 7.24.5
+      '@babel/runtime': 7.25.0
       '@remirror/core': 2.0.19(@remirror/pm@2.0.8)(@types/node@22.2.0)
       '@remirror/extension-bidi': 2.0.14(@remirror/pm@2.0.8)(@types/node@22.2.0)
       '@remirror/extension-blockquote': 2.0.14(@remirror/pm@2.0.8)(@types/node@22.2.0)
@@ -5744,12 +5744,12 @@ snapshots:
 
   '@svgmoji/blob@3.2.0':
     dependencies:
-      '@babel/runtime': 7.24.5
+      '@babel/runtime': 7.25.0
       '@svgmoji/core': 3.2.0
 
   '@svgmoji/core@3.2.0':
     dependencies:
-      '@babel/runtime': 7.24.5
+      '@babel/runtime': 7.25.0
       emojibase: 5.2.0
       emojibase-regex: 5.1.3
       idb-keyval: 5.1.5
@@ -5763,15 +5763,15 @@ snapshots:
 
   '@svgmoji/openmoji@3.2.0':
     dependencies:
-      '@babel/runtime': 7.24.5
+      '@babel/runtime': 7.25.0
       '@svgmoji/core': 3.2.0
 
   '@svgmoji/twemoji@3.2.0':
     dependencies:
-      '@babel/runtime': 7.24.5
+      '@babel/runtime': 7.25.0
       '@svgmoji/core': 3.2.0
 
-  '@tauri-apps/api@1.5.6': {}
+  '@tauri-apps/api@1.6.0': {}
 
   '@tauri-apps/cli-darwin-arm64@1.5.14':
     optional: true
@@ -6036,7 +6036,7 @@ snapshots:
 
   a11y-status@2.0.1:
     dependencies:
-      '@babel/runtime': 7.24.5
+      '@babel/runtime': 7.25.0
       '@types/throttle-debounce': 2.1.0
       throttle-debounce: 3.0.1
 
@@ -6196,7 +6196,7 @@ snapshots:
 
   babel-plugin-macros@3.1.0:
     dependencies:
-      '@babel/runtime': 7.24.5
+      '@babel/runtime': 7.25.0
       cosmiconfig: 7.1.0
       resolve: 1.22.4
 
@@ -6456,7 +6456,7 @@ snapshots:
 
   dom-helpers@5.2.1:
     dependencies:
-      '@babel/runtime': 7.24.5
+      '@babel/runtime': 7.25.0
       csstype: 3.1.3
 
   dom-walk@0.1.2: {}
@@ -7077,11 +7077,9 @@ snapshots:
 
   hyphenate-style-name@1.0.4: {}
 
-  /i18next-browser-languagedetector@8.0.0:
-    resolution: {integrity: sha512-zhXdJXTTCoG39QsrOCiOabnWj2jecouOqbchu3EfhtSHxIB5Uugnm9JaizenOy39h7ne3+fLikIjeW88+rgszw==}
+  i18next-browser-languagedetector@7.2.1:
     dependencies:
-      '@babel/runtime': 7.24.5
-    dev: false
+      '@babel/runtime': 7.25.0
 
   i18next-http-backend@2.5.1:
     dependencies:
@@ -7462,7 +7460,7 @@ snapshots:
 
   match-sorter@6.3.1:
     dependencies:
-      '@babel/runtime': 7.24.5
+      '@babel/runtime': 7.25.0
       remove-accents: 0.4.2
 
   material-colors@1.2.6: {}
@@ -7506,7 +7504,7 @@ snapshots:
 
   multishift@2.0.9(@remirror/pm@2.0.8)(@types/react@18.3.2)(react@18.3.1):
     dependencies:
-      '@babel/runtime': 7.24.5
+      '@babel/runtime': 7.25.0
       '@remirror/core-helpers': 3.0.0
       '@remirror/core-types': 2.0.5(@remirror/pm@2.0.8)
       '@seznam/compose-react-refs': 1.0.6
@@ -7842,7 +7840,7 @@ snapshots:
 
   prosemirror-resizable-view@2.0.14(@remirror/pm@2.0.8)(@types/node@22.2.0):
     dependencies:
-      '@babel/runtime': 7.24.5
+      '@babel/runtime': 7.25.0
       '@remirror/core-helpers': 3.0.0
       '@remirror/core-utils': 2.0.13(@remirror/pm@2.0.8)(@types/node@22.2.0)
       prosemirror-model: 1.19.3
