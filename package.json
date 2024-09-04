@@ -50,7 +50,7 @@
     "svgmoji": "^3.2.0",
     "uuid": "^9.0.1",
     "y-webrtc": "^10.3.0",
-    "yjs": "^13.6.9"
+    "yjs": "^13.6.18"
   },
   "devDependencies": {
     "@fireproof/core": "^0.18.0",
