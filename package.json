@@ -35,7 +35,7 @@
     "@tauri-apps/api": "^1.6.0",
     "autoprefixer": "^10.4.19",
     "eslint-plugin-react-refresh": "^0.4.7",
-    "i18next": "^23.5.1",
+    "i18next": "^23.15.0",
     "i18next-browser-languagedetector": "^7.2.0",
     "i18next-http-backend": "^2.5.1",
     "moment": "^2.30.1",
