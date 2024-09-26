@@ -28,7 +28,7 @@
     "@remirror/extension-mention-atom": "^2.0.17",
     "@remirror/extension-react-tables": "^2.2.19",
     "@remirror/extension-yjs": "^3.0.15",
-    "@remirror/pm": "^2.0.8",
+    "@remirror/pm": "^2.0.9",
     "@remirror/react": "^2.0.35",
     "@remirror/react-editors": "^1.0.41",
     "@remirror/styles": "^2.0.7",
