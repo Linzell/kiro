@@ -40,7 +40,7 @@ importers:
         version: 2.2.19(@remirror/pm@2.0.9)(@types/node@22.2.0)(@types/react-dom@18.3.0)(@types/react@18.3.10)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@remirror/extension-yjs':
         specifier: ^3.0.15
-        version: 3.0.15(@remirror/pm@2.0.9)(@types/node@22.2.0)(yjs@13.6.9)
+        version: 3.0.15(@remirror/pm@2.0.9)(@types/node@22.2.0)(yjs@13.6.19)
       '@remirror/pm':
         specifier: ^2.0.9
         version: 2.0.9
@@ -106,10 +106,10 @@ importers:
         version: 9.0.1
       y-webrtc:
         specifier: ^10.3.0
-        version: 10.3.0(yjs@13.6.9)
+        version: 10.3.0(yjs@13.6.19)
       yjs:
-        specifier: ^13.6.9
-        version: 13.6.9
+        specifier: ^13.6.19
+        version: 13.6.19
     devDependencies:
       '@reduxjs/toolkit':
         specifier: ^1.9.7
@@ -3864,8 +3864,8 @@ packages:
     resolution: {integrity: sha512-2eHWfjaoXgTBC2jNM1LRef62VQa0umtvRiDSk6HSzW7RvS5YtkabJrwYLLEKWBc8a5U2PTSCs+dJjUTJdlHsWQ==}
     engines: {node: '>= 14'}
 
-  yjs@13.6.9:
-    resolution: {integrity: sha512-kn5QVWRdMrdfAs5DyhMB/1Yc038N7kpD4dianzwfsh2dShQgbN+UIq1c8eqbumwrdL6w5ersJLJ/pllL/N8KXA==}
+  yjs@13.6.19:
+    resolution: {integrity: sha512-GNKw4mEUn5yWU2QPHRx8jppxmCm9KzbBhB4qJLUJFiiYD0g/tDVgXQ7aPkyh01YO28kbs2J/BEbWBagjuWyejw==}
     engines: {node: '>=16.0.0', npm: '>=8.0.0'}
 
   yocto-queue@0.1.0:
@@ -5374,7 +5374,7 @@ snapshots:
       - jsdom
       - supports-color
 
-  '@remirror/extension-yjs@3.0.15(@remirror/pm@2.0.9)(@types/node@22.2.0)(yjs@13.6.9)':
+  '@remirror/extension-yjs@3.0.15(@remirror/pm@2.0.9)(@types/node@22.2.0)(yjs@13.6.19)':
     dependencies:
       '@babel/runtime': 7.22.10
       '@remirror/core': 2.0.19(@remirror/pm@2.0.9)(@types/node@22.2.0)
@@ -5383,9 +5383,9 @@ snapshots:
       prosemirror-model: 1.19.3
       prosemirror-state: 1.4.3
       prosemirror-view: 1.31.7
-      y-prosemirror: 1.2.1(prosemirror-model@1.19.3)(prosemirror-state@1.4.3)(prosemirror-view@1.31.7)(y-protocols@1.0.5)(yjs@13.6.9)
+      y-prosemirror: 1.2.1(prosemirror-model@1.19.3)(prosemirror-state@1.4.3)(prosemirror-view@1.31.7)(y-protocols@1.0.5)(yjs@13.6.19)
       y-protocols: 1.0.5
-      yjs: 13.6.9
+      yjs: 13.6.19
     transitivePeerDependencies:
       - '@types/node'
       - jsdom
@@ -8152,7 +8152,7 @@ snapshots:
       '@remirror/extension-trailing-node': 2.0.13(@remirror/pm@2.0.9)(@types/node@22.2.0)
       '@remirror/extension-underline': 2.0.13(@remirror/pm@2.0.9)(@types/node@22.2.0)
       '@remirror/extension-whitespace': 2.0.13(@remirror/pm@2.0.9)(@types/node@22.2.0)
-      '@remirror/extension-yjs': 3.0.15(@remirror/pm@2.0.9)(@types/node@22.2.0)(yjs@13.6.9)
+      '@remirror/extension-yjs': 3.0.15(@remirror/pm@2.0.9)(@types/node@22.2.0)(yjs@13.6.19)
       '@remirror/icons': 2.0.3
       '@remirror/pm': 2.0.9
       '@remirror/preset-core': 2.0.16(@remirror/pm@2.0.9)(@types/node@22.2.0)
@@ -8163,7 +8163,7 @@ snapshots:
       '@types/refractor': 3.0.2
       codemirror: 5.65.14
       refractor: 3.6.0
-      yjs: 13.6.9
+      yjs: 13.6.19
     transitivePeerDependencies:
       - '@types/node'
       - jsdom
@@ -8725,30 +8725,30 @@ snapshots:
 
   xtend@4.0.2: {}
 
-  y-prosemirror@1.2.1(prosemirror-model@1.19.3)(prosemirror-state@1.4.3)(prosemirror-view@1.31.7)(y-protocols@1.0.5)(yjs@13.6.9):
+  y-prosemirror@1.2.1(prosemirror-model@1.19.3)(prosemirror-state@1.4.3)(prosemirror-view@1.31.7)(y-protocols@1.0.5)(yjs@13.6.19):
     dependencies:
       lib0: 0.2.87
       prosemirror-model: 1.19.3
       prosemirror-state: 1.4.3
       prosemirror-view: 1.31.7
       y-protocols: 1.0.5
-      yjs: 13.6.9
+      yjs: 13.6.19
 
   y-protocols@1.0.5:
     dependencies:
       lib0: 0.2.87
 
-  y-protocols@1.0.6(yjs@13.6.9):
+  y-protocols@1.0.6(yjs@13.6.19):
     dependencies:
       lib0: 0.2.87
-      yjs: 13.6.9
+      yjs: 13.6.19
 
-  y-webrtc@10.3.0(yjs@13.6.9):
+  y-webrtc@10.3.0(yjs@13.6.19):
     dependencies:
       lib0: 0.2.87
       simple-peer: 9.11.1
-      y-protocols: 1.0.6(yjs@13.6.9)
-      yjs: 13.6.9
+      y-protocols: 1.0.6(yjs@13.6.19)
+      yjs: 13.6.19
     optionalDependencies:
       ws: 8.18.0
     transitivePeerDependencies:
@@ -8764,7 +8764,7 @@ snapshots:
 
   yaml@2.3.1: {}
 
-  yjs@13.6.9:
+  yjs@13.6.19:
     dependencies:
       lib0: 0.2.87
 
