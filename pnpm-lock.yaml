@@ -36,8 +36,8 @@ importers:
         specifier: ^2.0.17
         version: 2.0.17(@remirror/pm@2.0.9)(@types/node@22.2.0)
       '@remirror/extension-react-tables':
-        specifier: ^2.2.19
-        version: 2.2.19(@remirror/pm@2.0.9)(@types/node@22.2.0)(@types/react-dom@18.3.0)(@types/react@18.3.10)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: ^2.2.21
+        version: 2.2.21(@remirror/pm@2.0.9)(@types/node@22.2.0)(@types/react-dom@18.3.0)(@types/react@18.3.10)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@remirror/extension-yjs':
         specifier: ^3.0.15
         version: 3.0.15(@remirror/pm@2.0.9)(@types/node@22.2.0)(yjs@13.6.19)
@@ -290,10 +290,6 @@ packages:
 
   '@babel/runtime@7.22.10':
     resolution: {integrity: sha512-21t/fkKLMZI4pqP2wlmsQAWnYW1PDyKyyUV4vCi+B25ydmdaYTKXPwCj0BzSUnZf4seIiYvSA3jcZ3gdsMFkLQ==}
-    engines: {node: '>=6.9.0'}
-
-  '@babel/runtime@7.23.1':
-    resolution: {integrity: sha512-hC2v6p8ZSI/W0HUzh3V8C5g+NwSKzKPtJwSpTjwl0o297GP9+ZLQSkdvHz46CM3LqyoXxq+5G9komY+eSqSO0g==}
     engines: {node: '>=6.9.0'}
 
   '@babel/runtime@7.23.6':
@@ -1070,10 +1066,10 @@ packages:
       '@types/react-dom':
         optional: true
 
-  '@remirror/extension-react-tables@2.2.19':
-    resolution: {integrity: sha512-Fu4M16HCkJODYtN2ilTbpO3R1LvPTUEnvkfQgzypUT0SGSJbVM4cPsQpEKKwh207t7O5Ht7XlkrczrAntFXBDA==}
+  '@remirror/extension-react-tables@2.2.21':
+    resolution: {integrity: sha512-cPhWYXjyCGyGPAD/z1xcGQHnrowmw6EPT57qsRFPrEbGUJuRUKGgeP24dnE08T058Qja18ImrqFZEsCquLLs4A==}
     peerDependencies:
-      '@remirror/pm': ^2.0.7
+      '@remirror/pm': ^2.0.9
       react: ^16.14.0 || ^17 || ^18
       react-dom: ^16.14.0 || ^17 || ^18
     peerDependenciesMeta:
@@ -1107,15 +1103,15 @@ packages:
     peerDependencies:
       '@remirror/pm': ^2.0.5
 
-  '@remirror/extension-tables@2.3.1':
-    resolution: {integrity: sha512-SJ/vIrEql+dSC1K2vWr+g9fGONGYMId4D4AZWq0E/ttENZo8jZqEeUAV+Z6NIfPJyScVsXKxolZAVGWfZ4JK6g==}
-    peerDependencies:
-      '@remirror/pm': ^2.0.7
-
   '@remirror/extension-tables@2.4.1':
     resolution: {integrity: sha512-8qcNNAQzUqbP1jDDuPRQE+/Nv99oDijnkS87anTVtZhjfHGsNHjLloFb/OsUxAb/RaW9I/+2Jh+Am1abyWwMlw==}
     peerDependencies:
       '@remirror/pm': ^2.0.7
+
+  '@remirror/extension-tables@2.4.3':
+    resolution: {integrity: sha512-Mo7eGYc2h/rJW4uUYluh529Lv6Lwjyy10M2SJ52Yxnr0kZDU0bTJZsXRF+SxPgS0V8qQkqhwSSCDoys/x9IqLQ==}
+    peerDependencies:
+      '@remirror/pm': ^2.0.9
 
   '@remirror/extension-text-case@2.0.13':
     resolution: {integrity: sha512-sC0VoHUf2DHKAznn6+19eJTc2z8H6diz49MGodOtnGU9eCYbkKa1aoVB1ZMQndLAIQJ6kR9ElEOMvk4bpu++UA==}
@@ -4026,10 +4022,6 @@ snapshots:
     dependencies:
       regenerator-runtime: 0.14.0
 
-  '@babel/runtime@7.23.1':
-    dependencies:
-      regenerator-runtime: 0.14.0
-
   '@babel/runtime@7.23.6':
     dependencies:
       regenerator-runtime: 0.14.0
@@ -5182,15 +5174,15 @@ snapshots:
       - jsdom
       - supports-color
 
-  '@remirror/extension-react-tables@2.2.19(@remirror/pm@2.0.9)(@types/node@22.2.0)(@types/react-dom@18.3.0)(@types/react@18.3.10)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@remirror/extension-react-tables@2.2.21(@remirror/pm@2.0.9)(@types/node@22.2.0)(@types/react-dom@18.3.0)(@types/react@18.3.10)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
-      '@babel/runtime': 7.23.1
+      '@babel/runtime': 7.25.0
       '@emotion/css': 11.11.2
       '@linaria/core': 4.2.10
       '@remirror/core': 2.0.19(@remirror/pm@2.0.9)(@types/node@22.2.0)
       '@remirror/core-utils': 2.0.13(@remirror/pm@2.0.9)(@types/node@22.2.0)
       '@remirror/extension-positioner': 2.1.8(@remirror/pm@2.0.9)(@types/node@22.2.0)
-      '@remirror/extension-tables': 2.3.1(@remirror/pm@2.0.9)(@types/node@22.2.0)
+      '@remirror/extension-tables': 2.4.3(@remirror/pm@2.0.9)(@types/node@22.2.0)
       '@remirror/icons': 2.0.3
       '@remirror/messages': 2.0.6
       '@remirror/pm': 2.0.9
@@ -5266,7 +5258,7 @@ snapshots:
       - jsdom
       - supports-color
 
-  '@remirror/extension-tables@2.3.1(@remirror/pm@2.0.9)(@types/node@22.2.0)':
+  '@remirror/extension-tables@2.4.1(@remirror/pm@2.0.9)(@types/node@22.2.0)':
     dependencies:
       '@babel/runtime': 7.25.0
       '@remirror/core': 2.0.19(@remirror/pm@2.0.9)(@types/node@22.2.0)
@@ -5280,7 +5272,7 @@ snapshots:
       - jsdom
       - supports-color
 
-  '@remirror/extension-tables@2.4.1(@remirror/pm@2.0.9)(@types/node@22.2.0)':
+  '@remirror/extension-tables@2.4.3(@remirror/pm@2.0.9)(@types/node@22.2.0)':
     dependencies:
       '@babel/runtime': 7.25.0
       '@remirror/core': 2.0.19(@remirror/pm@2.0.9)(@types/node@22.2.0)
@@ -5552,7 +5544,7 @@ snapshots:
       '@remirror/extension-strike': 2.0.13(@remirror/pm@2.0.9)(@types/node@22.2.0)
       '@remirror/extension-sub': 2.0.13(@remirror/pm@2.0.9)(@types/node@22.2.0)
       '@remirror/extension-sup': 2.0.13(@remirror/pm@2.0.9)(@types/node@22.2.0)
-      '@remirror/extension-tables': 2.4.1(@remirror/pm@2.0.9)(@types/node@22.2.0)
+      '@remirror/extension-tables': 2.4.3(@remirror/pm@2.0.9)(@types/node@22.2.0)
       '@remirror/extension-text-color': 2.0.15(@remirror/pm@2.0.9)(@types/node@22.2.0)
       '@remirror/extension-underline': 2.0.13(@remirror/pm@2.0.9)(@types/node@22.2.0)
       '@remirror/extension-whitespace': 2.0.13(@remirror/pm@2.0.9)(@types/node@22.2.0)
@@ -5614,7 +5606,7 @@ snapshots:
     dependencies:
       '@babel/runtime': 7.23.6
       '@remirror/core-helpers': 3.0.0
-      '@remirror/extension-react-tables': 2.2.19(@remirror/pm@2.0.9)(@types/node@22.2.0)(@types/react-dom@18.3.0)(@types/react@18.3.10)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@remirror/extension-react-tables': 2.2.21(@remirror/pm@2.0.9)(@types/node@22.2.0)(@types/react-dom@18.3.0)(@types/react@18.3.10)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@remirror/pm': 2.0.9
       '@remirror/react': 2.0.35(@remirror/pm@2.0.9)(@types/node@22.2.0)(@types/react-dom@18.3.0)(@types/react@18.3.10)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@remirror/styles': 2.0.7(@emotion/css@11.11.2)(@emotion/react@11.11.4(@types/react@18.3.10)(react@18.3.1))(@emotion/styled@11.11.5(@emotion/react@11.11.4(@types/react@18.3.10)(react@18.3.1))(@types/react@18.3.10)(react@18.3.1))(@types/react@18.3.10)(react@18.3.1)
@@ -5699,7 +5691,7 @@ snapshots:
       '@remirror/extension-placeholder': 2.0.14(@remirror/pm@2.0.9)(@types/node@22.2.0)
       '@remirror/extension-positioner': 2.1.8(@remirror/pm@2.0.9)(@types/node@22.2.0)
       '@remirror/extension-react-component': 2.0.13(@remirror/pm@2.0.9)(@types/node@22.2.0)(@types/react-dom@18.3.0)(@types/react@18.3.10)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@remirror/extension-react-tables': 2.2.19(@remirror/pm@2.0.9)(@types/node@22.2.0)(@types/react-dom@18.3.0)(@types/react@18.3.10)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@remirror/extension-react-tables': 2.2.21(@remirror/pm@2.0.9)(@types/node@22.2.0)(@types/react-dom@18.3.0)(@types/react@18.3.10)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@remirror/preset-react': 2.0.14(@remirror/pm@2.0.9)(@types/node@22.2.0)(@types/react-dom@18.3.0)(@types/react@18.3.10)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@remirror/react-components': 2.1.17(@remirror/pm@2.0.9)(@types/node@22.2.0)(@types/react-dom@18.3.0)(@types/react@18.3.10)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@remirror/react-core': 2.0.21(@remirror/pm@2.0.9)(@types/node@22.2.0)(@types/react-dom@18.3.0)(@types/react@18.3.10)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -6083,7 +6075,7 @@ snapshots:
 
   aria-hidden@1.2.3:
     dependencies:
-      tslib: 2.6.1
+      tslib: 2.6.2
 
   array-buffer-byte-length@1.0.0:
     dependencies:
