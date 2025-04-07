@@ -54,8 +54,8 @@ importers:
         specifier: ^2.0.7
         version: 2.0.7(@emotion/css@11.11.2)(@emotion/react@11.11.4(@types/react@18.3.10)(react@18.3.1))(@emotion/styled@11.11.5(@emotion/react@11.11.4(@types/react@18.3.10)(react@18.3.1))(@types/react@18.3.10)(react@18.3.1))(@types/react@18.3.10)(react@18.3.1)
       '@tauri-apps/api':
-        specifier: ^1.6.0
-        version: 1.6.0
+        specifier: ^2.4.1
+        version: 2.4.1
       autoprefixer:
         specifier: ^10.4.19
         version: 10.4.19(postcss@8.4.41)
@@ -1341,9 +1341,8 @@ packages:
   '@svgmoji/twemoji@3.2.0':
     resolution: {integrity: sha512-6xqZgh9viFDKf5wvrxw56ImCR3Ni84IqwK45lxojOe1Gc1Mni1GpPfr4gb7WHDKjumfx+K7BHSvX0KXt3Nr3CQ==}
 
-  '@tauri-apps/api@1.6.0':
-    resolution: {integrity: sha512-rqI++FWClU5I2UBp4HXFvl+sBWkdigBkxnpJDQUWttNyG7IZP4FwQGhTNL5EOw0vI8i6eSAJ5frLqO7n7jbJdg==}
-    engines: {node: '>= 14.6.0', npm: '>= 6.6.0', yarn: '>= 1.19.1'}
+  '@tauri-apps/api@2.4.1':
+    resolution: {integrity: sha512-5sYwZCSJb6PBGbBL4kt7CnE5HHbBqwH+ovmOW6ZVju3nX4E3JX6tt2kRklFEH7xMOIwR0btRkZktuLhKvyEQYg==}
 
   '@tauri-apps/cli-darwin-arm64@1.5.14':
     resolution: {integrity: sha512-lxoSOp3KKSqzHJa7iT32dukPGMlfsTuja1xXSgwR8o/fqzpYJY7FY/3ZxesP8HR66FcK+vtqa//HNqeOQ0mHkA==}
@@ -5778,7 +5777,7 @@ snapshots:
       '@babel/runtime': 7.25.0
       '@svgmoji/core': 3.2.0
 
-  '@tauri-apps/api@1.6.0': {}
+  '@tauri-apps/api@2.4.1': {}
 
   '@tauri-apps/cli-darwin-arm64@1.5.14':
     optional: true
